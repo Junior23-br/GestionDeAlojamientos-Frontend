@@ -1,0 +1,53 @@
+:root {
+  --color-primary: #23ce6b;
+  --color-secondary: #b8c5d6;
+  --color-accent: #a39ba8;
+  --color-dark: #272d2d;
+  --color-light: #edf5fc;
+}
+
+body {
+  font-family: 'Chivo', sans-serif;
+}
+
+.font-ruda {
+  font-family: 'Ruda', sans-serif;
+}
+
+.font-overlock {
+  font-family: 'Overlock', sans-serif;
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+.text-dark {
+  color: var(--color-dark);
+}
+.text-accent {
+  color: var(--color-accent);
+}
+.bg-primary {
+  background-color: var(--color-primary);
+}
+.bg-light {
+  background-color: var(--color-light);
+}
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+
+/* Hero section */
+.hero {
+  background: linear-gradient(rgba(39, 45, 45, 0.7), rgba(39, 45, 45, 0.7)),
+  url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fveigler.com%2Falojamientos-turisticos%2F&psig=AOvVaw3ZSCgstR2MpF8NM5Qm2O7R&ust=1761878014991000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCMjDtpzxypADFQAAAAAdAAAAABAE') center/cover no-repeat;
+  color: #fff;
+}
+
+/* Cards */
+.card {
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: scale(1.05);
+  }
+}

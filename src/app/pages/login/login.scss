@@ -1,0 +1,131 @@
+:root {
+  --color-primary: #23CE6B;
+  --color-secondary: #B8C5D6;
+  --color-accent: #A39BA8;
+  --color-dark: #272D2D;
+  --color-light: #EDF5FC;
+}
+
+body {
+  font-family: 'Chivo', sans-serif;
+}
+
+.font-ruda {
+  font-family: 'Ruda', sans-serif;
+}
+
+.font-overlock {
+  font-family: 'Overlock', sans-serif;
+}
+
+/* === Colors === */
+.bg-light {
+  background-color: var(--color-light);
+}
+.text-dark {
+  color: var(--color-dark);
+}
+.text-primary {
+  color: var(--color-primary);
+}
+.text-accent {
+  color: var(--color-accent);
+}
+
+/* === Inputs & Buttons === */
+.input-field {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-secondary);
+  background-color: var(--color-light);
+  color: var(--color-dark);
+  font-size: 0.875rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-primary);
+}
+
+.checkbox {
+  height: 1rem;
+  width: 1rem;
+  border: 1px solid var(--color-secondary);
+  border-radius: 0.25rem;
+  accent-color: var(--color-primary);
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: var(--color-primary);
+  color: white;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.btn-submit:hover {
+  transform: scale(1.05);
+  background-color: #1fb760;
+}
+
+.btn-primary {
+  padding: 0.5rem 1rem;
+  background-color: var(--color-primary);
+  color: white;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #1fb760;
+}
+
+.btn-outline {
+  padding: 0.5rem 1rem;
+  color: var(--color-dark);
+  font-weight: bold;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s;
+}
+
+.btn-outline:hover {
+  background-color: var(--color-secondary);
+}
+
+/* === Nav links === */
+.nav-link {
+  font-family: 'Overlock', sans-serif;
+  font-size: 1rem;
+  color: var(--color-dark);
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: var(--color-primary);
+}
+
+/* === Responsiveness === */
+@media (max-width: 768px) {
+  nav,
+  .btn-outline,
+  .btn-primary {
+    display: none;
+  }
+
+  header .container {
+    justify-content: space-between;
+  }
+
+  main {
+    padding: 2rem 1rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+}

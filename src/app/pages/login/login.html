@@ -1,0 +1,99 @@
+<div class="flex flex-col min-h-screen bg-light text-dark">
+  <!-- Header -->
+  <header class="bg-white shadow-md">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#" class="flex items-center gap-2">
+        <svg class="h-8 w-8 text-primary" fill="none" stroke="currentColor" stroke-width="1.5"
+             viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205l3 1m-3-1l-3-1.091m0 0l-3 1.091m0 0l-3-1.091m9-3.273l-3 1.091L9 7.5l3-1.091m0 0l3 1.091" />
+        </svg>
+        <h1 class="text-2xl font-bold font-ruda text-dark">Alojamientos Quindío</h1>
+      </a>
+
+      <nav class="hidden md:flex items-center space-x-6">
+        <a href="#" class="nav-link">Explorar</a>
+        <a href="#" class="nav-link">Experiencias</a>
+        <a href="#" class="nav-link">Ser Anfitrión</a>
+      </nav>
+
+      <div class="hidden md:flex items-center space-x-4">
+        <a href="#" class="btn-outline">Iniciar Sesión</a>
+        <a href="#" class="btn-primary">Regístrate</a>
+      </div>
+
+      <button class="md:hidden">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div class="w-full max-w-md space-y-8 bg-white p-10 rounded-xl shadow-lg">
+      <div>
+        <h2 class="mt-6 text-center text-4xl font-bold font-ruda text-dark">¡Bienvenido de nuevo!</h2>
+        <p class="mt-2 text-center text-base text-accent font-overlock">
+          Inicia sesión para continuar tu aventura en el Quindío.
+        </p>
+      </div>
+
+      <form method="POST" class="mt-8 space-y-6">
+        <div class="rounded-md shadow-sm -space-y-px">
+          <div>
+            <label for="email-address" class="sr-only">Correo electrónico</label>
+            <input id="email-address" name="email" type="email" autocomplete="email"
+                   required
+                   placeholder="Correo electrónico"
+                   class="input-field rounded-t-lg" />
+          </div>
+          <div>
+            <label for="password" class="sr-only">Contraseña</label>
+            <input id="password" name="password" type="password" autocomplete="current-password"
+                   required
+                   placeholder="Contraseña"
+                   class="input-field rounded-b-lg" />
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between">
+          <div class="flex items-center">
+            <input id="remember-me" name="remember-me" type="checkbox"
+                   class="checkbox" />
+            <label for="remember-me" class="ml-2 block text-sm text-dark font-overlock">
+              Recuérdame
+            </label>
+          </div>
+          <div class="text-sm">
+            <a href="#" class="text-primary hover:text-opacity-80 font-overlock">
+              ¿Olvidaste tu contraseña?
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <button type="submit" class="btn-submit">
+            Iniciar Sesión
+          </button>
+        </div>
+      </form>
+
+      <div class="text-center">
+        <p class="text-sm font-overlock text-accent">
+          ¿No tienes una cuenta?
+          <a href="#" class="font-bold text-primary hover:text-opacity-80">Regístrate</a>
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white mt-auto">
+    <div class="container mx-auto px-6 py-4 text-center text-accent font-overlock text-sm">
+      <p>© 2025 Alojamientos Quindío.</p>
+    </div>
+  </footer>
+</div>
