@@ -41,18 +41,20 @@
         </p>
       </div>
 
-      <form method="POST" class="mt-8 space-y-6">
+      <form (click)="onSubmit()" method="POST" class="mt-8 space-y-6">
         <div class="rounded-md shadow-sm -space-y-px">
           <div>
             <label for="email-address" class="sr-only">Correo electrónico</label>
-            <input id="email-address" name="email" type="email" autocomplete="email"
+            <input 
+            [(ngModel)]="email"
+            id="email-address" name="email" type="email" autocomplete="email"
                    required
                    placeholder="Correo electrónico"
-                   class="input-field rounded-t-lg" />
+                   class="input-field rounded-t-lg"/>
           </div>
           <div>
             <label for="password" class="sr-only">Contraseña</label>
-            <input id="password" name="password" type="password" autocomplete="current-password"
+            <input [(ngModel)]="password" id="password" name="password" type="password" autocomplete="current-password"
                    required
                    placeholder="Contraseña"
                    class="input-field rounded-b-lg" />

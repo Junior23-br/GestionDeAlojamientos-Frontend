@@ -6,6 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { CommonModule } from '@angular/common';
+import { AuthService } from '../../core/http/user-service';
 
 
 @Component({
@@ -27,15 +28,14 @@ export class Register {
   email = '';
   password = '';
   telefono = '';
-  rol = 'usuario';
+  rol = 'GUEST';
   fechaNacimiento = '';
   aceptaTerminos = false;
   recibeNotificaciones = false;
   tambienAnfitrion = false;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private userService: AuthService) {
     this.registerForm = this.fb.group({
-
       nombre: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8)]]
@@ -54,8 +54,31 @@ export class Register {
       recibeNotificaciones: this.recibeNotificaciones,
       tambienAnfitrion: this.tambienAnfitrion});
 
+    this.registerForm = this.fb.group({
+      nombre: [this.nombre, Validators.required],
+      email: [this.email, [Validators.required, Validators.email]],
+      password: [this.password, [Validators.required, Validators.minLength(8)]]
+    });
+
     if (this.registerForm.valid) {
       console.log('Formulario válido:', this.registerForm.value);
+      this.userService.registerGuest(
+        {    
+        name: this.nombre,
+        phoneNumber: this.telefono,
+        birthDate: this.fechaNacimiento,
+        email: this.email,
+        password: this.password,
+        role: this.rol,
+        urlProfilePhoto: null,
+      }).subscribe({
+          next: (response) => {
+            console.log('Usuario registrado con éxito:', response);
+          },
+          error: (error) => {
+            console.error('Error al registrar el usuario:', error);
+          }
+        });
       alert(`Usuario registrado: ${this.registerForm.value.nombre}`);
       this.registerForm.reset();
     } else {
