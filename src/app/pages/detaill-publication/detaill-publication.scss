@@ -1,0 +1,55 @@
+/* detalle-alojamiento.component.scss */
+
+/* Variables (mantener para compatibilidad con utilidades que usan vars) */
+:host {
+  --primary-50: #f0fdf6;
+  --primary-100: #dcfceb;
+  --primary-200: #bbf7d6;
+  --primary-300: #86efb6;
+  --primary-400: #4ade8f;
+  --primary-500: #1ed275;
+  --primary-600: #16a34a;
+  --primary-700: #15803d;
+  --primary-800: #166534;
+  --primary-900: #14532d;
+  --primary-950: #052e16;
+
+  display: block;
+  /* Font stack local to component; ideal si quieres mantenerlo sólo aquí */
+  font-family: "Plus Jakarta Sans", "Noto Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Utility to ensure background images behave identically */
+:host .bg-cover {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Fix for sticky side-card on smaller heights (avoid overflow off-screen) */
+:host aside[role] {
+  /* reserved if you want to add role later */
+}
+
+/* Improve focus outline contrast for inputs in this component */
+:host input:focus,
+:host select:focus,
+:host textarea:focus,
+:host button:focus {
+  outline: none;
+}
+
+/* Small responsive tweak: reduce top offset in very small screens to avoid overlap */
+@media (max-width: 640px) {
+  :host header {
+    position: sticky;
+    top: 0;
+  }
+}
+
+/* If you want additional small animations */
+:host .group-hover\:scale-105 {
+  transition: transform 0.3s ease;
+}
+
+/* Nothing else duplicated: Tailwind covers the rest. */
