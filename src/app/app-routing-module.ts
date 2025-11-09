@@ -6,6 +6,13 @@ import {DetaillPublication} from './pages/detaill-publication/detaill-publicatio
 import {BeHost} from './pages/be-host/be-host';
 import {RestorePassword} from './pages/restore-password/restore-password';
 import {FilterAccomodation} from './pages/filter-accomodation/filter-accomodation';
+import {MyAccountHost} from './pages/my-account-host/my-account-host';
+import {MyReputation} from './pages/my-reputation/my-reputation';
+import {MyAccountGuest} from './pages/my-account-guest/my-account-guest';
+import {MyReservations}  from './pages/my-reservations/my-reservations';
+import {ConfigurationAccount} from './pages/configuration-account/configuration-account';
+import {MyChats} from './pages/my-chats/my-chats';
+import {PaymentMethod} from './pages/payment-method/payment-method';
 import {NgModule} from '@angular/core';
 
 export const routes: Routes = [
@@ -17,6 +24,13 @@ export const routes: Routes = [
   { path: 'detaill-publication', component: DetaillPublication },
   {path: 'restore-password', component: RestorePassword},
   {path: 'filter-accomodation', component: FilterAccomodation},
+  {path: 'my-account-host', component: MyAccountHost},
+  {path: 'my-reputation', component: MyReputation},
+  {path: 'my-account-guest', component: MyAccountGuest},
+  {path: 'my-reservations', component: MyReservations},
+  {path: 'my-chats', component: MyChats},
+  {path: 'payment-method', component: PaymentMethod},
+  {path: 'configuration-account', component: ConfigurationAccount}
 
 
 

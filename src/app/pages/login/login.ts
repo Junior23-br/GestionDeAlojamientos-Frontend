@@ -48,4 +48,12 @@ export class Login {
   onForgotPassword() {
     this.router.navigate(['/restore-password']).then(r =>"Pagina no accesible, error 404: Not Found Page" );
   }
+
+  goToMyAccountGuest() {
+    this.router.navigate(['/my-account-guest']).then(r =>"Pagina no accesible, error 404: Not Found Page");
+  }
+
+  goToMyAccountHost() {
+    this.router.navigate(['/my-account-host']).then(r =>"Pagina no accesible, error 404: Not Found Page");
+  }
 }

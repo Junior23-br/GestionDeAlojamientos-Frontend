@@ -99,8 +99,12 @@
         </div>
 
         <!-- Botón de envío -->
-        <button type="submit" class="btn-primary w-full" aria-label="Iniciar sesión">
-          Iniciar Sesión
+        <button type="submit" class="btn-primary w-full" aria-label="Iniciar sesión" (click)="goToMyAccountGuest()">
+          Iniciar Sesión como huesped
+        </button>
+
+        <button type="submit" class="btn-primary w-full" aria-label="Iniciar sesión" (click)="goToMyAccountHost()">
+          Iniciar Sesión como host
         </button>
       </form>
 
