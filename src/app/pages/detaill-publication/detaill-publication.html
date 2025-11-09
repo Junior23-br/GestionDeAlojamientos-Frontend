@@ -1,47 +1,55 @@
-<!-- Componente: detalle-alojamiento.component.html -->
-<div class="detalle-alojamiento-root relative flex min-h-screen flex-col overflow-x-hidden">
+<!-- Página de alojamiento / listing -->
+<section class="min-h-screen bg-white text-gray-900">
   <!-- Header -->
-  <header class="sticky top-0 z-50 w-full border-b border-gray-200 bg-white">
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center gap-8">
-        <a class="flex items-center gap-3 text-gray-900" routerLink="/" aria-label="Quindío Stays home">
-          <svg class="h-7 w-7 text-[var(--primary-500)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"
-               aria-hidden="true">
-            <path clip-rule="evenodd" d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z" fill="currentColor" fill-rule="evenodd"></path>
-            <path clip-rule="evenodd" d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z" fill="currentColor" fill-rule="evenodd"></path>
-          </svg>
-          <h1 class="text-xl font-bold">Quindío Stays</h1>
-        </a>
-
-        <nav class="hidden items-center gap-8 md:flex" aria-label="Main navigation">
-          <a class="text-sm font-medium text-gray-700 hover:text-[var(--primary-500)]" routerLink="/explore">Explore</a>
-          <a class="text-sm font-medium text-gray-700 hover:text-[var(--primary-500)]" routerLink="/wishlist">Wishlist</a>
-          <a class="text-sm font-medium text-gray-700 hover:text-[var(--primary-500)]" routerLink="/trips">Trips</a>
-        </nav>
-      </div>
-
-      <div class="flex items-center gap-4">
-        <div class="relative hidden lg:block w-64">
-          <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-            <svg class="h-5 w-5 text-gray-400" fill="currentColor" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"
-                 aria-hidden="true">
-              <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+  <header class="sticky top-0 z-50 w-full border-b border-gray-200 bg-white" aria-label="Barra de navegación principal">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between py-3">
+        <div class="flex items-center gap-3 md:gap-8">
+          <a routerLink="/" class="flex items-center gap-3 text-gray-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[--primary-color] rounded">
+            <svg class="h-7 w-7 text-[--primary-color]" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path clip-rule="evenodd" d="M24 18.423 42 11.475V34.366c0 .414-.254.785-.64.934L24 42V18.423Z" fill="currentColor" fill-rule="evenodd"/>
+              <path clip-rule="evenodd" d="M24 8.188 33.412 11.574 24 15.207 14.588 11.574 24 8.188ZM9 15.849l12 4.632v17.146L9 32.995V15.849Zm18 21.777V20.481l12-4.632v17.146L27 37.626ZM25.354 2.299a3 3 0 0 0-2.708 0L4.985 8.652A3 3 0 0 0 3 11.475v22.891a4 4 0 0 0 2.56 3.732l17.36 6.701a3 3 0 0 0 2.16 0l17.36-6.701A4 4 0 0 0 45 34.366V11.475a3 3 0 0 0-1.984-2.823L25.354 2.299Z" fill="currentColor" fill-rule="evenodd"/>
             </svg>
-          </div>
-          <input
-            aria-label="Search destinations"
-            class="block w-full rounded-full border border-gray-200 bg-gray-50 py-2 pl-10 pr-4 text-sm text-gray-900 placeholder-gray-500 focus:border-[var(--primary-500)] focus:outline-none focus:ring-1 focus:ring-[var(--primary-500)]"
-            placeholder="Search destinations" />
+            <h1 class="text-xl font-bold">Quindío Stays</h1>
+          </a>
+
+          <nav class="hidden md:flex items-center gap-6 lg:gap-8" aria-label="Navegación">
+            <a routerLink="/explore" class="nav-link">Explore</a>
+            <a routerLink="/wishlist" class="nav-link">Wishlist</a>
+            <a routerLink="/trips" class="nav-link">Trips</a>
+          </nav>
         </div>
 
-        <button class="rounded-full p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700" aria-label="Global actions">
-          <svg fill="currentColor" height="20" viewBox="0 0 256 256" width="20" xmlns="http://www.w3.org/2000/svg"
-               aria-hidden="true">
-            <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24ZM101.63,168h52.74C149,186.34,140,202.87,128,215.89,116,202.87,107,186.34,101.63,168ZM98,152a145.72,145.72,0,0,1,0-48h60a145.72,145.72,0,0,1,0,48ZM40,128a87.61,87.61,0,0,1,3.33-24H81.79a161.79,161.79,0,0,0,0,48H43.33A87.61,87.61,0,0,1,40,128Z"></path>
-          </svg>
-        </button>
+        <div class="flex items-center gap-2 sm:gap-4">
+          <!-- Buscador (solo desktop) -->
+          <div class="relative hidden lg:block">
+            <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3" aria-hidden="true">
+              <svg class="h-5 w-5 text-gray-400" viewBox="0 0 256 256" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="m229.66 218.34-50.07-50.06a88.11 88.11 0 1 0-11.31 11.31l50.06 50.07a8 8 0 0 0 11.32-11.32ZM40 112a72 72 0 1 1 72 72 72.08 72.08 0 0 1-72-72Z"/>
+              </svg>
+            </div>
+            <label class="sr-only" for="buscar">Search destinations</label>
+            <input id="buscar" type="search" placeholder="Search destinations" class="w-full rounded-full border-gray-300 bg-gray-50 py-2 pl-10 pr-4 text-sm text-gray-900 placeholder-gray-500 focus:border-[--primary-color] focus:ring-1 focus:ring-[--primary-color]"/>
+          </div>
 
-        <button class="h-10 w-10 rounded-full bg-cover bg-center" aria-label="User profile" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBkWH7kf1RqjTbawrxB5aTFeyytdI6qGfMl5c2Dw_Lpo8UBFnGzpbLo250q2LO54Vx22ceD0XVLifVTKyHwpI6mYw7n5fe92SznGXjORcY0tD3XrDxOuVhQrTL4_feTC7KjlpV7kg-N8SuSJjF0NjAHC2SHfzIgp9_ke6x61GP10us75w4aXwCfHZ--u3TbdcjKnNWggbiEEzyvhHkjt9sOT_gDsiJrAt15fHBLRseN79zcXWP39hayVG5KF6eNb-VyOdmY0R9_aA');"></button>
+          <!-- Idioma -->
+          <button type="button" class="icon-btn" aria-label="Cambiar idioma">
+            <svg class="h-5 w-5 text-gray-600" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm1 17.93V19h-2v.93A8 8 0 0 1 4.07 13H5v-2H4.07A8 8 0 0 1 11 4.07V5h2V4.07A8 8 0 0 1 19.93 11H19v2h.93A8 8 0 0 1 13 19.93Z"/>
+            </svg>
+          </button>
+
+          <!-- Avatar -->
+          <div class="avatar" role="img" aria-label="Perfil de usuario"
+               style='background-image:url("https://lh3.googleusercontent.com/aida-public/AB6AXuBkWH7kf1RqjTbawrxB5aTFeyytdI6qGfMl5c2Dw_Lpo8UBFnGzpbLo250q2LO54Vx22ceD0XVLifVTKyHwpI6mYw7n5fe92SznGXjORcY0tD3XrDxOuVhQrTL4_feTC7KjlpV7kg-N8SuSJjF0NjAHC2SHfzIgp9_ke6x61GP10us75w4aXwCfHZ--u3TbdcjKnNWggbiEEzyvhHkjt9sOT_gDsiJrAt15fHBLRseN79zcXWP39hayVG5KF6eNb-VyOdmY0R9_aA");'></div>
+
+          <!-- Menú móvil -->
+          <button type="button" class="icon-btn md:hidden" aria-label="Abrir menú">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   </header>
@@ -49,259 +57,223 @@
   <!-- Main -->
   <main class="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
     <!-- Breadcrumb -->
-    <div class="flex items-center gap-2 text-sm text-gray-500">
-      <a class="hover:text-[var(--primary-500)]" href="#">Colombia</a>
-      <span>/</span>
-      <span class="font-medium text-gray-700">Quindío</span>
-    </div>
+    <nav aria-label="Breadcrumb" class="text-sm text-gray-500">
+      <ol class="flex items-center gap-2">
+        <li><a routerLink="/colombia" class="hover:text-[--primary-color] focus-ring rounded">Colombia</a></li>
+        <li aria-hidden="true">/</li>
+        <li aria-current="page" class="font-medium text-gray-700">Quindío</li>
+      </ol>
+    </nav>
 
-    <!-- Title -->
-    <h2 class="mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Charming Villa in Salento with Panoramic Views</h2>
+    <!-- Title + meta -->
+    <h2 class="mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+      Charming Villa in Salento with Panoramic Views
+    </h2>
     <p class="mt-2 text-base text-gray-600">Entire villa · 4 beds · 2 baths</p>
 
-    <!-- Gallery + Layout -->
-    <div class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4 items-start">
-      <!-- Main large image (spans 2 cols on md) -->
-      <div class="group relative col-span-1 h-80 w-full cursor-pointer overflow-hidden rounded-lg shadow-md sm:col-span-2 md:col-span-2">
-        <div class="h-full w-full bg-cover bg-center transition-transform duration-300 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAYplBwLYSnavvZZPwjU2KhyLQc3jNXN0Z9fLXgkwT57i1IMFbTBOgYrEQN3oro8DI2WlC21-P6Lznjryl4OivvYT7m5-_YK4m8cbn-WRess9Qu7tYntDcvbdjlgh1VuuN4FTKJ_TDIdjCTsHRVtF6n2eIK9yUZfUqybLy8GaL06Z63o7-RqkNQQRBJ-NWH6P-HR_AGSaua96x7GOkEDP3ghDskPyJH5p-TCv9goEPV5clCAUF4X5KG-CmnvXKUNKc82rYt3C0KRw');"></div>
-      </div>
+    <!-- Gallery -->
+    <section aria-label="Galería de imágenes" class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4 md:grid-rows-2">
+      <figure class="group relative h-80 w-full overflow-hidden rounded-lg shadow-md sm:col-span-2 md:col-span-2 md:row-span-2">
+        <img alt="Vista principal de la villa" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+             src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYplBwLYSnavvZZPwjU2KhyLQc3jNXN0Z9fLXgkwT57i1IMFbTBOgYrEQN3oro8DI2WlC21-P6Lznjryl4OivvYT7m5-_YK4m8cbn-WRess9Qu7tYntDcvbdjlgh1VuuN4FTKJ_TDIdjCTsHRVtF6n2eIK9yUZfUqybLy8GaL06Z63o7-RqkNQQRBJ-NWH6P-HR_AGSaua96x7GOkEDP3ghDskPyJH5p-TCv9goEPV5clCAUF4X5KG-CmnvXKUNKc82rYt3C0KRw"/>
+      </figure>
+      <figure class="group relative h-40 w-full overflow-hidden rounded-lg shadow-md md:h-auto">
+        <img alt="Habitación luminosa" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+             src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5K5lj5xRQP86pcy2mPoXbT6M6IgnWjvT94ifc7VUnZlWS_iaupQ7ebrzW1lBdZkLYITc85O04C6RGJ1hZO1rklqeMrDtLZuV0ntLuqGumLMIP6KtJmn9ZXERegD02aBwiqa-vD7UdWDGQsZ6ZageeDjAP9djufqhnsw2KclSL1PyqoS4QV_-G3FYSnF4dTWOERJnMYvBg5pYKRJeePI4wgr_tJNQ7vxrDRDrJdWsB0TgTs2yTYOUUpuW1bIeIOeDrCgF8zbJIrA"/>
+      </figure>
+      <figure class="group relative h-40 w-full overflow-hidden rounded-lg shadow-md md:h-auto">
+        <img alt="Sala con vistas" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+             src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaIQeV3yJdfvGnThsq1lWrpF4cuJJBjv6ZsorGIPdcvMy_jX1BJMBdSQjZs3gmFrXzSejdfdPlDqZck3lAHQw5gbjErU1S6mfPnQQtHUalatrqf--pAon5B9oenp7Di3aicGpEv6dkTzMTtcw0MOBfTX3TkrmHEcKO2DGyYaIHTG8-w_dGOQKP2XiFQuy0mok7TWr0OliPQLgpL0ZxorGGx8xmp56tH-EsVNUNGPBIJrni_7O0rmQwfyHWQlLiwez5QZUY7GnnIQ"/>
+      </figure>
+    </section>
 
-      <!-- Thumbnails hidden on small screens -->
-      <div class="group relative hidden h-80 w-full cursor-pointer overflow-hidden rounded-lg shadow-md md:block">
-        <div class="h-full w-full bg-cover bg-center transition-transform duration-300 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD5K5lj5xRQP86pcy2mPoXbT6M6IgnWjvT94ifc7VUnZlWS_iaupQ7ebrzW1lBdZkLYITc85O04C6RGJ1hZO1rklqeMrDtLZuV0ntLuqGumLMIP6KtJmn9ZXERegD02aBwiqa-vD7UdWDGQsZ6ZageeDjAP9djufqhnsw2KclSL1PyqoS4QV_-G3FYSnF4dTWOERJnMYvBg5pYKRJeePI4wgr_tJNQ7vxrDRDrJdWsB0TgTs2yTYOUUpuW1bIeIOeDrCgF8zbJIrA');"></div>
-      </div>
-
-      <div class="group relative hidden h-80 w-full cursor-pointer overflow-hidden rounded-lg shadow-md md:block">
-        <div class="h-full w-full bg-cover bg-center transition-transform duration-300 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCaIQeV3yJdfvGnThsq1lWrpF4cuJJBjv6ZsorGIPdcvMy_jX1BJMBdSQjZs3gmFrXzSejdfdPlDqZck3lAHQw5gbjErU1S6mfPnQQtHUalatrqf--pAon5B9oenp7Di3aicGpEv6dkTzMTtcw0MOBfTX3TkrmHEcKO2DGyYaIHTG8-w_dGOQKP2XiFQuy0mok7TWr0OliPQLgpL0ZxorGGx8xmp56tH-EsVNUNGPBIJrni_7O0rmQwfyHWQlLiwez5QZUY7GnnIQ');"></div>
-      </div>
-    </div>
-
-    <!-- Content columns: main + sidebar -->
+    <!-- Content + Sidebar -->
     <div class="mt-12 grid grid-cols-1 gap-x-12 gap-y-16 lg:grid-cols-3">
-      <!-- Main content (left) -->
+      <!-- Main column -->
       <div class="lg:col-span-2">
-        <section>
-          <h3 class="text-2xl font-bold text-gray-900">About this place</h3>
+        <!-- About -->
+        <section aria-labelledby="about-title">
+          <h3 id="about-title" class="text-2xl font-bold text-gray-900">About this place</h3>
           <p class="mt-4 text-base leading-relaxed text-gray-700">
-            Nested in the heart of Salento, this charming villa offers breathtaking panoramic views of the Cocora Valley. Enjoy the tranquility of the countryside while being
-            just a short distance from the town's vibrant center. Perfect for families or groups seeking a peaceful retreat with easy access to local attractions.
+            Nestled in the heart of Salento, this charming villa offers breathtaking panoramic views of the Cocora Valley...
           </p>
         </section>
 
-        <section class="mt-12">
-          <h3 class="text-2xl font-bold text-gray-900">What this place offers</h3>
-          <div class="mt-6 grid grid-cols-2 gap-6 sm:grid-cols-3">
-            <div class="flex items-center gap-3">
-              <svg class="h-6 w-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
-                   aria-hidden="true">
-                <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"></path>
-              </svg>
-              <span class="text-base font-medium text-gray-800">Pool</span>
-            </div>
-
-            <div class="flex items-center gap-3">
-              <svg class="h-6 w-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
-                   aria-hidden="true">
-                <path d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.79 4 4s-1.79 4-4 4-4-1.79-4-4c0-1.944 1.452-3.551 3.334-3.903" stroke-linecap="round" stroke-linejoin="round"></path>
-              </svg>
-              <span class="text-base font-medium text-gray-800">Wifi</span>
-            </div>
-
-            <div class="flex items-center gap-3">
-              <svg class="h-6 w-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
-                   aria-hidden="true">
-                <path d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6H8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" stroke-linecap="round" stroke-linejoin="round"></path>
-              </svg>
-              <span class="text-base font-medium text-gray-800">Mountain View</span>
-            </div>
-
-            <div class="flex items-center gap-3">
-              <svg class="h-6 w-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
-                   aria-hidden="true">
-                <path d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" stroke-linecap="round" stroke-linejoin="round"></path>
-              </svg>
-              <span class="text-base font-medium text-gray-800">Kitchen</span>
-            </div>
-
-            <div class="flex items-center gap-3">
-              <svg class="h-6 w-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
-                   aria-hidden="true">
-                <path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"></path>
-              </svg>
-              <span class="text-base font-medium text-gray-800">TV</span>
-            </div>
-
-            <div class="flex items-center gap-3">
-              <svg class="h-6 w-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
-                   aria-hidden="true">
-                <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"></path>
-              </svg>
-              <span class="text-base font-medium text-gray-800">Free Parking</span>
-            </div>
-          </div>
+        <!-- Offers -->
+        <section class="mt-12" aria-labelledby="offers-title">
+          <h3 id="offers-title" class="text-2xl font-bold text-gray-900">What this place offers</h3>
+          <ul class="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 text-base">
+            <li class="flex items-center gap-3">
+              <svg class="h-6 w-6 text-gray-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="font-medium text-gray-800">Pool</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="h-6 w-6 text-gray-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.79 4 4s-1.79 4-4 4-4-1.79-4-4c0-1.944 1.452-3.551 3.334-3.903" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="font-medium text-gray-800">Wifi</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="h-6 w-6 text-gray-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 21v-4m0 0V5a2 2 0 0 1 2-2h6.5l1 1H21l-3 6 3 6H8.5l-1-1H5a2 2 0 0 0-2 2zm9-13.5V9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="font-medium text-gray-800">Mountain View</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="h-6 w-6 text-gray-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 8v13m0-13V6a2 2 0 1 1 2 2h-2zm0 0V5.5A2.5 2.5 0 1 0 9.5 8H12zm-7 4h14M5 12a2 2 0 1 1 0-4h14a2 2 0 1 1 0 4M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg>
+              <span class="font-medium text-gray-800">Kitchen</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="h-6 w-6 text-gray-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9.75 17 9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="font-medium text-gray-800">TV</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg class="h-6 w-6 text-gray-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="font-medium text-gray-800">Free Parking</span>
+            </li>
+          </ul>
         </section>
       </div>
 
-      <!-- Sidebar (right) -->
-      <div class="lg:col-span-1">
-        <aside class="sticky top-28 rounded-xl border border-gray-200 bg-white p-6 shadow-lg">
-          <div class="flex items-baseline justify-between">
-            <p class="text-2xl font-bold text-gray-900">$150<span class="text-base font-normal text-gray-600"> / night</span></p>
-            <div class="flex items-center gap-1">
-              <svg class="h-5 w-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"
-                   aria-hidden="true">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-              </svg>
+      <!-- Sidebar -->
+      <aside class="lg:col-span-1" aria-label="Tarjeta de reserva">
+        <div class="sticky top-28 rounded-xl border border-gray-200 bg-white p-6 shadow-lg">
+          <div class="flex flex-wrap items-baseline justify-between gap-4">
+            <p class="text-2xl font-bold text-gray-900">$150 <span class="text-base font-normal text-gray-600">/ night</span></p>
+            <div class="flex items-center gap-1" aria-label="Rating 4.8 out of 5">
+              <svg class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 0 0 .95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 0 0-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 0 0-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 0 0-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 0 0 .951-.69l1.07-3.292z"/></svg>
               <span class="font-semibold text-gray-800">4.8</span>
               <span class="text-sm text-gray-500">(25 reviews)</span>
             </div>
           </div>
 
-          <form class="mt-6 grid grid-cols-2 gap-4" aria-label="Reservation form">
-            <div>
-              <label class="block text-sm font-medium text-gray-700" for="check-in">Check-in</label>
-              <input class="mt-1 block w-full rounded-lg border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-[var(--primary-500)] focus:ring-[var(--primary-500)]" id="check-in" type="date"/>
+          <form class="mt-6 space-y-4" (submit)="$event.preventDefault()">
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <div>
+                <label for="check-in" class="block text-sm font-medium text-gray-700">Check-in</label>
+                <input id="check-in" type="date" class="input-base"/>
+              </div>
+              <div>
+                <label for="check-out" class="block text-sm font-medium text-gray-700">Check-out</label>
+                <input id="check-out" type="date" class="input-base"/>
+              </div>
             </div>
+
             <div>
-              <label class="block text-sm font-medium text-gray-700" for="check-out">Check-out</label>
-              <input class="mt-1 block w-full rounded-lg border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-[var(--primary-500)] focus:ring-[var(--primary-500)]" id="check-out" type="date"/>
+              <label for="guests" class="block text-sm font-medium text-gray-700">Guests</label>
+              <select id="guests" class="input-base">
+                <option>1 guest</option>
+                <option>2 guests</option>
+                <option>3 guests</option>
+                <option>4 guests</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn-primary w-full" aria-label="Reservar">
+              Reserve
+            </button>
+
+            <div class="mt-4 text-sm">
+              <div class="flex justify-between"><p class="text-gray-700">$150 x 5 nights</p><p class="font-medium text-gray-900">$750</p></div>
+              <div class="mt-2 flex justify-between"><p class="text-gray-700">Service fee</p><p class="font-medium text-gray-900">$50</p></div>
+              <div class="mt-4 flex justify-between border-t border-gray-200 pt-4 font-bold"><p>Total</p><p>$800</p></div>
             </div>
           </form>
-
-          <div class="mt-4">
-            <label class="block text-sm font-medium text-gray-700" for="guests">Guests</label>
-            <select class="mt-1 block w-full rounded-lg border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-[var(--primary-500)] focus:ring-[var(--primary-500)]" id="guests">
-              <option>1 guest</option>
-              <option>2 guests</option>
-              <option>3 guests</option>
-              <option>4 guests</option>
-            </select>
-          </div>
-
-          <button class="mt-6 w-full rounded-lg bg-[var(--primary-500)] px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-[var(--primary-600)] focus:outline-none focus:ring-2 focus:ring-[var(--primary-500)] focus:ring-offset-2">
-            Reserve
-          </button>
-
-          <div class="mt-4 flex justify-between text-sm">
-            <p class="text-gray-700">$150 x 5 nights</p>
-            <p class="font-medium text-gray-900">$750</p>
-          </div>
-          <div class="mt-2 flex justify-between text-sm">
-            <p class="text-gray-700">Service fee</p>
-            <p class="font-medium text-gray-900">$50</p>
-          </div>
-          <div class="mt-4 border-t border-gray-200 pt-4 flex justify-between font-bold">
-            <p class="text-gray-900">Total</p>
-            <p class="text-gray-900">$800</p>
-          </div>
-        </aside>
-      </div>
+        </div>
+      </aside>
     </div>
 
-    <!-- Where you'll be (map placeholder) -->
-    <section class="mt-16">
-      <h3 class="text-2xl font-bold text-gray-900">Where you'll be</h3>
+    <!-- Map -->
+    <section class="mt-16" aria-labelledby="where-title">
+      <h3 id="where-title" class="text-2xl font-bold text-gray-900">Where you'll be</h3>
       <div class="mt-6 h-96 w-full overflow-hidden rounded-xl">
-        <div class="h-full w-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAfPvmstxERwKkg3CyV_ENS54C_e8UsGDsHUvYKNMenJy5zP1N4e92gnzvYavEugT3yGWdCzuM42053M7cOK0oNygOpmwXSbShmgdVbISBol4_xQAwnfXjpU-zzrS8ElS37yA0_OAPH8wfez67gbXyOqyZ8bGsflE9qwtr5PyCU9oCMRVr6M1sX7ZCfT4zIziUk-A6IuIjH7Ao8MTPTvXgk1zgO5S1p8VJhq6z8ZifDyS6PZi5AkFZAk8qAZAH3e78UMXWyqFSjqw');"></div>
+        <div class="h-full w-full bg-cover bg-center"
+             role="img" aria-label="Mapa / imagen de la zona"
+             style='background-image:url("https://lh3.googleusercontent.com/aida-public/AB6AXuAfPvmstxERwKkg3CyV_ENS54C_e8UsGDsHUvYKNMenJy5zP1N4e92gnzvYavEugT3yGWdCzuM42053M7cOK0oNygOpmwXSbShmgdVbISBol4_xQAwnfXjpU-zzrS8ElS37yA0_OAPH8wfez67gbXyOqyZ8bGsflE9qwtr5PyCU9oCMRVr6M1sX7ZCfT4zIziUk-A6IuIjH7Ao8MTPTvXgk1zgO5S1p8VJhq6z8ZifDyS6PZi5AkFZAk8qAZAH3e78UMXWyqFSjqw");'></div>
       </div>
     </section>
 
-    <!-- Reviews -->
-    <section class="mt-16">
-      <h3 class="text-2xl font-bold text-gray-900">Reviews</h3>
+    <!-- Reviews (resumen + barras) -->
+    <section class="mt-16" aria-labelledby="reviews-title">
+      <h3 id="reviews-title" class="text-2xl font-bold text-gray-900">Reviews</h3>
 
       <div class="mt-6 flex flex-wrap items-center gap-x-8 gap-y-4">
         <div class="flex items-center gap-2">
           <p class="text-4xl font-bold text-gray-900">4.8</p>
-          <div class="flex">
-            <svg class="h-6 w-6 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"
-                 aria-hidden="true">
-              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-            </svg>
+          <div class="flex" aria-hidden="true">
+            <svg class="h-6 w-6 text-yellow-400" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292..."/></svg>
           </div>
           <p class="text-base text-gray-600">25 reviews</p>
         </div>
 
         <div class="w-full max-w-md flex-1">
-          <!-- Bars -->
-          <div class="flex items-center gap-2">
+          <div class="flex items-center gap-2" aria-label="5 stars 70%">
             <span class="w-4 text-sm text-gray-600">5</span>
-            <div class="h-2 flex-1 rounded-full bg-gray-200">
-              <div class="h-full rounded-full bg-yellow-400" style="width: 70%;"></div>
-            </div>
+            <div class="h-2 flex-1 rounded-full bg-gray-200"><div class="h-full rounded-full bg-yellow-400" style="width:70%"></div></div>
             <span class="w-8 text-sm text-gray-600">70%</span>
           </div>
-
-          <div class="flex items-center gap-2 mt-3">
+          <div class="flex items-center gap-2" aria-label="4 stars 20%">
             <span class="w-4 text-sm text-gray-600">4</span>
-            <div class="h-2 flex-1 rounded-full bg-gray-200">
-              <div class="h-full rounded-full bg-yellow-400" style="width: 20%;"></div>
-            </div>
+            <div class="h-2 flex-1 rounded-full bg-gray-200"><div class="h-full rounded-full bg-yellow-400" style="width:20%"></div></div>
             <span class="w-8 text-sm text-gray-600">20%</span>
           </div>
-
-          <div class="flex items-center gap-2 mt-3">
+          <div class="flex items-center gap-2" aria-label="3 stars 5%">
             <span class="w-4 text-sm text-gray-600">3</span>
-            <div class="h-2 flex-1 rounded-full bg-gray-200">
-              <div class="h-full rounded-full bg-yellow-400" style="width: 5%;"></div>
-            </div>
+            <div class="h-2 flex-1 rounded-full bg-gray-200"><div class="h-full rounded-full bg-yellow-400" style="width:5%"></div></div>
             <span class="w-8 text-sm text-gray-600">5%</span>
           </div>
-
-          <div class="flex items-center gap-2 mt-3">
+          <div class="flex items-center gap-2" aria-label="2 stars 3%">
             <span class="w-4 text-sm text-gray-600">2</span>
-            <div class="h-2 flex-1 rounded-full bg-gray-200">
-              <div class="h-full rounded-full bg-yellow-400" style="width: 3%;"></div>
-            </div>
+            <div class="h-2 flex-1 rounded-full bg-gray-200"><div class="h-full rounded-full bg-yellow-400" style="width:3%"></div></div>
             <span class="w-8 text-sm text-gray-600">3%</span>
           </div>
-
-          <div class="flex items-center gap-2 mt-3">
+          <div class="flex items-center gap-2" aria-label="1 star 2%">
             <span class="w-4 text-sm text-gray-600">1</span>
-            <div class="h-2 flex-1 rounded-full bg-gray-200">
-              <div class="h-full rounded-full bg-yellow-400" style="width: 2%;"></div>
-            </div>
+            <div class="h-2 flex-1 rounded-full bg-gray-200"><div class="h-full rounded-full bg-yellow-400" style="width:2%"></div></div>
             <span class="w-8 text-sm text-gray-600">2%</span>
           </div>
         </div>
       </div>
 
-      <!-- Individual reviews list -->
+      <!-- Cards de reviews -->
       <div class="mt-8 grid grid-cols-1 gap-12 md:grid-cols-2">
-        <div class="flex flex-col gap-4">
-          <div class="flex items-center gap-4">
-            <div class="h-12 w-12 rounded-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC_h0Xc5SwuTUR-LWmc0VJHwIJwtuwghBMH7KQ3L3qJLiETf1NIfD6LGxOjrPMwLExfMjxJHsbSYfidDr33ruI1IL4bpG4QfDwX3_olsXZjn8Vwigl0YvP64qUP7V95bLV9xtmasTeCxefdYPqZtbHliaMO568w_cMfTZXB3BAjDz6ZuGOpGfYF5t3gdCzURPAw8LIDHe9Y8yfUE1UO4E1HdlGbSOoZEsIb8ahpmos9cwk5Kpl5B8EKHwBFK6qdzc6cpYwsDbIEwQ');"></div>
+        <article class="flex flex-col gap-4">
+          <header class="flex items-center gap-4">
+            <div class="avatar h-12 w-12" style='background-image:url("https://lh3.googleusercontent.com/aida-public/AB6AXuC_h0Xc5SwuTUR-LWmc0VJHwIJwtuwghBMH7KQ3L3qJLiETf1NIfD6LGxOjrPMwLExfMjxJHsbSYfidDr33ruI1IL4bpG4QfDwX3_olsXZjn8Vwigl0YvP64qUP7V95bLV9xtmasTeCxefdYPqZtbHliaMO568w_cMfTZXB3BAjDz6ZuGOpGfYF5t3gdCzURPAw8LIDHe9Y8yfUE1UO4E1HdlGbSOoZEsIb8ahpmos9cwk5Kpl5B8EKHwBFK6qdzc6cpYwsDbIEwQ");'></div>
             <div>
               <p class="font-semibold text-gray-900">Sophia Carter</p>
               <p class="text-sm text-gray-500">June 2024</p>
             </div>
-          </div>
-          <p class="text-base text-gray-700">Absolutely stunning villa with breathtaking views! The house was impeccably clean and well-equipped. The pool was a highlight, and the location was perfect for exploring Salento and the Cocora Valley. Highly recommend!</p>
-        </div>
+          </header>
+          <p class="text-base text-gray-700">Absolutely stunning villa with breathtaking views! ...</p>
+        </article>
 
-        <div class="flex flex-col gap-4">
-          <div class="flex items-center gap-4">
-            <div class="h-12 w-12 rounded-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCp30SFrz7nxPiA-BdXoEp9mLuMSDf3cEiaWfJ5ZHReSJP-udr6lOZ-D9xxxyZj7wwyJl40oP9gvIXNG9AY06le1-I1N9xtx4DjOwhl4MSVB9aaINqaJZwbvqMMuKoctN_xFdC0LD-slzwe586b3Jvr0szlap13Q2P4zPSHvVCVRbZIT_7OI21bo-gh7NcExhJFm5S125n93jBls9KJeFLr-fOK9Gyo_Heha9Dgwl-eAjvUyeR6dNApgrIIXrwfZTs0GwyAeXMHGg');"></div>
+        <article class="flex flex-col gap-4">
+          <header class="flex items-center gap-4">
+            <div class="avatar h-12 w-12" style='background-image:url("https://lh3.googleusercontent.com/aida-public/AB6AXuCp30SFrz7nxPiA-BdXoEp9mLuMSDf3cEiaWfJ5ZHReSJP-udr6lOZ-D9xxxyZj7wwyJl40oP9gvIXNG9AY06le1-I1N9xtx4DjOwhl4MSVB9aaINqaJZwbvqMMuKoctN_xFdC0LD-slzwe586b3Jvr0szlap13Q2P4zPSHvVCVRbZIT_7OI21bo-gh7NcExhJFm5S125n93jBls9KJeFLr-fOK9Gyo_Heha9Dgwl-eAjvUyeR6dNApgrIIXrwfZTs0GwyAeXMHGg");'></div>
             <div>
               <p class="font-semibold text-gray-900">Liam Bennett</p>
               <p class="text-sm text-gray-500">May 2024</p>
             </div>
-          </div>
-          <p class="text-base text-gray-700">The villa was beautiful and the views were incredible. However, we experienced some issues with the wifi connectivity during our stay. Overall, a great experience, but the wifi could be improved.</p>
-        </div>
+          </header>
+          <p class="text-base text-gray-700">The villa was beautiful and the views were incredible... </p>
+        </article>
       </div>
     </section>
 
-    <!-- Host card -->
+    <!-- Host CTA -->
     <section class="mt-16 rounded-2xl bg-gray-50 p-8">
       <div class="flex flex-col items-start gap-8 sm:flex-row">
-        <div class="h-32 w-32 flex-shrink-0 rounded-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA_sUaq6Poz5xM_isK7Sb-51ZZYrav7HOfpy-6RIdzwE-A6drHYH6ULypdc2dlyTYZBuum2GQxtk7-5J-QTi5eLa3RDniVW4DQNFqvIShYzJoayNNahAE4CQr_ZaXNQTBEj8U0WhCEh-X0acdCq-Op-9DBUoFWvYlG07xDIrVywpztaRhj-Li0Js2AMvi3KhswfnT131n89Qh6H0mPWmaS3MlNgz7nhW7h2aDIKWDkHfAmB7Dl-ISLDuzo8QiKj8Xf1ppJHS651ug');"></div>
+        <div class="avatar h-32 w-32" style='background-image:url("https://lh3.googleusercontent.com/aida-public/AB6AXuA_sUaq6Poz5xM_isK7Sb-51ZZYrav7HOfpy-6RIdzwE-A6drHYH6ULypdc2dlyTYZBuum2GQxtk7-5J-QTi5eLa3RDniVW4DQNFqvIShYzJoayNNahAE4CQr_ZaXNQTBEj8U0WhCEh-X0acdCq-Op-9DBUoFWvYlG07xDIrVywpztaRhj-Li0Js2AMvi3KhswfnT131n89Qh6H0mPWmaS3MlNgz7nhW7h2aDIKWDkHfAmB7Dl-ISLDuzo8QiKj8Xf1ppJHS651ug");'></div>
         <div class="flex-grow">
           <h3 class="text-2xl font-bold text-gray-900">Hosted by Isabella Rodriguez</h3>
-          <p class="mt-1 text-base text-gray-600">Joined in 2020</p>
-          <p class="mt-4 text-base text-gray-700">I'm a passionate traveler and host, dedicated to providing exceptional experiences for my guests. I love sharing the beauty of Quindío and ensuring a comfortable and memorable stay for everyone.</p>
+          <div class="mt-2 flex items-center gap-4">
+            <p class="text-base text-gray-600">Joined in 2020</p>
+            <div class="flex items-center gap-1" aria-label="Rating 4.9 out of 5">
+              <svg class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M9.049 2.927c..."/></svg>
+              <span class="font-semibold text-gray-800">4.9</span>
+              <span class="text-sm text-gray-500">(150 reviews)</span>
+            </div>
+          </div>
+          <p class="mt-4 text-base text-gray-700">I'm a passionate traveler and host, dedicated to providing exceptional experiences...</p>
         </div>
-        <button class="w-full flex-shrink-0 rounded-lg border border-gray-300 bg-white px-6 py-3 text-base font-semibold text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[var(--primary-500)] focus:ring-offset-2 sm:w-auto">
+        <button type="button" class="btn-secondary w-full sm:w-auto" aria-label="Contact host">
           Contact host
         </button>
       </div>
@@ -311,12 +283,12 @@
   <!-- Footer -->
   <footer class="mt-auto bg-gray-100">
     <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-      <div class="flex flex-wrap items-center justify-center gap-6 text-center text-gray-600">
-        <a class="text-sm hover:text-[var(--primary-500)]" href="#">Privacy</a>
-        <a class="text-sm hover:text-[var(--primary-500)]" href="#">Terms</a>
-        <a class="text-sm hover:text-[var(--primary-500)]" href="#">Sitemap</a>
-      </div>
+      <ul class="flex flex-wrap items-center justify-center gap-4 text-center text-gray-600 sm:gap-6">
+        <li><a routerLink="/privacy" class="text-sm hover:text-[--primary-color] focus-ring rounded">Privacy</a></li>
+        <li><a routerLink="/terms" class="text-sm hover:text-[--primary-color] focus-ring rounded">Terms</a></li>
+        <li><a routerLink="/sitemap" class="text-sm hover:text-[--primary-color] focus-ring rounded">Sitemap</a></li>
+      </ul>
       <p class="mt-6 text-center text-sm text-gray-500">© 2024 Quindío Stays. All rights reserved.</p>
     </div>
   </footer>
-</div>
+</section>

@@ -5,11 +5,15 @@ import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { provideHttpClient, withFetch, withInterceptorsFromDi } from '@angular/common/http';
 import { DetaillPublication } from './pages/detaill-publication/detaill-publication';
+import { BeHost } from './pages/be-host/be-host';
+import { RestorePassword } from './pages/restore-password/restore-password';
 
 @NgModule({
   declarations: [
     App,
-    DetaillPublication
+    DetaillPublication,
+    BeHost,
+    RestorePassword
   ],
   imports: [
     BrowserModule,

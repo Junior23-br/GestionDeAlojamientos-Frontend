@@ -1,0 +1,134 @@
+<!-- Componente: Conviértete en anfitrión - El Rincón del Viajero -->
+<section class="min-h-screen bg-stone-50 text-slate-800">
+  <!-- Header -->
+  <header
+    class="flex items-center justify-between border-b border-stone-200 px-4 sm:px-6 lg:px-10 py-4 bg-white"
+    aria-label="Barra de navegación principal"
+  >
+    <div class="flex items-center gap-3 sm:gap-4 text-slate-900">
+      <span class="size-6 text-[#1ed275]" aria-hidden="true">
+        <!-- Logo -->
+        <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="block h-6 w-6">
+          <path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"/>
+        </svg>
+      </span>
+      <h1 class="text-xl font-bold leading-tight tracking-[-0.015em]">
+        El Rincón del Viajero
+      </h1>
+    </div>
+
+    <div class="flex flex-1 justify-end items-center gap-4 sm:gap-6">
+      <!-- Nav -->
+      <nav class="hidden md:flex items-center gap-6 lg:gap-8" aria-label="Navegación">
+        <a routerLink="/explorar" class="text-slate-700 hover:text-slate-900 text-base font-medium leading-normal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[--primary-color] rounded">
+          Explorar
+        </a>
+        <a routerLink="/mis-viajes" class="text-slate-700 hover:text-slate-900 text-base font-medium leading-normal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[--primary-color] rounded">
+          Mis viajes
+        </a>
+        <a routerLink="/anfitrion" class="text-slate-700 hover:text-slate-900 text-base font-medium leading-normal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[--primary-color] rounded" aria-current="page">
+          Conviértete en anfitrión
+        </a>
+      </nav>
+
+      <!-- Controles (idioma / avatar) -->
+      <div class="flex items-center gap-2 sm:gap-4">
+        <button
+          type="button"
+          class="size-10 inline-flex items-center justify-center rounded-full hover:bg-stone-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[--primary-color]"
+          aria-label="Cambiar idioma"
+        >
+          <!-- Icono globo (inline, sin dependencias externas) -->
+          <svg class="h-5 w-5 text-slate-700" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10a10 10 0 0 0 0-20zm1 17.93V19h-2v.93A8.001 8.001 0 0 1 4.07 13H5v-2H4.07A8.001 8.001 0 0 1 11 4.07V5h2V4.07A8.001 8.001 0 0 1 19.93 11H19v2h.93A8.001 8.001 0 0 1 13 19.93z"/>
+          </svg>
+        </button>
+
+        <div
+          class="bg-center bg-no-repeat bg-cover rounded-full size-10 ring-1 ring-inset ring-stone-200"
+          role="img"
+          aria-label="Avatar de usuario"
+          style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC6y05cNBpKzmg-iXL6Swr3PUP22iH-Lq90gBm-fYu9GA_0GBZKVJG3DrW9QcqeOGJ6JhksqgZRgWlCjRkBQBMG6gMryIBOQfw2XQsoLzbo0GlD-YsHzip-YaDhsXG_L8c2-vYLr0Nq0aw62INyzh14oVHNGnL0t5Hacxlq0YetYfAEUzIp3yQHf2JslD2d0_ZD7UEIt-oPJ3FTqyAcuq2xTSdYNGDnOx-sS71pXd7e_2DSo-5Vq1dQkgqh9VPU7mwF_Qdmq2-waQ");'
+        ></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="flex justify-center py-8 sm:py-10 px-4 sm:px-6 lg:px-8">
+    <div class="w-full max-w-2xl">
+      <section class="bg-white rounded-2xl shadow-lg p-6 md:p-10 lg:p-12 space-y-8" aria-labelledby="titulo-form">
+        <!-- Título -->
+        <div class="text-center space-y-3">
+          <span class="mx-auto block h-12 w-12" aria-hidden="true">
+            <!-- Icono editar/contrato -->
+            <svg class="h-12 w-12 text-[#1ed275]" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16l4-4h10a2 2 0 0 0 2-2V6l-6-4zM13 7h5.5L13 2.5V7z"/>
+            </svg>
+          </span>
+          <h2 id="titulo-form" class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">
+            ¡Un último paso para ser anfitrión!
+          </h2>
+          <p class="text-slate-600 text-base sm:text-lg">
+            Por favor, revisa y acepta nuestros términos y condiciones para empezar a alojar huéspedes.
+          </p>
+        </div>
+
+        <!-- Checklist -->
+        <form class="space-y-4 sm:space-y-6" (submit)="$event.preventDefault()" novalidate>
+          <label class="flex items-start gap-4 p-4 rounded-lg hover:bg-stone-100 transition-colors cursor-pointer">
+            <input
+              class="chk"
+              type="checkbox"
+              aria-label="Aceptar política de privacidad"
+            />
+            <p class="text-slate-700 text-base">
+              Acepto la
+              <a routerLink="/privacidad" class="font-semibold text-[--primary-color] hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[--primary-color] rounded">
+                política de privacidad
+              </a>
+              de El Rincón del Viajero.
+            </p>
+          </label>
+
+          <label class="flex items-start gap-4 p-4 rounded-lg hover:bg-stone-100 transition-colors cursor-pointer">
+            <input
+              class="chk"
+              type="checkbox"
+              aria-label="Consentir notificaciones y comunicaciones"
+            />
+            <p class="text-slate-700 text-base">
+              Consiento recibir notificaciones y comunicaciones de El Rincón del Viajero.
+            </p>
+          </label>
+
+          <label class="flex items-start gap-4 p-4 rounded-lg hover:bg-stone-100 transition-colors cursor-pointer">
+            <input
+              class="chk"
+              type="checkbox"
+              aria-label="Aceptar términos y condiciones para anfitriones"
+            />
+            <p class="text-slate-700 text-base">
+              Acepto los
+              <a routerLink="/terminos-anfitrion" class="font-semibold text-[--primary-color] hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[--primary-color] rounded">
+                términos y condiciones para anfitriones
+              </a>
+              de El Rincón del Viajero.
+            </p>
+          </label>
+
+          <!-- CTA -->
+          <div class="pt-2 sm:pt-4">
+            <button
+              type="submit"
+              class="btn-primary mx-auto block w-full sm:max-w-[480px]"
+              aria-label="Confirmar y activar cuenta de anfitrión"
+            >
+              Confirmar y activar cuenta de anfitrión
+            </button>
+          </div>
+        </form>
+      </section>
+    </div>
+  </main>
+</section>
