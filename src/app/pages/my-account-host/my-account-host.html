@@ -18,7 +18,7 @@
         <!-- Search -->
         <form class="hidden md:flex items-center" role="search" aria-label="Buscar">
           <label class="relative block w-full">
-            <span class="material-symbols-outlined input-icon">search</span>
+            <span class="material-symbols-outlined input-icon"></span>
             <input
               class="input-chip pl-10"
               type="search"
@@ -28,10 +28,7 @@
           </label>
         </form>
 
-        <!-- Language -->
-        <button type="button" class="hidden sm:flex icon-btn" aria-label="Cambiar idioma">
-          <span class="material-symbols-outlined text-xl">language</span>
-        </button>
+
 
         <!-- Account -->
         <button type="button" class="account-btn" aria-haspopup="menu" aria-expanded="false">
@@ -39,8 +36,7 @@
             class="avatar"
             style="--avatar-url: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA9AINKTC9EL3qYCeXqnwp8Oyq1k7utktxcRY3ldvchae5piDnA2kxJ0Qd1RYZGw1ZDTdsvGgv4v9n5NDHWcm0OqrIKE5gp6aTsLzsfvGlzqOYHbUtyX_OqxCcvaf4atnwkeoW4OYU4fJ56E31lIXkLPGso4bKBXtnlx6VN3dWIhSfdpZfUytu-ki0G-ilhQ8wDzUpGG6kZE-Y3lbwTJs1XoI0cL1Xq-TSAH2rPvrAk9A-uAL2T8Xo-RqXAfedrLZj6m-5Q2PuMeA');"
           ></div>
-          <span class="hidden lg:inline font-semibold text-sm">Mi Cuenta</span>
-          <span class="material-symbols-outlined hidden lg:inline">expand_more</span>
+          <span class="hidden lg:inline font-semibold text-sm">Mi Cuenta Anfitrion</span>
         </button>
       </div>
     </div>
@@ -56,7 +52,7 @@
         <section class="bg-white rounded-lg shadow-sm overflow-hidden" aria-labelledby="mi-cuenta-lista">
           <h3 id="mi-cuenta-lista" class="sr-only">Opciones de mi cuenta</h3>
           <ul class="divide-y divide-gray-200">
-            <li class="group">
+            <li class="group" (click)="goToMyReservations()">
               <a routerLink="/cuenta/reservas" class="row-link">
                 <div class="row-left">
                   <div class="chip-icon">
@@ -64,11 +60,11 @@
                   </div>
                   <span class="row-text">Mis reservas</span>
                 </div>
-                <span class="material-symbols-outlined row-chevron">chevron_right</span>
+                <span class="material-symbols-outlined row-chevron"></span>
               </a>
             </li>
 
-            <li class="group">
+            <li class="group" (click)="goToMyChats()">
               <a routerLink="/cuenta/chats" class="row-link">
                 <div class="row-left">
                   <div class="chip-icon">
@@ -76,11 +72,11 @@
                   </div>
                   <span class="row-text">Mis chats</span>
                 </div>
-                <span class="material-symbols-outlined row-chevron">chevron_right</span>
+                <span class="material-symbols-outlined row-chevron"></span>
               </a>
             </li>
 
-            <li class="group">
+            <li class="group" (click)="goToMyConfig()">
               <a routerLink="/cuenta/configuracion" class="row-link">
                 <div class="row-left">
                   <div class="chip-icon">
@@ -88,11 +84,11 @@
                   </div>
                   <span class="row-text">Configuración de mi cuenta</span>
                 </div>
-                <span class="material-symbols-outlined row-chevron">chevron_right</span>
+                <span class="material-symbols-outlined row-chevron"></span>
               </a>
             </li>
 
-            <li class="group">
+            <li class="group" (click)="goToMyNotifications()">
               <a routerLink="/cuenta/notificaciones" class="row-link">
                 <div class="row-left">
                   <div class="chip-icon">
@@ -100,11 +96,11 @@
                   </div>
                   <span class="row-text">Notificaciones</span>
                 </div>
-                <span class="material-symbols-outlined row-chevron">chevron_right</span>
+                <span class="material-symbols-outlined row-chevron"></span>
               </a>
             </li>
 
-            <li class="group">
+            <li class="group" (click)="goToMyPaymenthMethods()">
               <a routerLink="/cuenta/pagos" class="row-link">
                 <div class="row-left">
                   <div class="chip-icon">
@@ -112,11 +108,11 @@
                   </div>
                   <span class="row-text">Métodos de pago</span>
                 </div>
-                <span class="material-symbols-outlined row-chevron">chevron_right</span>
+                <span class="material-symbols-outlined row-chevron"></span>
               </a>
             </li>
 
-            <li class="group">
+            <li class="group" (click)="goToMyCalifications()">
               <a routerLink="/cuenta/valoraciones" class="row-link">
                 <div class="row-left">
                   <div class="chip-icon">
@@ -124,14 +120,14 @@
                   </div>
                   <span class="row-text">Historial de valoraciones</span>
                 </div>
-                <span class="material-symbols-outlined row-chevron">chevron_right</span>
+                <span class="material-symbols-outlined row-chevron"></span>
               </a>
             </li>
           </ul>
         </section>
 
         <!-- Modo anfitrión -->
-        <section class="bg-white rounded-lg shadow-sm" aria-labelledby="modo-anfitrion">
+        <section class="bg-white rounded-lg shadow-sm" aria-labelledby="modo-anfitrion" (click)="goToMyAccountGuest()">
           <h3 id="modo-anfitrion" class="sr-only">Modo anfitrión</h3>
           <a routerLink="/anfitrion" class="row-link">
             <div class="row-left">
@@ -140,10 +136,10 @@
               </div>
               <div>
                 <span class="row-text">Modo Huesped</span>
-                <p class="text-sm text-gray-500">Regresa a revisar alojamientos, y a hacer reservas</p>
+                <p class="text-sm text-gray-500">Ve alojamientos, reserva y conoce el Quindio</p>
               </div>
             </div>
-            <span class="material-symbols-outlined row-chevron">chevron_right</span>
+            <span class="material-symbols-outlined row-chevron"></span>
           </a>
         </section>
       </div>
