@@ -5,6 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { CommonModule } from '@angular/common';
+import {Router, RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ import { CommonModule } from '@angular/common';
     MatInputModule,
     MatButtonModule,
     CommonModule,
-    MatFormFieldModule, FormsModule
+    MatFormFieldModule, FormsModule, RouterLink
   ],
   templateUrl: './login.html',
   styleUrl: './login.scss',
@@ -23,7 +24,8 @@ export class Login {
   email = '';
   password = '';
 
-  constructor(private userService: AuthService) {}
+  constructor(private userService: AuthService,
+  private router:Router) {}
 
   onSubmit() {
     this.userService.loginGuest({
@@ -41,5 +43,9 @@ export class Login {
       email: this.email,
       password: this.password
     });
+  }
+
+  onForgotPassword() {
+    this.router.navigate(['/restore-password']).then(r =>"Pagina no accesible, error 404: Not Found Page" );
   }
 }

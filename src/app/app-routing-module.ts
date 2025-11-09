@@ -11,7 +11,7 @@ export const routes: Routes = [
   { path: 'login', component: Login },
   { path: 'register', component: Register },
   { path: 'landing-page', component: LandingPage },
-  { path: '', redirectTo: '/restore-password', pathMatch: 'full' },
+  { path: '', redirectTo: '/landing-page', pathMatch: 'full' },
   { path: 'be-host', component: BeHost },
   { path: 'detaill-publication', component: DetaillPublication },
   {path: 'restore-password', component: RestorePassword},
