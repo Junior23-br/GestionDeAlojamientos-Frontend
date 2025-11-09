@@ -1,0 +1,241 @@
+<!-- Enlace de salto de accesibilidad -->
+<a class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 px-3 py-2 rounded-md bg-black text-white"
+   routerLink="." fragment="contenido">
+  Saltar al contenido
+</a>
+
+<section class="min-h-screen flex flex-col bg-gray-50 text-gray-800 group">
+  <!-- Header -->
+  <header class="flex items-center justify-between border-b border-gray-200 px-4 md:px-10 py-4 shadow-sm bg-white">
+    <div class="flex items-center gap-6 md:gap-10">
+      <a class="flex items-center gap-3 text-gray-900" routerLink="/">
+        <svg class="h-8 w-8 text-[var(--primary-color)]" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true">
+          <path d="M39.5563 34.1455V13.8546C39.5563 15.708 36.8773 17.3437 32.7927 18.3189C30.2914 18.916 27.263 19.2655 24 19.2655C20.737 19.2655 17.7086 18.916 15.2073 18.3189C11.1227 17.3437 8.44365 15.708 8.44365 13.8546V34.1455C8.44365 35.9988 11.1227 37.6346 15.2073 38.6098C17.7086 39.2069 20.737 39.5564 24 39.5564C27.263 39.5564 30.2914 39.2069 32.7927 38.6098C36.8773 37.6346 39.5563 35.9988 39.5563 34.1455Z"></path>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M24 10.4437c-4.1333 0-7.7901.5858-10.343 1.5338-1.286.4472-2.1838.9341-2.7207 1.3756-.3698.3042-.4652.4945-.488 0.5588.0264.0752.1718.3941.9305.8842.919.5937 2.3702 1.1784 4.2927 1.6374 2.329 0.5561 5.1995.892 8.3283.892s5.9993-.3359 8.3283-.892c1.9225-.459 3.3737-1.0437 4.2927-1.6374.7587-.4901.9041-.809.9305-.8842-.0228-.0643-.1182-.2546-.488-.5588-.5369-.4415-1.4347-.9284-2.7205-1.3756C31.7901 11.0295 28.1333 10.4437 24 10.4437zM24 41.5564c-3.3973 0-6.5836-.363-9.2571-1.0013-2.0926-.4963-4.0232-1.217-5.4651-2.1482C7.912 37.5242 6.4437 36.1078 6.4437 34.1455V13.8546c0-1.5862.9285-2.8092 1.9521-3.6509 1.0374-.8531 2.4179-1.5322 3.9472-2.0641C15.4203 7.0691 19.5418 6.4437 24 6.4437s8.5797.6254 11.657 1.696c1.5293.5319 2.9098 1.211 3.9472 2.0641 1.0236.8417 1.9521 2.0647 1.9521 3.6509v20.2909c0 1.9623-1.3983 3.3587-2.7648 4.2414-1.4417.9313-3.3723 1.652-5.5344 2.1682-2.6735.6383-5.8598 1.0013-9.2571 1.0013z"></path>
+        </svg>
+        <span class="text-xl font-bold leading-tight tracking-tight">El Rincón del Viajero</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6" aria-label="Principal">
+        <a class="nav-link" routerLink="/alojamientos">Alojamientos</a>
+        <a class="nav-link" routerLink="/alojamientos">Alojamientos</a>
+        <a class="nav-link" routerLink="/experiencias">Experiencias</a>
+        <a class="nav-link" routerLink="/online">Alojamientos en línea</a>
+      </nav>
+    </div>
+
+    <div class="flex flex-1 justify-end items-center gap-3 sm:gap-4">
+      <!-- Buscador -->
+      <label class="hidden sm:flex items-center rounded-full bg-gray-100 h-10 pl-4 pr-2" aria-label="Buscar">
+        <span class="material-symbols-outlined text-gray-500" aria-hidden="true">search</span>
+        <input
+          class="w-40 md:w-64 flex-1 rounded-full border-none bg-transparent px-2 text-sm text-gray-800 placeholder:text-gray-500 focus:outline-none focus:ring-0"
+          type="search" placeholder="Buscar" />
+      </label>
+
+      <button type="button" class="icon-btn" aria-label="Cambiar idioma">
+        <span class="material-symbols-outlined" aria-hidden="true">language</span>
+      </button>
+
+      <button type="button" class="rounded-full focus-visible:ring-2 focus-visible:ring-[var(--primary-color)]" aria-label="Abrir perfil">
+        <img class="size-11 rounded-full object-cover"
+             src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqlMfUu__WCLfGGTVAydjXC5DekZ06ErwIeU3yOr9Qi5K3m2SwjbJCDVuEllOVT2PitbG2-TonZNE9d951AEGoQZsfZQJFy3QIFNYmFJC8gfOeIV3kaqqNAGZi7ootUClj6G6bTn68Mgjz1PDciuUZ8tGgxOy4C-v6fhQcgkHkYEB1UUP9RTDgxZQsw2y1vzc1N9PoXmfUqGmKvBKh0N_zUES4vnQwIlgSmJPCEvY5l1YKf0sKsb5DUL4mvXYC5czp3RwbE9PmFg"
+             alt="Avatar de usuario" />
+      </button>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main id="contenido" class="flex-1 bg-gray-50">
+    <div class="mx-auto max-w-[960px] px-4 md:px-10 py-8 md:py-10">
+      <!-- Tarjeta cabecera del anfitrión -->
+      <section class="card p-6">
+        <div class="flex w-full flex-col gap-6 md:flex-row md:items-center md:justify-between">
+          <div class="flex items-center gap-6">
+            <img
+              class="min-h-32 w-32 rounded-full object-cover"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAF8Inkp0bksmO7VMUppyYYfzrLHnPz7hL2bi2GBfc1_YAKw1fjIxr7uoaXA82Hqy_-cARNITQHUU2sXZ9iEjNLKgv7dkWLMt1D-Pw3V67xmkIkviMGDZQ1oHu2Z3-KD9SWGhVPZHvm5dIcWTSDkrZf1Dd_yi9hrAO7FYu30KIM_-WPcYuVLic0GYOJsMJUIse62CJSblanDvvtYKlbD29hSeo135olp9EtURCUcu1hUOYMrQtuQytbpVb1s-2zlKDQHAOFF9TwtA"
+              alt="Foto de perfil del anfitrión" />
+            <div class="flex flex-col gap-1">
+              <h1 class="text-3xl font-bold tracking-tight text-gray-900">El Rincón del Viajero</h1>
+              <p class="text-base text-gray-600">Se unió en 2018</p>
+              <div class="flex items-center gap-2 text-base text-gray-600">
+                <span class="material-symbols-outlined text-yellow-500 text-xl" aria-hidden="true" style="font-variation-settings:'FILL' 1;">military_tech</span>
+                <p>Superanfitrión</p>
+                <span class="text-gray-300">•</span>
+                <p>1000+ reseñas</p>
+              </div>
+            </div>
+          </div>
+
+          <button type="button" class="btn-primary w-full sm:w-auto">
+            Contactar anfitrión
+          </button>
+        </div>
+      </section>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8">
+        <!-- Columna principal -->
+        <div class="lg:col-span-2 flex flex-col gap-8">
+          <!-- Acerca de -->
+          <section class="card p-6">
+            <h2 class="section-title mb-4">Acerca de</h2>
+            <p class="leading-relaxed text-gray-700">
+              Soy una apasionada de los viajes y la cultura local. Me encanta compartir la belleza del Quindío con mis huéspedes y asegurar
+              que tengan una experiencia inolvidable. Siempre estoy disponible para ayudar y ofrecer recomendaciones personalizadas.
+            </p>
+          </section>
+
+          <!-- Valoraciones -->
+          <section class="card p-6">
+            <h2 class="section-title mb-6">Valoraciones</h2>
+
+            <article class="review">
+              <div class="review-header">
+                <img class="avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjWocZf_nMokygc601tZz9Eaef_T7ZQmRUEjL0Z42DOf1IfcX_Qy2q2MaicKSiPvDbgmp0Pjki41RzRs5pTwuDKKldeqLLKpXKXzHwPbOHxJ6WDwA-RQ8WDUfAORaRXSGzTu8HtJnr0_zF0ndiu2uqmHLfJldFhJIDBUy8ihpQwGSr9mpGtp-sl7wDEaCU_Bj0K6MOSYFj01igOvdV4q3anbu0vT6AT972huLNDH-hQdcZ5-CDG7Rr1drOKrdIWH5U79R_FAj1TA" alt="Avatar de Sofía García" />
+                <div class="flex-1">
+                  <p class="font-semibold text-gray-900">Sofía García</p>
+                  <p class="text-sm text-gray-500">Mayo de 2023</p>
+                </div>
+              </div>
+              <div class="stars">
+                <span class="material-symbols-outlined star" style="font-variation-settings:'FILL' 1;">star</span>
+                <span class="material-symbols-outlined star" style="font-variation-settings:'FILL' 1;">star</span>
+                <span class="material-symbols-outlined star" style="font-variation-settings:'FILL' 1;">star</span>
+                <span class="material-symbols-outlined star" style="font-variation-settings:'FILL' 1;">star</span>
+                <span class="material-symbols-outlined star" style="font-variation-settings:'FILL' 1;">star</span>
+              </div>
+              <p class="review-text">
+                La casa de campo es espectacular, con vistas impresionantes y todas las comodidades necesarias.
+                El anfitrión fue muy atento y nos dio excelentes recomendaciones de la zona.
+              </p>
+            </article>
+
+            <article class="review">
+              <div class="review-header">
+                <img class="avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdFBgufzxN6QkkvavJdGcFUQuBhV8Rd3BySUxpmtiWm3U4M51L_cwqMgunI-NZ8xg8WYsim5H3n2PmDzWzqyK8B6CJoH2xxdHUx0UiImodO2YWLLCz6Nl6ZqAZKklwHsFVWqqioVjJuVAEYZqosr4DmWE9BRPbiHxjKRSXeiG0c82WBPSzXh8v5DU7ZcOka9-BcwiT4jjZfcWrXUyYD_i5XZV1tcvOpjbnYJp5ABJSO0CGbrTQ67Nuxia3AwaZvhPK_zN2yIu18w" alt="Avatar de Carlos López" />
+                <div class="flex-1">
+                  <p class="font-semibold text-gray-900">Carlos López</p>
+                  <p class="text-sm text-gray-500">Abril de 2023</p>
+                </div>
+              </div>
+              <div class="stars">
+                <span class="material-symbols-outlined star" style="font-variation-settings:'FILL' 1;">star</span>
+                <span class="material-symbols-outlined star" style="font-variation-settings:'FILL' 1;">star</span>
+                <span class="material-symbols-outlined star" style="font-variation-settings:'FILL' 1;">star</span>
+                <span class="material-symbols-outlined star" style="font-variation-settings:'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-gray-300 text-xl">star</span>
+              </div>
+              <p class="review-text">
+                El lugar es muy bonito y tranquilo, ideal para relajarse. Sin embargo, la comunicación con el anfitrión podría mejorar.
+              </p>
+            </article>
+
+            <article class="review">
+              <div class="review-header">
+                <img class="avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6bM151cPwBVvdRFPxfJclKkQvvGVBLZOvEzD6guejjsVkj6KE4xqz0uKEQ7dngf_LpgmG_5T2EH-gBevesFJ28ccII2xYsjSi87FRfgNC5j9BIVW80Nn1A1kcUbg9bDmKC1c-Fi0TsW8dO3H4WCOtrsFnnfAt-Vv_8Hi0Karb-jC5tW-i5cezO566ImPo0-d-UTImHTJzRr-nvnrjfwEklOKbFBZHqUQZXL9ft3506QdBLZG6e_cIZmUegCvWDf9wItL75fogHQ" alt="Avatar de Ana Martínez" />
+                <div class="flex-1">
+                  <p class="font-semibold text-gray-900">Ana Martínez</p>
+                  <p class="text-sm text-gray-500">Marzo de 2023</p>
+                </div>
+              </div>
+              <div class="stars">
+                <span class="material-symbols-outlined star" style="font-variation-settings:'FILL' 1;">star</span>
+                <span class="material-symbols-outlined star" style="font-variation-settings:'FILL' 1;">star</span>
+                <span class="material-symbols-outlined star" style="font-variation-settings:'FILL' 1;">star</span>
+                <span class="material-symbols-outlined star" style="font-variation-settings:'FILL' 1;">star</span>
+                <span class="material-symbols-outlined star" style="font-variation-settings:'FILL' 1;">star</span>
+              </div>
+              <p class="review-text">
+                ¡Una experiencia maravillosa! La finca es hermosa, muy bien cuidada y con una ubicación perfecta. El anfitrión fue muy amable y servicial.
+              </p>
+            </article>
+          </section>
+
+          <!-- Alojamientos -->
+          <section class="card p-6">
+            <h2 class="section-title mb-6">Alojamientos</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <article class="stay-card">
+                <div class="stay-media">
+                  <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                       src="https://lh3.googleusercontent.com/aida-public/AB6AXuA69RG5CNVardxgjRXqxAGrxF2B0j1N8ME6eTXkrzmZqDlDjyWarcjomiVsusFgJV5F5t7AlYEECpyrkIqg6Jx-s1TD0H8n_RuqHOXKz66LisyrQ1LOyBRUz14oU7x4Jgo55G187BLa_eo41Na2UOvnzxWSWLKCCHgcFd60yz0tLItTWSmHGf_MDsbLYwRWKLqQCWYgyiVpioXWn-ndwSuP5G4Dnk0XdzWf1uvG-AviFkz0KHLJ-QE8-jpdR4QKnurwADBHqxzy-Q"
+                       alt="Casa de Campo El Paraíso" />
+                </div>
+                <div>
+                  <p class="font-semibold text-gray-900">Casa de Campo El Paraíso</p>
+                  <p class="text-sm text-gray-600">Alojamiento entero · 4 camas</p>
+                </div>
+              </article>
+
+              <article class="stay-card">
+                <div class="stay-media">
+                  <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                       src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9pjr52gZtGw738Xkoe34p8sa7XvhgcLLf6xqLr3vNfAQdR-U-4xDV9M5KmD2YONO78oHjqVkZX6MFWoxXefv8ljcBO9_lPKee8pnmhbdBbuEdFWYPKV3lLN9K3iqeG2JtnbgGZZEToXViKhCOKUQ5JWdaVdQF0nN4pdbySG5NomdUuzCvRsNmeyOKxKRxVdsKewEpcBNMJyXKeldrWtrrP0_9z8ZZXFSqlW3wcITYahAoACb645dXbEMyYX8-3npEMkj8mPGl4A"
+                       alt="Finca La Esperanza" />
+                </div>
+                <div>
+                  <p class="font-semibold text-gray-900">Finca La Esperanza</p>
+                  <p class="text-sm text-gray-600">Alojamiento entero · 6 camas</p>
+                </div>
+              </article>
+
+              <article class="stay-card">
+                <div class="stay-media">
+                  <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                       src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQcykYseLaTMVDnq3KmeWlhSpsNmiSS9WCO_lQTzKpXJR7jSdRqkaEIA5xjvwe9TaUiBZurM6VebAKUBDw_vEUHM4Z9sbRgS5KGkbCXms4WR85ZB9jqFWsaSzB049xv1XqBRO3dvOM0ysCyfHUi59v3yPvrUEzkGYhK8BNKsWNwwDhP3eq_CDgKnyf7o-uLnnWJl6QWGO8lS8qJtJRacOjdtMJ12n7z94P21cnndcA5FO4yijNmU24o0QlEWzqMaGWsJhwcA9xGQ"
+                       alt="Apartamento Vista Hermosa" />
+                </div>
+                <div>
+                  <p class="font-semibold text-gray-900">Apartamento Vista Hermosa</p>
+                  <p class="text-sm text-gray-600">Habitación privada · 2 camas</p>
+                </div>
+              </article>
+            </div>
+          </section>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="lg:col-span-1">
+          <div class="sticky top-6 card p-6">
+            <div class="flex flex-col items-center text-center gap-2">
+              <p class="text-5xl font-black tracking-tighter text-gray-900">4.8</p>
+              <div class="flex gap-0.5" aria-label="Valoración media 4.8 de 5">
+                <span class="material-symbols-outlined text-yellow-500 text-lg" aria-hidden="true" style="font-variation-settings:'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-yellow-500 text-lg" aria-hidden="true" style="font-variation-settings:'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-yellow-500 text-lg" aria-hidden="true" style="font-variation-settings:'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-yellow-500 text-lg" aria-hidden="true" style="font-variation-settings:'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-yellow-500 text-lg" aria-hidden="true" style="font-variation-settings:'FILL' 1;">star_half</span>
+              </div>
+              <p class="text-base text-gray-600">1000+ reseñas</p>
+            </div>
+
+            <hr class="my-4 border-gray-200"/>
+
+            <div class="grid grid-cols-[auto_1fr_auto] items-center gap-x-3 gap-y-2 w-full">
+              <p class="text-sm font-medium text-gray-700">5</p>
+              <div class="bar-track"><div class="bar-fill w-[75%]"></div></div>
+              <p class="text-sm text-gray-500 text-right">75%</p>
+
+              <p class="text-sm font-medium text-gray-700">4</p>
+              <div class="bar-track"><div class="bar-fill w-[15%]"></div></div>
+              <p class="text-sm text-gray-500 text-right">15%</p>
+
+              <p class="text-sm font-medium text-gray-700">3</p>
+              <div class="bar-track"><div class="bar-fill w-[5%]"></div></div>
+              <p class="text-sm text-gray-500 text-right">5%</p>
+
+              <p class="text-sm font-medium text-gray-700">2</p>
+              <div class="bar-track"><div class="bar-fill w-[3%]"></div></div>
+              <p class="text-sm text-gray-500 text-right">3%</p>
+
+              <p class="text-sm font-medium text-gray-700">1</p>
+              <div class="bar-track"><div class="bar-fill w-[2%]"></div></div>
+              <p class="text-sm text-gray-500 text-right">2%</p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+</section>

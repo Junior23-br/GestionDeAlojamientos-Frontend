@@ -1,0 +1,211 @@
+<!-- Skip link accesible -->
+<a class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 px-3 py-2 rounded-md bg-black text-white"
+   routerLink="." fragment="contenido">
+  Saltar al contenido
+</a>
+
+<section class="min-h-screen flex flex-col bg-gray-50">
+  <!-- Header -->
+  <header class="sticky top-0 z-40 flex items-center justify-between border-b border-gray-200 bg-white px-4 md:px-10 py-3">
+    <div class="flex items-center gap-8">
+      <a class="flex items-center gap-3 text-gray-800" routerLink="/">
+        <svg class="h-8 w-8 text-gray-900" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"/>
+        </svg>
+        <h1 class="text-xl font-bold leading-tight tracking-[-0.015em]">
+          El Rincón del Viajero
+        </h1>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6" aria-label="Principal">
+        <a class="nav-link" routerLink="/alojamientos">Alojamientos</a>
+        <a class="nav-link" routerLink="/experiencias">Experiencias</a>
+        <a class="nav-link" routerLink="/lujo">Alojamientos de lujo</a>
+        <a class="nav-link" routerLink="/ofertas">Ofertas</a>
+      </nav>
+    </div>
+
+    <div class="flex items-center gap-4">
+      <!-- Búsqueda desktop -->
+      <label class="hidden md:flex items-center rounded-full bg-gray-100 pl-4 pr-2 h-10" aria-label="Buscar">
+        <span class="material-symbols-outlined text-gray-500" aria-hidden="true">search</span>
+        <input
+          class="w-full min-w-0 flex-1 rounded-full border-0 bg-transparent text-gray-800 placeholder:text-gray-500 text-sm focus:outline-none focus:ring-0"
+          type="search" placeholder="Buscar" />
+      </label>
+
+      <!-- Idioma -->
+      <button type="button" class="hidden md:flex items-center justify-center rounded-full h-10 w-10 bg-gray-100 text-gray-800 hover:bg-gray-200 focus-visible:ring-2 focus-visible:ring-[var(--primary-color)]"
+              aria-label="Cambiar idioma">
+        <span class="material-symbols-outlined" aria-hidden="true">language</span>
+      </button>
+
+      <!-- Búsqueda móvil -->
+      <button type="button" class="md:hidden flex items-center justify-center rounded-full h-10 w-10 bg-gray-100 text-gray-800 hover:bg-gray-200 focus-visible:ring-2 focus-visible:ring-[var(--primary-color)]"
+              aria-label="Buscar">
+        <span class="material-symbols-outlined" aria-hidden="true">search</span>
+      </button>
+
+      <!-- Avatar -->
+      <button type="button" class="avatar-btn" aria-label="Abrir menú de usuario">
+        <span class="avatar-img"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main id="contenido" class="flex-1 bg-white">
+    <div class="mx-auto max-w-4xl px-4 py-8 sm:py-12">
+      <div class="mb-8">
+        <h2 class="text-3xl font-bold text-gray-900">Métodos de pago</h2>
+        <p class="mt-2 text-base text-gray-600">Administra tus métodos de pago para reservas y pagos futuros.</p>
+      </div>
+
+      <div class="space-y-8">
+        <!-- Principal -->
+        <section aria-labelledby="titulo-principal">
+          <h3 id="titulo-principal" class="text-xl font-bold text-gray-900 mb-4">Método de pago principal</h3>
+
+          <div class="rounded-lg border border-gray-200 bg-white">
+            <div class="flex items-center justify-between p-4">
+              <div class="flex items-center gap-4">
+                <img class="h-8 w-12 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2nirF4-C5tG19h3a6qgWmaqS9j--3IZ7KecqZeAvh0CxKwCf_3WuII-GDlbjNZu2qurfl9Pc-4d9K9RtQUHnQyXhTKjHRqXodabRhyu4qAkhl7QIGnMwOb9RT6HnsyOK_v1sdYh50SCi20vmZRMGOT6l1aylxN_WwZ2VpyfGV9WU96vL9Cu80C0JsR-bCabs5tGXCX5nC_U5gFY4s_OnI_mg_AYZn_iAkrWP8HEpESf_9LKPLdzwQ_oaGu_p7DPyu6rycIrw_EA"
+                     alt="Logo Mastercard" />
+                <div>
+                  <p class="font-medium text-gray-800">Tarjeta de crédito que termina en 1234</p>
+                  <p class="text-sm text-gray-500">Vence el 12/2025</p>
+                </div>
+              </div>
+
+              <label class="inline-flex items-center gap-3">
+                <span class="text-sm font-medium text-gray-600">Principal</span>
+                <input type="radio" name="principal" checked
+                       class="h-5 w-5 text-[var(--primary-color)] focus:ring-[var(--primary-color)]"
+                       aria-label="Seleccionar esta tarjeta como principal" />
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <!-- Otros -->
+        <section aria-labelledby="titulo-otros">
+          <h3 id="titulo-otros" class="text-xl font-bold text-gray-900 mb-4">Otros métodos de pago</h3>
+
+          <div class="rounded-lg border border-gray-200 bg-white divide-y divide-gray-200">
+            <!-- Item 1 -->
+            <div class="flex items-center justify-between p-4">
+              <div class="flex items-center gap-4">
+                <img class="h-8 w-12 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAh2Nmtzg_DJ6G3Xv6yyAQ0uJJLsSm4upMcjajK-Tz1JZ_zLMqpPbOX1NvxYMuTw5SWSdjHdL_p7wmQlgXraL1_f3vM8gYHGwamqKZqxTvEENwfeOigF0DG6MPq6x1Hu2yfWM8UMmtMhRQ59oBER0sOw_mYepPtktl1wmNBGT9DOzSrX49GKih5mKCZKZacVoa_mwIPCDvvvY3EstZWU-TOW-RotvBz9i1dC_1I7u72ew1P9hndynCbXztA8Eu9Q4_4OBOf3dl5Pw"
+                     alt="Logo Visa" />
+                <div>
+                  <p class="font-medium text-gray-800">Tarjeta de crédito que termina en 5678</p>
+                  <p class="text-sm text-gray-500">Vence el 08/2024</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <input type="radio" name="principal"
+                       class="h-5 w-5 text-[var(--primary-color)] focus:ring-[var(--primary-color)]"
+                       aria-label="Seleccionar esta tarjeta como principal" />
+                <button type="button" class="icon-btn" aria-label="Eliminar método de pago terminación 5678">
+                  <span class="material-symbols-outlined" aria-hidden="true">delete</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="flex items-center justify-between p-4">
+              <div class="flex items-center gap-4">
+                <img class="h-8 w-12 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxaTiBCJsFdLDuUvcQ_nBezcHuwWmlX-shHUnm3GdGce8mqsb_NkBgwPCdulNUetNrqkQVpMytbC4v0H85pnGZKHJjg7ZphUrKWdCw0TqDiiPpl5N9VzKSOYzT0JZhsj-JLHdR1M0iUUezU5r1kbZnKwfnGvd_wPn5IKLk3YHEUWeZndGJ3d7gvyHRLNt56ffda5G6YA6VAKmMrO-2yp2Xaqr1RbRDkWrlJsoqtTmFEeynLmoFAhq0v71txi53IzBqIAwFlc7izQ"
+                     alt="Logo Visa" />
+                <div>
+                  <p class="font-medium text-gray-800">Tarjeta de crédito que termina en 9012</p>
+                  <p class="text-sm text-gray-500">Vence el 05/2026</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <input type="radio" name="principal"
+                       class="h-5 w-5 text-[var(--primary-color)] focus:ring-[var(--primary-color)]"
+                       aria-label="Seleccionar esta tarjeta como principal" />
+                <button type="button" class="icon-btn" aria-label="Eliminar método de pago terminación 9012">
+                  <span class="material-symbols-outlined" aria-hidden="true">delete</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Acciones -->
+        <div class="flex flex-col sm:flex-row gap-4 pt-6 border-t border-gray-200">
+          <button type="button" class="btn-primary" aria-label="Añadir método de pago">
+            <span class="material-symbols-outlined mr-2" aria-hidden="true">add_card</span>
+            Añadir método de pago
+          </button>
+
+          <button type="button" class="btn-secondary" aria-label="Ver historial de pagos">
+            <span class="material-symbols-outlined mr-2" aria-hidden="true">history</span>
+            Historial de pagos
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 text-gray-600 py-8">
+    <div class="mx-auto max-w-6xl px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h4 class="font-bold text-gray-800 mb-4">El Rincón del Viajero</h4>
+          <p class="text-sm">Tu puerta de entrada a los encantos del Quindío.</p>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-gray-800 mb-4">Navegación</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a class="footer-link" routerLink="/alojamientos">Alojamientos</a></li>
+            <li><a class="footer-link" routerLink="/experiencias">Experiencias</a></li>
+            <li><a class="footer-link" routerLink="/ofertas">Ofertas</a></li>
+            <li><a class="footer-link" routerLink="/blog">Blog</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-gray-800 mb-4">Soporte</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a class="footer-link" routerLink="/ayuda">Centro de ayuda</a></li>
+            <li><a class="footer-link" routerLink="/terminos">Términos y condiciones</a></li>
+            <li><a class="footer-link" routerLink="/privacidad">Política de privacidad</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-gray-800 mb-4">Contáctanos</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a class="footer-link" routerLink="/contacto">info@rincondelviajero.com</a></li>
+            <li><a class="footer-link" routerLink="/contacto">+57 300 123 4567</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-8 border-t border-gray-200 pt-8 flex flex-col sm:flex-row justify-between items-center">
+        <p class="text-sm">© 2024 El Rincón del Viajero. Todos los derechos reservados.</p>
+
+        <div class="flex space-x-4 mt-4 sm:mt-0" aria-label="Redes sociales">
+          <a class="text-gray-500 hover:text-gray-900 focus-visible:ring-2 focus-visible:ring-[var(--primary-color)] rounded"
+             routerLink="/social/facebook" aria-label="Facebook">
+            <svg aria-hidden="true" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
+            </svg>
+          </a>
+
+          <a class="text-gray-500 hover:text-gray-900 focus-visible:ring-2 focus-visible:ring-[var(--primary-color)] rounded"
+             routerLink="/social/instagram" aria-label="Instagram">
+            <svg aria-hidden="true" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.9 4.9 0 011.772 1.153 4.9 4.9 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.9 4.9 0 01-1.153 1.772 4.9 4.9 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.012-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.9 4.9 0 01-1.772-1.153 4.9 4.9 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427A4.9 4.9 0 016.08 2.525c.636-.247 1.363-.416 2.427-.465C9.53 2.013 9.885 2 12.315 2zM12 7a5 5 0 100 10 5 5 0 000-10zm6.406-1.845a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</section>

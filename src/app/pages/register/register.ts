@@ -7,6 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../core/http/user-service';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -34,7 +35,8 @@ export class Register {
   recibeNotificaciones = false;
   tambienAnfitrion = false;
 
-  constructor(private fb: FormBuilder, private userService: AuthService) {
+  constructor(private fb: FormBuilder, private userService: AuthService,
+  private router:Router) {
     this.registerForm = this.fb.group({
       nombre: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -106,5 +108,9 @@ export class Register {
     } else {
       alert('Por favor completa todos los campos correctamente.');
     }
+  }
+
+  gotoDashboard() {
+    this.router.navigate(['/dashboard']);
   }
 }

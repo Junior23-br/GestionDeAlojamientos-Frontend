@@ -1,0 +1,86 @@
+/* Tipografías y variables (modular, sin globales) */
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Noto+Sans:wght@400;500;700;900&display=swap");
+
+:host {
+  /* Paleta y tokens reusables */
+  --primary-color: #22c55e; /* Tailwind green-500 */
+  --primary-color-hover: #16a34a; /* green-600 */
+  --ring-color: color-mix(in oklab, var(--primary-color) 75%, white);
+  --text-dark: #111714;
+
+  /* Fuente por defecto del componente */
+  font-family: "Plus Jakarta Sans", "Noto Sans", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+/* Utilidades componibles con Tailwind vía @apply */
+.nav-link {
+  @apply text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[--ring-color] rounded-md px-1 py-1;
+}
+
+.card {
+  @apply bg-white p-6 sm:p-8 rounded-2xl shadow-lg;
+}
+
+.section-title {
+  @apply text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6;
+}
+
+.label {
+  @apply block text-sm font-medium text-gray-700 mb-1;
+}
+
+.input {
+  @apply w-full rounded-lg border-gray-300 focus:border-[--primary-color] focus:ring-[--primary-color] transition duration-150 ease-in-out;
+}
+
+.select {
+  @apply w-full rounded-lg border-gray-300 focus:border-[--primary-color] focus:ring-[--primary-color] transition duration-150 ease-in-out;
+}
+
+.textarea {
+  @apply w-full rounded-lg border-gray-300 focus:border-[--primary-color] focus:ring-[--primary-color] transition duration-150 ease-in-out;
+}
+
+.btn-primary {
+  @apply inline-flex items-center gap-2 rounded-lg bg-[--primary-color] px-6 lg:px-8 py-2.5 lg:py-3 text-sm lg:text-base font-bold text-white shadow-lg hover:bg-[--primary-color-hover] focus:outline-none focus-visible:ring-2 focus-visible:ring-[--ring-color] focus-visible:ring-offset-2 transition-all;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center gap-2 rounded-lg bg-green-100 px-4 sm:px-5 py-2.5 text-sm font-bold text-green-700 hover:bg-green-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[--ring-color] focus-visible:ring-offset-2 transition-colors;
+}
+
+.icon-btn {
+  @apply flex items-center justify-center rounded-full h-10 w-10 hover:bg-gray-100 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[--ring-color];
+}
+
+/* Accesibilidad extra: estados de foco para inputs si el navegador no soporta :focus-visible */
+:host :where(input, select, textarea, button):focus {
+  outline: none;
+}
+
+/* Soporte de sticky en navegadores antiguos */
+@supports not (position: sticky) {
+  header[role="banner"] {
+    position: static;
+  }
+}
+
+/* Responsive refinements específicos (ejemplo de tipografía/padding adaptativa) */
+@media (min-width: 360px) {
+  /* Teléfono base: ya cubierto con clases mobile-first */
+}
+@media (min-width: 768px) {
+  /* Tablet */
+}
+@media (min-width: 1280px) {
+  /* Escritorio amplio si se requiere algo adicional */
+}
+
+/* Ejemplo de clase avatar con background-image (si prefieres usar <div> en lugar de <img>)
+   Mantiene apariencia exacta del diseño original sin estilos inline. */
+.avatar {
+  --avatar-url: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDAnODPMYWqwYlzyISZ0iXktaw61c6bt2bl3V6NdNCBnKHc8qO1ycLc6reShssre3EAEDIVMUUPzL4sPN4LgqWHZ_QoKJevr_G-JUX0LQYY-INEy9wYqndiOVl_2DI16wUbSfuHCz8CFG__6vdcVvlze82meA0rcqcoIXwz285UmDjlOTuNeYZA9_NNTVBqCR_P61KWdfRPMZKbMBcXJmbTbsZWsaaSlyYWBG1lXpltWC0zGjS-c5mnzMl3lpCRRHguexF4QEchEQ");
+  background-image: var(--avatar-url);
+  @apply bg-center bg-no-repeat bg-cover rounded-full h-10 w-10 border-2 border-white shadow-md;
+}

@@ -1,0 +1,181 @@
+export class Filters
+export class Filters <!-- Enlace de salto de accesibilidad -->
+<a class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 px-3 py-2 rounded-md bg-black text-white"
+   routerLink="." fragment="contenido">
+  Saltar al contenido
+</a>
+
+<section class="min-h-screen flex flex-col bg-gray-50 text-gray-800">
+  <!-- Header -->
+  <header class="flex items-center justify-between border-b border-gray-200 px-4 md:px-10 py-4 bg-white shadow-sm">
+    <div class="flex items-center gap-6 lg:gap-8">
+      <a class="flex items-center gap-3 text-gray-900" routerLink="/">
+        <svg class="h-8 w-8 text-[var(--primary-color)]" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true">
+          <path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z"></path>
+        </svg>
+        <h1 class="text-xl font-bold tracking-tight">El Rincón del Viajero</h1>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-medium" aria-label="Principal">
+        <a class="nav-link" routerLink="/alojamientos">Alojamientos</a>
+        <a class="nav-link" routerLink="/experiencias">Experiencias</a>
+        <a class="nav-link" routerLink="/online">Experiencias en línea</a>
+      </nav>
+    </div>
+
+    <div class="flex items-center gap-2 sm:gap-4">
+      <button type="button" class="icon-btn" aria-label="Cambiar idioma">
+        <span class="material-symbols-outlined" aria-hidden="true">language</span>
+      </button>
+
+      <button type="button" class="lg:hidden icon-btn" aria-label="Abrir menú">
+        <span class="material-symbols-outlined text-gray-600" aria-hidden="true">menu</span>
+      </button>
+
+      <button type="button" class="rounded-full focus-visible:ring-2 focus-visible:ring-[var(--primary-color)]" aria-label="Abrir perfil">
+        <img
+          class="size-10 rounded-full object-cover"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlAvUasBP-5GyL_lzYA0vOyR3-Gx6ZARredSfj-4ts6ewMP4DbzqGSoQ93Zf6rBO08fbAhwBhgpb5u40F1BtydRoIu0-RCDUN2hxYgzBD_IZ4-ATbP_SjO6ux_NGQFOka9TFLs3o8Ha5054HuD6KkpqyhsvekvM1kNe57cudrnK3YUuiFzZSYtrLmmLE2U0ZfAHX_ifF3dmFjW6v90opwXXIbYH5D2YsX3bq2H4IcE1SJx962pblGCqVJKe885KhzcP3GrC6LAJw"
+          alt="Avatar de usuario" />
+      </button>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main id="contenido" class="flex-1 px-4 sm:px-6 lg:px-8 xl:px-20 py-8 md:py-10">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <!-- Sidebar filtros -->
+      <aside class="lg:col-span-1 card p-6" aria-labelledby="titulo-filtros">
+        <h2 id="titulo-filtros" class="text-2xl font-bold mb-6 text-gray-900">Filtros</h2>
+
+        <div class="space-y-8">
+          <!-- Ubicación -->
+          <section aria-labelledby="filtro-ubicacion">
+            <h3 id="filtro-ubicacion" class="filter-title">Ubicación</h3>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-x-4 gap-y-3">
+              <label class="check">
+                <input type="checkbox" class="check-input" />
+                <span>Armenia</span>
+              </label>
+              <label class="check"><input type="checkbox" class="check-input" /><span>Calarcá</span></label>
+              <label class="check"><input type="checkbox" class="check-input" /><span>Circasia</span></label>
+              <label class="check"><input type="checkbox" class="check-input" /><span>Filandia</span></label>
+              <label class="check"><input type="checkbox" class="check-input" /><span>Génova</span></label>
+              <label class="check"><input type="checkbox" class="check-input" /><span>La Tebaida</span></label>
+              <label class="check"><input type="checkbox" class="check-input" /><span>Montenegro</span></label>
+              <label class="check"><input type="checkbox" class="check-input" /><span>Pijao</span></label>
+              <label class="check"><input type="checkbox" class="check-input" /><span>Quimbaya</span></label>
+              <label class="check"><input type="checkbox" class="check-input" /><span>Salento</span></label>
+              <label class="check"><input type="checkbox" class="check-input" /><span>Buenavista</span></label>
+              <label class="check"><input type="checkbox" class="check-input" /><span>Córdoba</span></label>
+            </div>
+          </section>
+
+          <hr class="divider" />
+
+          <!-- Tipo de alojamiento -->
+          <section aria-labelledby="filtro-tipo">
+            <h3 id="filtro-tipo" class="filter-title">Tipo de alojamiento</h3>
+            <div class="space-y-3">
+              <label class="check"><input type="checkbox" class="check-input" /><span>Casa</span></label>
+              <label class="check"><input type="checkbox" class="check-input" /><span>Apartamento</span></label>
+              <label class="check"><input type="checkbox" class="check-input" /><span>Cabaña</span></label>
+              <label class="check"><input type="checkbox" class="check-input" /><span>Finca</span></label>
+              <label class="check"><input type="checkbox" class="check-input" /><span>Hotel</span></label>
+            </div>
+          </section>
+
+          <hr class="divider" />
+
+          <!-- Calificación mínima -->
+          <section aria-labelledby="filtro-rating">
+            <h3 id="filtro-rating" class="filter-title">Calificación mínima</h3>
+            <div class="flex flex-wrap gap-2">
+              <!-- Chip de rating con peer -->
+              <label class="chip">
+                <input type="radio" name="rating" class="peer sr-only" />
+                <span class="chip-inner">
+                  <span class="material-symbols-outlined text-base mr-1" aria-hidden="true">star</span>1
+                </span>
+              </label>
+              <label class="chip">
+                <input type="radio" name="rating" class="peer sr-only" />
+                <span class="chip-inner">
+                  <span class="material-symbols-outlined text-base mr-1" aria-hidden="true">star</span>2
+                </span>
+              </label>
+              <label class="chip">
+                <input type="radio" name="rating" class="peer sr-only" />
+                <span class="chip-inner">
+                  <span class="material-symbols-outlined text-base mr-1" aria-hidden="true">star</span>3
+                </span>
+              </label>
+              <label class="chip">
+                <input type="radio" name="rating" class="peer sr-only" />
+                <span class="chip-inner">
+                  <span class="material-symbols-outlined text-base mr-1" aria-hidden="true">star</span>4
+                </span>
+              </label>
+              <label class="chip">
+                <input type="radio" name="rating" class="peer sr-only" />
+                <span class="chip-inner">
+                  <span class="material-symbols-outlined text-base mr-1" aria-hidden="true">star</span>5
+                </span>
+              </label>
+            </div>
+          </section>
+
+          <hr class="divider" />
+
+          <!-- Rango de precios -->
+          <section aria-labelledby="filtro-precio">
+            <h3 id="filtro-precio" class="filter-title">Rango de precios</h3>
+            <div class="relative pt-1">
+              <input type="range" min="0" max="1000" step="10"
+                     class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[var(--primary-color)]"
+                     aria-label="Rango de precios" />
+              <div class="flex justify-between text-xs text-gray-500 mt-2" aria-hidden="true">
+                <span>$0</span>
+                <span>$1,000,000+</span>
+              </div>
+            </div>
+          </section>
+
+          <hr class="divider" />
+
+          <!-- Servicios -->
+          <section aria-labelledby="filtro-servicios">
+            <h3 id="filtro-servicios" class="filter-title">Servicios</h3>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-x-4 gap-y-3">
+              <label class="check"><input type="checkbox" class="check-input" /><span>Piscina</span></label>
+              <label class="check"><input type="checkbox" class="check-input" /><span>Wifi</span></label>
+              <label class="check"><input type="checkbox" class="check-input" /><span>Parking</span></label>
+              <label class="check"><input type="checkbox" class="check-input" /><span>A/C</span></label>
+              <label class="check"><input type="checkbox" class="check-input" /><span>Cocina</span></label>
+              <label class="check"><input type="checkbox" class="check-input" /><span>Lavadora</span></label>
+              <label class="check"><input type="checkbox" class="check-input" /><span>Secadora</span></label>
+              <label class="check"><input type="checkbox" class="check-input" /><span>Mascotas</span></label>
+              <label class="check"><input type="checkbox" class="check-input" /><span>Desayuno</span></label>
+              <label class="check"><input type="checkbox" class="check-input" /><span>Gimnasio</span></label>
+            </div>
+          </section>
+        </div>
+
+        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+          <button type="button" class="btn-secondary w-full sm:w-auto">Borrar filtros</button>
+          <button type="button" class="btn-primary w-full sm:w-auto">Mostrar alojamientos</button>
+        </div>
+      </aside>
+
+      <!-- Resultados -->
+      <section class="lg:col-span-2">
+        <div class="card p-6 h-full">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">Resultados de la búsqueda</h2>
+          <div class="flex items-center justify-center text-center text-gray-500 h-72 sm:h-96">
+            <p> Aquí se mostrarán los resultados de los alojamientos. </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</section>

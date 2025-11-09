@@ -1,0 +1,82 @@
+/* Fuentes y símbolos (aislados al componente) */
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=Noto+Sans:wght@400;500;700;900&display=swap");
+
+/* Tokens del diseño original y ring */
+:host {
+  --primary-50:  #f0fdf6;
+  --primary-100: #dcfceb;
+  --primary-200: #bbf7d6;
+  --primary-300: #86efb8;
+  --primary-400: #4ade8f;
+  --primary-500: #22c56a;
+  --primary-600: #16a355;
+  --primary-700: #158046;
+  --primary-800: #16653a;
+  --primary-900: #145331;
+  --primary-950: #052e1a;
+
+  --ring-color: color-mix(in oklab, var(--primary-500) 70%, white);
+
+  font-family: "Plus Jakarta Sans", "Noto Sans", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+}
+
+/* Utilidades compuestas con Tailwind vía @apply (HTML más limpio) */
+.nav-link {
+  @apply text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[--ring-color] rounded-md px-1 py-1;
+}
+.nav-link-active {
+  @apply text-sm font-bold text-gray-900 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[--ring-color] rounded-md px-1 py-1;
+}
+
+.btn-icon {
+  @apply rounded-full p-2 hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-[--ring-color] focus-visible:ring-offset-2;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[--ring-color] focus-visible:ring-offset-2;
+  background-color: var(--primary-500);
+}
+.btn-primary:hover { background-color: var(--primary-600); }
+
+.link-primary {
+  @apply font-medium hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-[--ring-color] rounded-sm;
+  color: var(--primary-600);
+}
+.link-primary:hover { color: var(--primary-700); }
+
+/* Tabla */
+.th { @apply px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500; }
+.td { @apply whitespace-nowrap px-6 py-4 align-middle; }
+
+/* Chips de estado */
+.chip-active   { @apply inline-flex rounded-full px-2 text-xs font-semibold leading-5 text-green-800 bg-green-100; }
+.chip-inactive { @apply inline-flex rounded-full px-2 text-xs font-semibold leading-5 text-red-800   bg-red-100; }
+
+/* Acciones por fila */
+.row-action {
+  @apply rounded-md p-1.5 text-gray-400 hover:bg-gray-100 hover:text-gray-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-[--ring-color];
+}
+.row-action.danger     { @apply hover:bg-red-100  hover:text-red-600; }
+.row-action.danger-alt { @apply hover:bg-red-100  hover:text-red-600; }
+.row-action.success-alt{ @apply hover:bg-green-100 hover:text-green-600; }
+
+/* Opción de avatar con background-image si prefieres <div> en lugar de <img> */
+.avatar {
+  --avatar-url: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBCput83dNTcyDYrnkGakcisKCJQk4waZj9IQ2BHWWaxbZTDyivlqVW2L0Vw7n2PdwVMN491pp399fiYJBrOXawwdPfyk6XPBN1C-kzEAnRZlCrObZD_f9DWzKjlDiKpTaaNaL3Tek8XE61pW9hGNxD6MKej1K5kq73GbhkdGFGCWqobs-54qQbqujQL8zwNzagzwXmb_6F7WtUqsiXNlRiiBAWyN8kYoMU4LkNCHG1UjZP_54jErWFKhj3d7eOYPi9qidejAuflQ");
+  background-image: var(--avatar-url);
+  @apply bg-center bg-cover rounded-full h-10 w-10;
+}
+
+/* Accesibilidad extra: fallback para navegadores sin :focus-visible */
+:host :where(a, button):focus { outline: none; }
+
+/* Sticky fallback */
+@supports not (position: sticky) {
+  header[role="banner"] { position: static; }
+}
+
+/* Breakpoints guía (360 / 768 / 1280) */
+@media (min-width: 360px) { /* Teléfono: mobile-first ya aplicado en HTML */ }
+@media (min-width: 768px) { /* Tablet: nav visible por md: y espacios adecuados */ }
+@media (min-width: 1280px) { /* Escritorio amplio: sin ajustes adicionales requeridos */ }

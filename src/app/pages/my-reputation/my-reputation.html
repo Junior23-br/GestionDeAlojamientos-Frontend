@@ -1,0 +1,232 @@
+<!-- Raíz del componente (sin <html>, <head>, <body>) -->
+<div class="relative flex min-h-screen w-full flex-col bg-white overflow-x-hidden font-sans">
+  <!-- Header -->
+  <header
+    class="sticky top-0 z-20 flex items-center justify-between border-b border-gray-200 px-4 sm:px-6 lg:px-10 py-3 lg:py-4 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/75"
+    role="banner"
+  >
+    <div class="flex items-center justify-between gap-6 lg:gap-10 w-full">
+      <!-- Marca + Nav -->
+      <div class="flex items-center gap-6 lg:gap-10">
+        <a class="flex items-center gap-2 text-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-[--ring-color] rounded"
+           routerLink="/" aria-label="Ir al inicio">
+          <svg class="h-7 w-7 lg:h-8 lg:w-8 text-[--primary-color]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M39.5563 34.1455V13.8546C39.5563 15.708 36.8773 17.3437 32.7927 18.3189C30.2914 18.916 27.263 19.2655 24 19.2655C20.737 19.2655 17.7086 18.916 15.2073 18.3189C11.1227 17.3437 8.44365 15.708 8.44365 13.8546V34.1455C8.44365 35.9988 11.1227 37.6346 15.2073 38.6098C17.7086 39.2069 20.737 39.5564 24 39.5564C27.263 39.5564 30.2914 39.2069 32.7927 38.6098C36.8773 37.6346 39.5563 35.9988 39.5563 34.1455Z" fill="currentColor"></path>
+            <path clip-rule="evenodd" d="M10.4485 13.8519C10.4749 13.9271 10.6203 14.246 11.379 14.7361C12.298 15.3298 13.7492 15.9145 15.6717 16.3735C18.0007 16.9296 20.8712 17.2655 24 17.2655C27.1288 17.2655 29.9993 16.9296 32.3283 16.3735C34.2508 15.9145 35.702 15.3298 36.621 14.7361C37.3796 14.246 37.5251 13.9271 37.5515 13.8519C37.5287 13.7876 37.4333 13.5973 37.0635 13.2931C36.5266 12.8516 35.6288 12.3647 34.343 11.9175C31.79 11.0295 28.1333 10.4437 24 10.4437C19.8667 10.4437 16.2099 11.0295 13.657 11.9175C12.3712 12.3647 11.4734 12.8516 10.9365 13.2931C10.5667 13.5973 10.4713 13.7876 10.4485 13.8519ZM37.5563 18.7877C36.3176 19.3925 34.8502 19.8839 33.2571 20.2642C30.5836 20.9025 27.3973 21.2655 24 21.2655C20.6027 21.2655 17.4164 20.9025 14.7429 20.2642C13.1498 19.8839 11.6824 19.3925 10.4436 18.7877V34.1275C10.4515 34.1545 10.5427 34.4867 11.379 35.027C12.298 35.6207 13.7492 36.2054 15.6717 36.6644C18.0007 37.2205 20.8712 37.5564 24 37.5564C27.1288 37.5564 29.9993 37.2205 32.3283 36.6644C34.2508 36.2054 35.702 35.6207 36.621 35.027C37.4573 34.4867 37.5485 34.1546 37.5563 34.1275V18.7877ZM41.5563 13.8546V34.1455C41.5563 36.1078 40.158 37.5042 38.7915 38.3869C37.3498 39.3182 35.4192 40.0389 33.2571 40.5551C30.5836 41.1934 27.3973 41.5564 24 41.5564C20.6027 41.5564 17.4164 41.1934 14.7429 40.5551C12.5808 40.0389 10.6502 39.3182 9.20848 38.3869C7.84205 37.5042 6.44365 36.1078 6.44365 34.1455L6.44365 13.8546C6.44365 12.2684 7.37223 11.0454 8.39581 10.2036C9.43325 9.3505 10.8137 8.67141 12.343 8.13948C15.4203 7.06909 19.5418 6.44366 24 6.44366C28.4582 6.44366 32.5797 7.06909 35.657 8.13948C37.1863 8.67141 38.5667 9.3505 39.6042 10.2036C40.6278 11.0454 41.5563 12.2684 41.5563 13.8546Z" fill="currentColor" fill-rule="evenodd"></path>
+          </svg>
+          <h2 class="text-lg font-bold leading-tight tracking-tight">Aloja Quindío</h2>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-6 lg:gap-8" aria-label="Navegación principal">
+          <a class="nav-link" routerLink="/">Inicio</a>
+          <a class="nav-link" routerLink="/explorar">Explorar</a>
+          <a class="nav-link" routerLink="/mensajes">Mensajes</a>
+          <a class="nav-link-active" routerLink="/reservas" aria-current="page">Reservas</a>
+        </nav>
+      </div>
+
+      <!-- Buscador + avatar -->
+      <div class="flex items-center gap-4">
+        <div class="relative w-48 sm:w-56 md:w-64">
+          <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" aria-hidden="true">search</span>
+          <label for="search" class="sr-only">Buscar</label>
+          <input id="search" type="search" placeholder="Buscar"
+                 class="input-search" />
+        </div>
+
+        <!-- Avatar como <img> accesible; si prefieres <div>, usa .avatar -->
+        <img
+          class="h-10 w-10 rounded-full object-cover"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1n3UOmiIOOZ0YHoUjsGugWf0vee5zFYfkFqXB5fV_5Cobl_r9O7yuntcbUOhJLlgAbWRBAdpDKBOCEPSj-j8FM8SFSiFAwCS9CX3fq9Ue00kBPuivoBznn6KSgbeqDUD7vOZc4bVIg-q-pm8Ug2RXynaqhFP9qTMq9zkUBv7jpN4ingn-7wJycWsPRazyOAJIhg7jO07Zii0buOTp-DZ5Y7PS7rqaPGllGUDKRKqzRSVwreiGTsAy80kG5N5RXNRlDURJ3tCd-Q"
+          alt="Foto de perfil"
+          width="40" height="40"
+          referrerpolicy="no-referrer"
+        />
+      </div>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="flex-1 bg-gray-50 px-4 sm:px-6 lg:px-8 py-8 lg:py-10" id="main">
+    <div class="mx-auto max-w-5xl">
+      <div class="mb-6">
+        <h1 class="text-2xl sm:text-3xl font-bold leading-tight text-slate-900">Mi Reputación</h1>
+        <p class="text-gray-600 mt-1">Gestiona tu reputación como anfitrión.</p>
+      </div>
+
+      <div class="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:gap-12">
+        <!-- Columna principal -->
+        <section class="lg:col-span-2" aria-labelledby="reseñas-heading">
+          <h2 id="reseñas-heading" class="text-xl font-bold tracking-tight text-slate-900 mb-4 lg:mb-6">Reseñas Recibidas</h2>
+
+          <div class="space-y-6 lg:space-y-8">
+            <!-- Card reseña -->
+            <article class="card" aria-label="Reseña de Sofía García, 15 de mayo de 2024">
+              <div class="flex items-start gap-4">
+                <img class="h-12 w-12 rounded-full object-cover shrink-0"
+                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRp2H1jG6Omr1NIO9BlTKDnRki20NWUyvcUcw_dZ4KWavpC1ZKtO_JDiV4eIgyLSfJ2jxM2Y47IeOyzSWqkPn91AAhwGqn0eUWTnGP9b2sCbN04CReRCjNAeGj4EQEqhhBUj7KcOV7H9c_h5jm-QL3JNNzdwZWeEDKzMXb2SEvAkxMYNi8gP2gXe1P7y78EEM85EBrwOQ-sCUaj0eqsbniP5d4oY4cM794ujq24Zn-801hiWkE8g_95i-nmxuFQvusr6FUrTiWVw"
+                     alt="Avatar de Sofía García" width="48" height="48" />
+                <div class="flex-1">
+                  <div class="flex items-center justify-between gap-4">
+                    <div>
+                      <p class="text-slate-800 font-semibold">Sofía García</p>
+                      <p class="text-gray-500 text-sm">15 de mayo de 2024</p>
+                    </div>
+                    <div class="flex items-center gap-1 text-yellow-400" aria-label="Calificación: 5 de 5">
+                      <span class="material-symbols-outlined text-lg" aria-hidden="true">star</span>
+                      <span class="material-symbols-outlined text-lg" aria-hidden="true">star</span>
+                      <span class="material-symbols-outlined text-lg" aria-hidden="true">star</span>
+                      <span class="material-symbols-outlined text-lg" aria-hidden="true">star</span>
+                      <span class="material-symbols-outlined text-lg" aria-hidden="true">star</span>
+                    </div>
+                  </div>
+
+                  <p class="text-slate-700 mt-4 leading-relaxed">
+                    Una experiencia maravillosa en El Rincón del Viajero. La casa es hermosa, limpia y con todas las comodidades. La anfitriona, Laura, fue muy amable y atenta a nuestras necesidades. ¡Recomendado al 100%!
+                  </p>
+
+                  <div class="mt-4 flex items-center justify-between">
+                    <div class="flex gap-4 text-gray-500">
+                      <button type="button" class="btn-inline like" aria-label="Me gusta esta reseña">
+                        <span class="material-symbols-outlined text-xl" aria-hidden="true">thumb_up</span>
+                        <span>5</span>
+                      </button>
+                      <button type="button" class="btn-inline dislike" aria-label="No me gusta esta reseña">
+                        <span class="material-symbols-outlined text-xl" aria-hidden="true">thumb_down</span>
+                        <span>1</span>
+                      </button>
+                    </div>
+
+                    <button type="button" class="btn-ghost" aria-label="Responder a Sofía García">Responder</button>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card reseña -->
+            <article class="card" aria-label="Reseña de Mateo López, 20 de abril de 2024">
+              <div class="flex items-start gap-4">
+                <img class="h-12 w-12 rounded-full object-cover shrink-0"
+                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZaLFdO5tBLO5ezPAr1d6U80Fia3X_Yzok93aGkbGNAcUhJp8qWl7823UvG7poWiw9Wa1oiwJHfG2UE3uGp6QnZQJnnx-Qt50Pc0uVySXF0VHuR1u8n-q5l9CHRrUFm9uOWdfhVwfjI6o0akd8Jh__onzWGAMmv6zaaKieFBxZpxyKTQbuLyWrOwPHilrbsClKdSn8gOFZtxI_55XWpM3AaTNZ6WDBTvuzSvDHCSzxVTFBeaSBlw73MFv62YCO_hDnjMPGLSDB8w"
+                     alt="Avatar de Mateo López" width="48" height="48" />
+                <div class="flex-1">
+                  <div class="flex items-center justify-between gap-4">
+                    <div>
+                      <p class="text-slate-800 font-semibold">Mateo López</p>
+                      <p class="text-gray-500 text-sm">20 de abril de 2024</p>
+                    </div>
+                    <div class="flex items-center gap-1 text-yellow-400" aria-label="Calificación: 4 de 5">
+                      <span class="material-symbols-outlined text-lg" aria-hidden="true">star</span>
+                      <span class="material-symbols-outlined text-lg" aria-hidden="true">star</span>
+                      <span class="material-symbols-outlined text-lg" aria-hidden="true">star</span>
+                      <span class="material-symbols-outlined text-lg" aria-hidden="true">star</span>
+                      <span class="material-symbols-outlined text-lg text-gray-300" aria-hidden="true">star_outline</span>
+                    </div>
+                  </div>
+
+                  <p class="text-slate-700 mt-4 leading-relaxed">
+                    El lugar es acogedor y tiene una vista espectacular. Aunque hubo un pequeño problema con el agua caliente, Laura lo solucionó rápidamente. En general, una buena estancia.
+                  </p>
+
+                  <div class="mt-4 flex items-center justify-between">
+                    <div class="flex gap-4 text-gray-500">
+                      <button type="button" class="btn-inline like" aria-label="Me gusta esta reseña">
+                        <span class="material-symbols-outlined text-xl" aria-hidden="true">thumb_up</span>
+                        <span>2</span>
+                      </button>
+                      <button type="button" class="btn-inline dislike" aria-label="No me gusta esta reseña">
+                        <span class="material-symbols-outlined text-xl" aria-hidden="true">thumb_down</span>
+                      </button>
+                    </div>
+
+                    <button type="button" class="btn-ghost" aria-label="Responder a Mateo López">Responder</button>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card reseña -->
+            <article class="card" aria-label="Reseña de Isabella Rodríguez, 5 de marzo de 2024">
+              <div class="flex items-start gap-4">
+                <img class="h-12 w-12 rounded-full object-cover shrink-0"
+                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDMNwBPbQfTNsX-NYmcJxNpwCAcUU1JaFMF5DvcEMOGf9r3KyH8d_jSplZxw3MKzByJo42yQPZE_QCFeN90T9KjNjMWYGPlR9wwQOYYHNbBbSC_kHO9ziwiJF3cNA6dlIcswfq-4lpLr7D0J6VT5YbfHNgvWFQtp3Eb7wJco4p6ApFHJTZ0CoZcICfyJk-1n44kLWvIgDKI1WzjJCPsEM6dNaMeHc1Pa4czurz42OMEt0cVOkLnVCuOHILYlnPNukHfyf7oZE-0g"
+                     alt="Avatar de Isabella Rodríguez" width="48" height="48" />
+                <div class="flex-1">
+                  <div class="flex items-center justify-between gap-4">
+                    <div>
+                      <p class="text-slate-800 font-semibold">Isabella Rodríguez</p>
+                      <p class="text-gray-500 text-sm">5 de marzo de 2024</p>
+                    </div>
+                    <div class="flex items-center gap-1 text-yellow-400" aria-label="Calificación: 5 de 5">
+                      <span class="material-symbols-outlined text-lg" aria-hidden="true">star</span>
+                      <span class="material-symbols-outlined text-lg" aria-hidden="true">star</span>
+                      <span class="material-symbols-outlined text-lg" aria-hidden="true">star</span>
+                      <span class="material-symbols-outlined text-lg" aria-hidden="true">star</span>
+                      <span class="material-symbols-outlined text-lg" aria-hidden="true">star</span>
+                    </div>
+                  </div>
+
+                  <p class="text-slate-700 mt-4 leading-relaxed">
+                    Increíble lugar para relajarse y disfrutar de la naturaleza. La casa es tal cual se ve en las fotos, incluso mejor. Laura es una excelente anfitriona y nos hizo sentir como en casa. Volveremos sin duda.
+                  </p>
+
+                  <div class="mt-4 flex items-center justify-between">
+                    <div class="flex gap-4 text-gray-500">
+                      <button type="button" class="btn-inline like" aria-label="Me gusta esta reseña">
+                        <span class="material-symbols-outlined text-xl" aria-hidden="true">thumb_up</span>
+                        <span>7</span>
+                      </button>
+                      <button type="button" class="btn-inline dislike" aria-label="No me gusta esta reseña">
+                        <span class="material-symbols-outlined text-xl" aria-hidden="true">thumb_down</span>
+                      </button>
+                    </div>
+
+                    <button type="button" class="btn-ghost" aria-label="Responder a Isabella Rodríguez">Responder</button>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Sidebar -->
+        <aside class="lg:col-span-1" aria-labelledby="historial-heading">
+          <div class="lg:sticky lg:top-10">
+            <h2 id="historial-heading" class="text-xl font-bold tracking-tight text-slate-900 mb-4 lg:mb-6">Historial de Calificaciones</h2>
+
+            <section class="card" aria-label="Resumen de calificaciones últimos 12 meses">
+              <p class="text-slate-700 font-medium">Calificación promedio</p>
+              <p class="text-slate-900 tracking-tight text-4xl sm:text-5xl font-bold mt-1">4.8</p>
+
+              <div class="flex items-center gap-2 mt-2">
+                <p class="text-gray-500 text-sm">Últimos 12 meses</p>
+                <div class="flex items-center text-green-600">
+                  <span class="material-symbols-outlined text-base" aria-hidden="true">arrow_upward</span>
+                  <p class="text-sm font-medium">5%</p>
+                </div>
+              </div>
+
+              <div class="mt-6 h-48">
+                <!-- Mantiene tu SVG original y colores utilizando CSS var -->
+                <svg fill="none" height="100%" preserveAspectRatio="none" viewBox="0 0 472 150" width="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25" stroke="var(--primary-color)" stroke-linecap="round" stroke-width="3"></path>
+                  <path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25V150H0V109Z" fill="url(#paint0_linear_1131_5935_2)"></path>
+                  <defs>
+                    <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_1131_5935_2" x1="236" x2="236" y1="1" y2="150">
+                      <stop stop-color="var(--primary-color)" stop-opacity="0.2"></stop>
+                      <stop offset="1" stop-color="var(--primary-color)" stop-opacity="0"></stop>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+
+              <div class="flex justify-between mt-2 text-gray-500 text-xs tracking-wide">
+                <p>Ene</p><p>Feb</p><p>Mar</p><p>Abr</p><p>May</p><p>Jun</p><p>Jul</p>
+              </div>
+            </section>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+</div>

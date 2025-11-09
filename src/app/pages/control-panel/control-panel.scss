@@ -1,0 +1,52 @@
+:host {
+  /* Tokens del componente */
+  --primary-color: #1ed275;
+  --secondary-color: #f0f4f2;
+  --text-primary: #111714;
+  --text-secondary: #648775;
+
+  @apply block bg-gray-50 text-[var(--text-primary)];
+  font-family: "Plus Jakarta Sans", "Noto Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Enfoque visible consistente */
+:host a:focus-visible,
+:host button:focus-visible {
+  @apply outline-none ring-2 ring-offset-2;
+  --tw-ring-color: var(--primary-color);
+}
+
+/* Nav links */
+.nav-link {
+  @apply text-sm font-medium leading-normal text-[var(--text-primary)] transition-colors hover:text-[var(--primary-color)];
+}
+
+/* Botón circular de icono */
+.icon-btn {
+  @apply relative inline-flex items-center justify-center rounded-full size-10 transition-colors;
+}
+
+/* Tarjetas de acciones rápidas */
+.quick-card {
+  @apply flex flex-col items-center justify-center text-center p-6 bg-white rounded-lg shadow-sm
+  transition-all duration-300 hover:shadow-lg hover:-translate-y-1 focus-visible:outline-none
+  focus-visible:ring-2 focus-visible:ring-[var(--primary-color)] focus-visible:ring-offset-2;
+}
+
+.quick-card-title {
+  @apply text-base font-bold text-[var(--text-primary)];
+}
+
+.pill-icon {
+  @apply flex items-center justify-center size-14 rounded-full mb-4 transition-colors transform;
+}
+
+/* Material Symbols preset */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;
+}
+
+/* Ajustes responsivos sutiles */
+@screen lg {
+  .quick-card { @apply p-6; }
+}
