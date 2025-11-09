@@ -4,10 +4,14 @@ import { BrowserModule, provideClientHydration, withEventReplay } from '@angular
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { provideHttpClient, withFetch, withInterceptorsFromDi } from '@angular/common/http';
+import { MyAccountGuest } from './pages/my-account-guest/my-account-guest';
+import { MyAccountHost } from './pages/my-account-host/my-account-host';
 
 @NgModule({
   declarations: [
-    App
+    App,
+    MyAccountGuest,
+    MyAccountHost
   ],
   imports: [
     BrowserModule,
