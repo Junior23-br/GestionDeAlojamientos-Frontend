@@ -9,6 +9,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .ring-primary {
+    --tw-ring-color: var(--primary-color); /* usa tu var */
+  }
+  .accent-primary {
+    accent-color: var(--primary-color);
+  }
+}
 html {
   @include mat.theme((
     color: (

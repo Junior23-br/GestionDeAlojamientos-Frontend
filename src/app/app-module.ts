@@ -8,6 +8,18 @@ import {NgModule, provideBrowserGlobalErrorListeners, provideZonelessChangeDetec
 import {BrowserModule, provideClientHydration, withEventReplay} from '@angular/platform-browser';
 import {App} from './app';
 import {AppRoutingModule} from './app-routing-module';
+import { MyChats } from './pages/my-chats/my-chats';
+import { ConfigurationAccount } from './pages/configuration-account/configuration-account';
+import { MyReservations } from './pages/my-reservations/my-reservations';
+import { PaymentMethod } from './pages/payment-method/payment-method';
+import { DetaillReservation } from './pages/detaill-reservation/detaill-reservation';
+import { AboutHost } from './pages/about-host/about-host';
+import { FilterAccomodation } from './pages/filter-accomodation/filter-accomodation';
+import { DashboardHost } from './pages/dashboard-host/dashboard-host';
+import { ControlPanel } from './pages/control-panel/control-panel';
+import { CreateAccomodation } from './pages/create-accomodation/create-accomodation';
+import { MyAccomodations } from './pages/my-accomodations/my-accomodations';
+import { MyReputation } from './pages/my-reputation/my-reputation';
 
 @NgModule({
   declarations: [
@@ -17,6 +29,18 @@ import {AppRoutingModule} from './app-routing-module';
     RestorePassword,
     MyAccountGuest,
     MyAccountHost,
+    MyChats,
+    ConfigurationAccount,
+    MyReservations,
+    PaymentMethod,
+    DetaillReservation,
+    AboutHost,
+    FilterAccomodation,
+    DashboardHost,
+    ControlPanel,
+    CreateAccomodation,
+    MyAccomodations,
+    MyReputation,
   ],
   imports: [
     BrowserModule,

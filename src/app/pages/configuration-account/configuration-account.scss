@@ -1,0 +1,113 @@
+:host {
+  /* ===== Design Tokens ===== */
+  --brand-primary: #272d2d;
+  --brand-secondary: #a39ba8;
+  --brand-tertiary: #b8c5d6;
+  --brand-light: #edf5fc;
+  --brand-accent: #23ce6b;
+
+  display: block;
+  color: var(--brand-primary);
+  background: var(--brand-light);
+  font-family: 'Chivo', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Tipografías auxiliares (del diseño) */
+.font-ruda { font-family: 'Ruda', sans-serif; }
+.overlock-text { font-family: 'Overlock', cursive; }
+
+/* Material Symbols */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* ===== Accesibilidad (focus) ===== */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  @apply outline-none ring-2 ring-offset-2;
+  --tw-ring-color: var(--brand-accent);
+}
+
+/* ===== Header nav links ===== */
+.nav-link {
+  @apply text-[var(--brand-primary)] text-base lg:text-lg font-medium transition-colors;
+  &:hover { color: var(--brand-accent); }
+}
+
+/* ===== Avatar & dropdown ===== */
+.avatar-btn {
+  @apply relative inline-flex items-center justify-center rounded-full border-2 border-[var(--brand-tertiary)] size-12 bg-white focus:outline-none focus:ring-2;
+  --tw-ring-color: var(--brand-accent);
+}
+.avatar-img {
+  @apply block rounded-full bg-center bg-cover w-full h-full;
+  background-image: var(--img);
+}
+
+/* Menú desplegable por hover (fallback simple); en producción se puede controlar con estado Angular */
+.menu-dropdown {
+  @apply absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-20 opacity-0 invisible transition-opacity duration-200;
+}
+.group:hover .menu-dropdown {
+  @apply opacity-100 visible;
+}
+.menu-item {
+  @apply block px-4 py-2 text-sm text-[var(--brand-primary)] hover:bg-[var(--brand-light)];
+}
+
+/* ===== Sidebar tabs ===== */
+.side-tab {
+  @apply flex items-center gap-3 rounded-lg px-4 py-3 text-lg font-medium text-[var(--brand-primary)] hover:bg-[var(--brand-light)] transition-colors;
+  &:focus-visible { @apply ring-2 ring-offset-2; --tw-ring-color: var(--brand-accent); }
+  &.active { @apply font-bold text-white bg-[var(--brand-accent)]; }
+}
+
+/* ===== Cards & sections ===== */
+.card-section {
+  @apply rounded-xl border border-[var(--brand-tertiary)] bg-white p-6 md:p-8 shadow-md;
+}
+.section-title {
+  @apply text-2xl font-bold text-[var(--brand-primary)] mb-4 md:mb-6;
+}
+
+/* ===== Formularios ===== */
+.form-label {
+  @apply block text-sm font-medium text-[var(--brand-secondary)];
+}
+.form-input {
+  @apply block w-full rounded-lg border border-[var(--brand-tertiary)] bg-[var(--brand-light)]
+  text-[var(--brand-primary)] shadow-sm focus:border-[var(--brand-accent)] focus:ring-[var(--brand-accent)] sm:text-sm;
+}
+
+/* Botones */
+.btn-primary {
+  @apply inline-flex items-center justify-center rounded-lg bg-[var(--brand-accent)] px-8 py-3 text-base font-bold text-white shadow-lg
+  transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[var(--brand-accent)] focus:ring-offset-2;
+}
+.btn-ghost {
+  @apply rounded-lg bg-[var(--brand-light)] px-4 py-2 text-sm font-bold text-[var(--brand-primary)]
+  hover:bg-[var(--brand-tertiary)] transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--brand-accent)] focus:ring-offset-2;
+}
+
+/* Switch (preferencias) */
+.switch {
+  @apply relative inline-flex items-center cursor-pointer;
+}
+.switch-ui {
+  @apply w-11 h-6 bg-[var(--brand-tertiary)] rounded-full transition-colors relative;
+}
+.switch-ui::after {
+  content: '';
+  @apply absolute top-[2px] left-[2px] h-5 w-5 rounded-full bg-white border border-gray-300 transition-transform;
+}
+input.peer:checked + .switch-ui::after {
+  @apply translate-x-5;
+}
+
+/* ===== Sticky fallback para navegadores antiguos ===== */
+@supports not (position: sticky) {
+  .lg\:sticky { position: static; }
+}
+

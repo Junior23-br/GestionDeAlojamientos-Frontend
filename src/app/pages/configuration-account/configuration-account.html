@@ -1,0 +1,208 @@
+<a class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 px-3 py-2 rounded-md bg-black text-white"
+   routerLink="." fragment="contenido">
+  Saltar al contenido
+</a>
+
+<section class="min-h-screen w-full bg-[var(--brand-light)] text-[var(--brand-primary)] flex flex-col">
+  <!-- Header -->
+  <header
+    class="sticky top-0 z-40 flex items-center justify-between border-b border-[var(--brand-tertiary)] bg-white px-4 sm:px-6 lg:px-10 py-3 shadow-sm">
+    <div class="flex items-center gap-6 sm:gap-10">
+      <a class="flex items-center gap-3 text-[var(--brand-primary)]" routerLink="/">
+        <svg class="h-8 w-8 text-[var(--brand-accent)]" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"/>
+        </svg>
+        <h1 class="text-xl sm:text-2xl font-bold tracking-tight font-ruda">El Rincón del Viajero</h1>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6 lg:gap-8" aria-label="Principal">
+        <a class="nav-link" routerLink="/">Inicio</a>
+        <a class="nav-link" routerLink="/explorar">Explorar</a>
+        <a class="nav-link" routerLink="/reservas">Mis Reservas</a>
+        <a class="nav-link" routerLink="/favoritos">Favoritos</a>
+      </nav>
+    </div>
+
+    <div class="flex items-center gap-3 sm:gap-4">
+      <!-- Search (decorativo en header) -->
+      <label class="relative hidden sm:block" aria-label="Buscar destinos">
+        <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[var(--brand-secondary)] pointer-events-none">search</span>
+        <input
+          class="rounded-full border border-[var(--brand-tertiary)] bg-white py-2 pl-10 pr-4 text-sm text-[var(--brand-secondary)] focus:ring-2 focus:border-[var(--brand-accent)]"
+          placeholder="Buscar destinos..." type="search" />
+      </label>
+
+      <!-- Avatar + menú -->
+      <div class="relative group">
+        <button type="button" class="avatar-btn" aria-haspopup="menu" aria-expanded="false" aria-controls="menu-cuenta">
+          <span class="sr-only">Abrir menú de cuenta</span>
+          <span class="avatar-img" style="--img: url('https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=2080&auto=format&fit=crop');"></span>
+        </button>
+
+        <div id="menu-cuenta"
+             class="menu-dropdown"
+             role="menu" aria-label="Menú de cuenta">
+          <a routerLink="/perfil" class="menu-item" role="menuitem">Perfil</a>
+          <a routerLink="/configuracion" class="menu-item" role="menuitem">Configuración</a>
+          <a routerLink="/logout" class="menu-item text-red-600 hover:bg-red-50" role="menuitem">Cerrar Sesión</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main id="contenido" class="flex-1 py-10 md:py-16">
+    <div class="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div class="mb-8 md:mb-10">
+        <h2 class="text-3xl md:text-4xl font-black tracking-tight text-[var(--brand-primary)]">Configuración de la Cuenta</h2>
+        <p class="mt-2 text-base md:text-lg text-[var(--brand-secondary)] overlock-text">
+          Gestiona la información de tu cuenta, preferencias y seguridad.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- Sidebar -->
+        <aside class="lg:col-span-1">
+          <div class="bg-white rounded-xl shadow-md p-6 lg:sticky lg:top-24">
+            <nav class="space-y-2" aria-label="Secciones de configuración">
+              <a class="side-tab active" routerLink="." fragment="perfil">
+                <span class="material-symbols-outlined">person</span>
+                <span>Perfil</span>
+              </a>
+              <a class="side-tab" routerLink="." fragment="seguridad">
+                <span class="material-symbols-outlined">lock</span>
+                <span>Seguridad</span>
+              </a>
+              <a class="side-tab" routerLink="." fragment="preferencias">
+                <span class="material-symbols-outlined">tune</span>
+                <span>Preferencias</span>
+              </a>
+              <a class="side-tab" routerLink="." fragment="cuenta">
+                <span class="material-symbols-outlined">delete</span>
+                <span>Cuenta</span>
+              </a>
+            </nav>
+          </div>
+        </aside>
+
+        <!-- Content -->
+        <section class="lg:col-span-2 space-y-12">
+          <!-- Perfil -->
+          <section id="perfil" class="card-section">
+            <h3 class="section-title">Información del Perfil</h3>
+
+            <form class="space-y-6" novalidate>
+              <div class="flex items-center gap-6">
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvC-p8q9i2lW-zBpCLfzRn-TFDdxMMCytSlxdFEwhzbElM_k6s9iD-BVTXqQ8HSIEcLF3E2rr3rOjQSLNjc83G-V5MpBDj41PK9EuU0xNhiUbRTqrVjKF_2c1_Slv2BJMgmMLqeQIWpmk7v3nKouGZqJtNMq8RqizKzNn-1x6sbL3j89o1DRbl9ZWVwWqMUs8li4OiC1sXGJ6QScqwJi0rWma9IrP36RTDeyg4qQQszSqhNrfgpmo_lfL620kkHBDuiaB-YYE98w"
+                  alt="Foto de perfil" class="h-24 w-24 rounded-full object-cover border-4 border-[var(--brand-tertiary)]" />
+                <div>
+                  <button type="button" class="btn-ghost">Cambiar foto</button>
+                  <p class="text-xs text-[var(--brand-secondary)] mt-2">JPG, GIF o PNG. Tamaño máximo 800K</p>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label for="name" class="form-label">Nombre</label>
+                  <input id="name" name="name" type="text" placeholder="Tu nombre"
+                         class="form-input"
+                         value="Juan Pérez" autocomplete="name" />
+                </div>
+                <div>
+                  <label for="email" class="form-label">Correo Electrónico</label>
+                  <input id="email" name="email" type="email" placeholder="tu@email.com"
+                         class="form-input"
+                         value="juan.perez@example.com" autocomplete="email" />
+                </div>
+              </div>
+
+              <div>
+                <label for="phone" class="form-label">Número de Teléfono</label>
+                <input id="phone" name="phone" type="tel" placeholder="+57 300 123 4567"
+                       class="form-input"
+                       value="+57 310 123 4567" autocomplete="tel" />
+              </div>
+
+              <div>
+                <label for="bio" class="form-label">Biografía Corta</label>
+                <textarea id="bio" name="bio" rows="3" placeholder="Cuéntanos un poco sobre ti..."
+                          class="form-input"></textarea>
+              </div>
+
+              <div class="pt-2">
+                <button type="submit" class="btn-primary">Guardar Cambios</button>
+              </div>
+            </form>
+          </section>
+
+          <!-- Seguridad -->
+          <section id="seguridad" class="card-section">
+            <h3 class="section-title">Seguridad</h3>
+
+            <form class="space-y-6" novalidate>
+              <div>
+                <label for="current_password" class="form-label">Contraseña Actual</label>
+                <input id="current_password" name="current_password" type="password" class="form-input" autocomplete="current-password" />
+              </div>
+              <div>
+                <label for="new_password" class="form-label">Nueva Contraseña</label>
+                <input id="new_password" name="new_password" type="password" class="form-input" autocomplete="new-password" />
+              </div>
+              <div>
+                <label for="confirm_password" class="form-label">Confirmar Nueva Contraseña</label>
+                <input id="confirm_password" name="confirm_password" type="password" class="form-input" autocomplete="new-password" />
+              </div>
+              <div class="pt-2">
+                <button type="submit" class="btn-primary">Actualizar Contraseña</button>
+              </div>
+            </form>
+          </section>
+
+          <!-- Preferencias -->
+          <section id="preferencias" class="card-section">
+            <h3 class="section-title">Preferencias</h3>
+
+            <div class="space-y-6">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="font-medium text-[var(--brand-primary)]">Notificaciones por Email</p>
+                  <p class="text-sm text-[var(--brand-secondary)]">Recibir noticias, ofertas y recomendaciones.</p>
+                </div>
+                <label class="switch" for="notifications">
+                  <input id="notifications" type="checkbox" class="sr-only peer" checked />
+                  <span class="switch-ui peer-checked:bg-[var(--brand-accent)]"></span>
+                </label>
+              </div>
+
+              <div class="border-t border-[var(--brand-tertiary)]"></div>
+
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="font-medium text-[var(--brand-primary)]">Modo Anfitrión</p>
+                  <p class="text-sm text-[var(--brand-secondary)]">Habilitar herramientas para administrar propiedades.</p>
+                </div>
+                <label class="switch" for="host-mode">
+                  <input id="host-mode" type="checkbox" class="sr-only peer" />
+                  <span class="switch-ui peer-checked:bg-[var(--brand-accent)]"></span>
+                </label>
+              </div>
+            </div>
+          </section>
+
+          <!-- Cuenta -->
+          <section id="cuenta" class="rounded-xl border border-red-300 bg-red-50 p-8 shadow-md">
+            <h3 class="text-2xl font-bold text-red-700 mb-4">Eliminar Cuenta</h3>
+            <p class="text-red-600 mb-6">
+              Esta acción es irreversible. Toda tu información, incluyendo reservaciones y propiedades, será eliminada permanentemente.
+            </p>
+            <button type="button"
+                    class="flex w-full sm:w-auto items-center justify-center rounded-lg bg-red-600 px-8 py-3 text-base font-bold text-white shadow-lg transition-transform hover:bg-red-700 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-offset-2">
+              Eliminar mi Cuenta
+            </button>
+          </section>
+        </section>
+      </div>
+    </div>
+  </main>
+</section>

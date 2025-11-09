@@ -1,0 +1,180 @@
+<!-- Enlace para saltar al contenido -->
+<a class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 px-3 py-2 rounded-md bg-black text-white"
+   routerLink="." fragment="contenido">
+  Saltar al contenido
+</a>
+
+<section class="min-h-screen flex flex-col bg-gray-50">
+  <!-- Header -->
+  <header class="sticky top-0 z-40 flex items-center justify-between border-b border-gray-200 bg-white px-4 md:px-10 py-4 shadow-sm">
+    <div class="flex items-center gap-10">
+      <a class="flex items-center gap-3 text-gray-900" routerLink="/">
+        <svg class="h-8 w-8 text-[var(--primary-color)]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm3.68 14.74l-3.03-1.85-3.03 1.85c-.32.2-.72-.03-.72-.41V11.4c0-.23.12-.44.32-.57l4.06-2.65c.19-.13.45-.13.64 0l4.06 2.65c.2.13.32.34.32.57v4.92c0 .38-.4.61-.72.41zM12 11.25L9.61 12.8l2.39-1.47 2.39 1.47L12 11.25z"/>
+        </svg>
+        <h1 class="text-2xl font-bold leading-tight tracking-tighter">
+          Quindío Stays
+        </h1>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8" aria-label="Principal">
+        <a class="nav-link" routerLink="/destinos">Destinos</a>
+        <a class="nav-link" routerLink="/experiencias">Experiencias</a>
+        <a class="nav-link" routerLink="/experiencias-online">Experiencias Online</a>
+      </nav>
+    </div>
+
+    <div class="flex flex-1 justify-end gap-4 items-center">
+      <!-- Búsqueda -->
+      <label class="hidden lg:flex flex-col min-w-40 max-w-xs h-11" aria-label="Buscar">
+        <div class="relative flex w-full flex-1 items-stretch h-full">
+          <div class="absolute inset-y-0 left-0 flex items-center pl-4 text-gray-500" aria-hidden="true">
+            <span class="material-symbols-outlined">search</span>
+          </div>
+          <input
+            class="w-full rounded-full border border-gray-300 bg-white h-full px-4 pl-12 text-base text-gray-800 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]"
+            type="search" placeholder="Buscar" />
+        </div>
+      </label>
+
+      <!-- Idioma -->
+      <button type="button" class="icon-circle" aria-label="Cambiar idioma">
+        <span class="material-symbols-outlined" aria-hidden="true">language</span>
+      </button>
+
+      <!-- Avatar -->
+      <button type="button" class="focus-visible:ring-2 focus-visible:ring-[var(--primary-color)] rounded-full" aria-label="Abrir menú de usuario">
+        <img class="h-11 w-11 rounded-full border-2 border-white shadow-md object-cover"
+             src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-yQGc_Wr1XwxqUgQVnJGDCljTIAMAYGgkCxN2JY2bq0WV9iMKEhtjaXklmq_Tt_vagQSSonf5QSwk61Md1sL1I-M5Nn6dpleLFbB5ARpvUqjcu04QTGXh5XdWT-QxhotZCnBsT_MvuJDASUG62_XSLetSyjzR4nu1quFcc_Dlf8VPvpsu44Qxvym4wfvbBI1kS-zPdKNMNltYXF3O5Q_Yuzn_PFs-v8hP28xb2mAJg2WYIiRHZyzDG7que0jkcOFKxv5ZtzkDoQ"
+             alt="Avatar de usuario" />
+      </button>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main id="contenido" class="px-4 md:px-10 lg:px-20 xl:px-40 flex-1 py-8 bg-gray-50">
+    <div class="mx-auto flex max-w-5xl flex-col gap-8">
+      <!-- Migas -->
+      <nav class="flex flex-wrap items-center gap-2 text-sm" aria-label="Breadcrumb">
+        <a routerLink="/viajes" class="text-gray-500 hover:text-gray-800 focus-visible:ring-2 focus-visible:ring-[var(--primary-color)] rounded">Viajes</a>
+        <span class="material-symbols-outlined text-gray-400 text-base" aria-hidden="true">chevron_right</span>
+        <span class="text-gray-800 font-medium" aria-current="page">El Rincón del Viajero</span>
+      </nav>
+
+      <!-- Título + acciones -->
+      <div class="flex flex-wrap justify-between items-start gap-4">
+        <div class="flex flex-col gap-1">
+          <h2 class="text-gray-900 text-4xl font-bold tracking-tight">El Rincón del Viajero</h2>
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-green-500" aria-hidden="true">check_circle</span>
+            <p class="text-green-600 text-base font-medium">Reserva confirmada</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button type="button" class="btn-outline" aria-label="Descargar comprobante">
+            <span class="material-symbols-outlined text-lg" aria-hidden="true">download</span>
+            <span>Descargar comprobante</span>
+          </button>
+
+          <button type="button" class="btn-primary" aria-label="Contactar anfitrión">
+            <span class="material-symbols-outlined text-lg" aria-hidden="true">chat</span>
+            <span>Contactar anfitrión</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Contenido principal -->
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Tu estancia -->
+        <section aria-labelledby="estancia" class="card">
+          <h3 id="estancia" class="card-title">Tu estancia</h3>
+
+          <div class="flex items-start gap-4">
+            <img
+              class="size-20 shrink-0 rounded-lg object-cover"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsfPKN0sfbEcvyrQKVsniShofDfphlz0OOQYMtsjG6dpoDdSkHvgBEGXroj5qUVXNHNu-LDEllI_sxPhKOHuX7GCTo5oZh9zT8bvkwIHNpoiY2v0hGMdd_p7uqF3Sa2_YLwE0ktnNQvwt3xNIJb0gaBrEZnfgs_Ermx1SknZJeLGPbhiueb-T3x96lrThlkR2LqNtC3IWH2D-sgQ3L_DFngreYAc8VrOlxr1god6gVafL-UaBWGP9wIRvBc-foRlQDiv0Cp8gXkg"
+              alt="Vista del alojamiento" />
+            <div class="flex flex-col">
+              <p class="text-gray-800 text-lg font-semibold">Viernes, 12 de julio - Domingo, 14 de julio</p>
+              <p class="text-gray-500 text-sm">Check-in: 3:00 PM - 12:00 AM</p>
+              <p class="text-gray-500 text-sm">Check-out: 11:00 AM</p>
+            </div>
+          </div>
+
+          <div class="border-t border-gray-200 pt-4">
+            <a routerLink="/mapa" class="group flex items-center gap-3 text-gray-700 hover:text-gray-900 focus-visible:ring-2 focus-visible:ring-[var(--primary-color)] rounded">
+              <div class="flex items-center justify-center rounded-lg bg-gray-100 group-hover:bg-gray-200 shrink-0 size-12" aria-hidden="true">
+                <span class="material-symbols-outlined text-gray-600">map</span>
+              </div>
+              <div class="flex flex-col">
+                <p class="text-base font-medium">Obtener indicaciones</p>
+                <p class="text-sm text-gray-500">Calle 10 # 15-20, Salento, Quindío</p>
+              </div>
+              <span class="material-symbols-outlined ml-auto text-gray-400" aria-hidden="true">chevron_right</span>
+            </a>
+          </div>
+        </section>
+
+        <!-- Detalles -->
+        <section aria-labelledby="detalles" class="card">
+          <h3 id="detalles" class="card-title">Detalles de la reserva</h3>
+
+          <dl class="space-y-4">
+            <div class="flex justify-between items-center">
+              <dt class="text-gray-500 text-base">Código de reserva</dt>
+              <dd class="text-gray-800 text-base font-mono bg-gray-100 px-2 py-1 rounded-md">HM4321</dd>
+            </div>
+            <div class="flex justify-between items-center">
+              <dt class="text-gray-500 text-base">Huéspedes</dt>
+              <dd class="text-gray-800 text-base font-medium">2 adultos</dd>
+            </div>
+            <div class="flex justify-between items-center">
+              <dt class="text-gray-500 text-base">Confirmación</dt>
+              <dd class="text-green-600 text-base font-medium flex items-center gap-1">
+                <span class="material-symbols-outlined text-lg" aria-hidden="true">verified</span>
+                Confirmada
+              </dd>
+            </div>
+            <div class="flex justify-between items-center border-t border-gray-200 pt-4">
+              <dt class="text-gray-500 text-base font-semibold">Total</dt>
+              <dd class="text-gray-900 text-lg font-bold">$250.00 COP</dd>
+            </div>
+          </dl>
+        </section>
+
+        <!-- Gestión -->
+        <section aria-labelledby="gestion" class="md:col-span-2 card">
+          <h3 id="gestion" class="card-title">Gestión de la reserva</h3>
+
+          <div class="grid md:grid-cols-2 gap-4">
+            <a routerLink="/reservas/modificar" class="action-tile">
+              <div class="tile-icon bg-green-100 text-green-600">
+                <span class="material-symbols-outlined" aria-hidden="true">calendar_month</span>
+              </div>
+              <p class="text-gray-800 font-medium">Modificar fechas</p>
+              <span class="material-symbols-outlined ml-auto text-gray-400" aria-hidden="true">chevron_right</span>
+            </a>
+
+            <a routerLink="/reservas/cancelar" class="action-tile">
+              <div class="tile-icon bg-red-100 text-red-600">
+                <span class="material-symbols-outlined" aria-hidden="true">cancel</span>
+              </div>
+              <p class="text-gray-800 font-medium">Cancelar reserva</p>
+              <span class="material-symbols-outlined ml-auto text-gray-400" aria-hidden="true">chevron_right</span>
+            </a>
+          </div>
+        </section>
+
+        <!-- Política -->
+        <aside class="md:col-span-2 p-6 bg-blue-50 border border-blue-200 rounded-lg">
+          <h3 class="text-blue-900 text-xl font-bold">Política de cancelación</h3>
+          <p class="text-blue-800 text-base mt-1">
+            Cancelación gratuita antes del <strong>10 de julio</strong>. Después de esa fecha, se te cobrará la primera noche de la estancia.
+            <a routerLink="/politicas/cancelacion" class="font-semibold underline hover:text-blue-900">Ver detalles</a>
+          </p>
+        </aside>
+      </div>
+    </div>
+  </main>
+</section>

@@ -1,0 +1,150 @@
+<!-- Raíz del componente -->
+<div class="relative flex min-h-screen w-full flex-col bg-white overflow-x-hidden font-sans">
+  <!-- Header -->
+  <header
+    class="sticky top-0 z-20 flex items-center justify-between border-b border-b-[#f0f4f2] px-4 sm:px-6 lg:px-10 py-3 lg:py-4 shadow-sm bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/75"
+    role="banner"
+  >
+    <div class="flex items-center gap-6 lg:gap-10">
+      <a class="flex items-center gap-3 text-[#111714] focus:outline-none focus-visible:ring-2 focus-visible:ring-[--ring-color] rounded-md"
+         routerLink="/" aria-label="Ir al inicio">
+        <svg class="h-7 w-7 lg:h-8 lg:w-8 text-[--primary-color]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path>
+        </svg>
+        <h1 class="text-lg sm:text-xl font-bold tracking-tight">El Rincón del Viajero</h1>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6 lg:gap-8" aria-label="Navegación principal">
+        <a routerLink="/"
+           class="nav-link" aria-current="page">Inicio</a>
+        <a routerLink="/explorar"
+           class="nav-link">Explorar</a>
+        <a routerLink="/mensajes"
+           class="nav-link">Mensajes</a>
+      </nav>
+    </div>
+
+    <div class="flex items-center gap-2 sm:gap-4">
+      <button
+        type="button"
+        class="icon-btn"
+        aria-label="Cambiar idioma"
+      >
+        <span class="material-symbols-outlined text-gray-600" aria-hidden="true">language</span>
+      </button>
+
+      <!-- Avatar con imagen accesible (mejor para lectores de pantalla) -->
+      <img
+        class="h-10 w-10 rounded-full border-2 border-white shadow-md object-cover"
+        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAnODPMYWqwYlzyISZ0iXktaw61c6bt2bl3V6NdNCBnKHc8qO1ycLc6reShssre3EAEDIVMUUPzL4sPN4LgqWHZ_QoKJevr_G-JUX0LQYY-INEy9wYqndiOVl_2DI16wUbSfuHCz8CFG__6vdcVvlze82meA0rcqcoIXwz285UmDjlOTuNeYZA9_NNTVBqCR_P61KWdfRPMZKbMBcXJmbTbsZWsaaSlyYWBG1lXpltWC0zGjS-c5mnzMl3lpCRRHguexF4QEchEQ"
+        alt="Foto de perfil"
+        width="40" height="40"
+        referrerpolicy="no-referrer"
+      />
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="flex-1 bg-gray-50 py-8 sm:py-10 lg:py-12 px-4 sm:px-6 lg:px-8" id="main">
+    <div class="mx-auto max-w-4xl">
+      <div class="mb-8 lg:mb-10 text-center">
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">Crea tu Alojamiento</h2>
+        <p class="mt-2 text-base sm:text-lg text-gray-600">Publica tu espacio en El Rincón del Viajero y empieza a ganar.</p>
+      </div>
+
+      <div class="space-y-8 lg:space-y-12">
+        <!-- Información del Alojamiento -->
+        <section class="card" aria-labelledby="sec-info-heading">
+          <h3 id="sec-info-heading" class="section-title">Información del Alojamiento</h3>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 lg:gap-x-8 gap-y-5 lg:gap-y-6">
+            <div class="col-span-1 md:col-span-2">
+              <label class="label" for="accommodation-name">Nombre del Alojamiento</label>
+              <input id="accommodation-name" type="text" autocomplete="off"
+                     placeholder="Ej. Cabaña en la Montaña"
+                     class="input" />
+            </div>
+
+            <div>
+              <label class="label" for="accommodation-type">Tipo de Alojamiento</label>
+              <select id="accommodation-type" class="select">
+                <option>Apartamento</option>
+                <option>Casa</option>
+                <option>Cabaña</option>
+                <option>Finca</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="label" for="location">Ubicación</label>
+              <input id="location" type="text" autocomplete="address-level2"
+                     placeholder="Municipio, Vereda"
+                     class="input" />
+            </div>
+
+            <div>
+              <label class="label" for="capacity">Capacidad máxima</label>
+              <input id="capacity" type="number" inputmode="numeric" min="1"
+                     placeholder="Número de huéspedes"
+                     class="input" />
+            </div>
+
+            <div class="col-span-1 md:col-span-2">
+              <label class="label" for="services">Servicios</label>
+              <textarea id="services" rows="4"
+                        placeholder="Describe los servicios que ofreces. Ej: Piscina, WiFi, Estacionamiento, Cocina equipada"
+                        class="textarea"></textarea>
+            </div>
+          </div>
+        </section>
+
+        <!-- Fotos del Alojamiento -->
+        <section class="card" aria-labelledby="sec-fotos-heading">
+          <h3 id="sec-fotos-heading" class="section-title">Fotos del Alojamiento</h3>
+
+          <div
+            class="flex flex-col items-center justify-center gap-4 rounded-xl border-2 border-dashed border-gray-300 p-8 sm:p-10 lg:p-12 text-center"
+            role="region" aria-label="Cargador de fotos"
+          >
+            <span class="material-symbols-outlined text-5xl sm:text-6xl text-gray-400" aria-hidden="true">add_a_photo</span>
+            <p class="text-base sm:text-lg font-medium text-gray-700">Arrastra y suelta tus fotos aquí</p>
+            <p class="text-gray-500">o</p>
+            <button type="button" class="btn-secondary" role="button" aria-label="Seleccionar fotos desde tu dispositivo">
+              <span class="material-symbols-outlined text-lg" aria-hidden="true">upload_file</span>
+              <span>Seleccionar fotos</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- Configuración de Precios -->
+        <section class="card" aria-labelledby="sec-precio-heading">
+          <h3 id="sec-precio-heading" class="section-title">Configuración de Precios</h3>
+
+          <div>
+            <label class="label" for="price">Precio por noche</label>
+            <div class="relative">
+              <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                <span class="text-gray-500 sm:text-sm" aria-hidden="true">$</span>
+              </div>
+              <input id="price" name="price" type="text" inputmode="decimal"
+                     aria-describedby="price-currency"
+                     placeholder="0.00"
+                     class="input pl-7 pr-12" />
+              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+                <span id="price-currency" class="text-gray-500 sm:text-sm">COP</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CTA -->
+        <div class="flex justify-end pt-2 lg:pt-6">
+          <button type="submit" class="btn-primary" aria-label="Crear Alojamiento">
+            <span class="material-symbols-outlined" aria-hidden="true">add_home</span>
+            <span>Crear Alojamiento</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

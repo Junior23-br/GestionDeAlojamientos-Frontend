@@ -5,6 +5,7 @@ import {LandingPage} from './pages/landing-page/landing-page';
 import {DetaillPublication} from './pages/detaill-publication/detaill-publication';
 import {BeHost} from './pages/be-host/be-host';
 import {RestorePassword} from './pages/restore-password/restore-password';
+import {FilterAccomodation} from './pages/filter-accomodation/filter-accomodation';
 import {NgModule} from '@angular/core';
 
 export const routes: Routes = [
@@ -15,6 +16,10 @@ export const routes: Routes = [
   { path: 'be-host', component: BeHost },
   { path: 'detaill-publication', component: DetaillPublication },
   {path: 'restore-password', component: RestorePassword},
+  {path: 'filter-accomodation', component: FilterAccomodation},
+
+
+
 
 
 ];

@@ -1,0 +1,83 @@
+:host {
+  /* Tokens */
+  --primary-color: #1ed275;
+
+  @apply block bg-gray-50 text-gray-800;
+  font-family: "Plus Jakarta Sans", "Noto Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Focus visible consistente */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  @apply outline-none ring-2 ring-offset-2;
+  --tw-ring-color: var(--primary-color);
+}
+
+/* Utilidades reusables */
+.card {
+  @apply bg-white rounded-lg shadow-sm border border-gray-200;
+}
+
+.nav-link {
+  @apply text-gray-600 hover:text-gray-900 transition-colors;
+}
+
+.icon-btn {
+  @apply inline-flex items-center justify-center rounded-full h-10 w-10 bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors;
+}
+
+/* Títulos/Divisores del panel */
+.filter-title {
+  @apply text-lg font-semibold text-gray-800 mb-4;
+}
+
+.divider {
+  @apply border-gray-200 my-4;
+}
+
+/* Controles de formulario */
+.check {
+  @apply inline-flex items-center gap-3 cursor-pointer select-none;
+}
+.filter-checkbox {
+  @apply h-5 w-5 rounded border-gray-300 focus:outline-none;
+  @apply ring-primary focus:ring-2 focus:ring-opacity-50 focus:ring-offset-2; /* color desde .ring-primary */
+  @apply accent-primary; /* color del check */
+}
+
+/* Chips (radio) con peer */
+.chip {
+  @apply cursor-pointer;
+}
+.chip-inner {
+  @apply inline-flex items-center justify-center rounded-lg border border-gray-300 px-3 py-1.5 text-sm font-medium transition-colors;
+}
+.peer:checked + .chip-inner {
+  @apply bg-[var(--primary-color)] text-white border-[var(--primary-color)];
+}
+
+/* Botones */
+.btn-primary {
+  @apply inline-flex items-center justify-center rounded-lg h-12 px-6 text-sm font-bold tracking-wide
+  text-black bg-[var(--primary-color)] hover:bg-emerald-600/90 transition-colors;
+}
+.btn-secondary {
+  @apply inline-flex items-center justify-center rounded-lg h-12 px-6 text-sm font-bold tracking-wide
+  bg-gray-100 text-gray-800 hover:bg-gray-200 transition-colors;
+}
+
+/* Material Symbols: asegurar peso/tamaño */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;
+}
+
+/* Responsividad fina */
+@screen xl {
+  .card { @apply rounded-xl; }
+}
+
+
+/* src/app/pages/filter-accomodation/filter-accomodation.scss */
+
+

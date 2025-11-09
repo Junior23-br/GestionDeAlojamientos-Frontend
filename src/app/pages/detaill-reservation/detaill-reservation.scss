@@ -1,0 +1,62 @@
+:host {
+  /* Tokens */
+  --primary-color: #1ed275;
+
+  @apply block bg-gray-50 text-gray-900;
+  font-family: "Plus Jakarta Sans", "Noto Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Focus visible consistente en elementos interactivos */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  @apply outline-none ring-2 ring-offset-2;
+  --tw-ring-color: var(--primary-color);
+}
+
+/* Tipos y bloques reutilizables */
+.nav-link {
+  @apply text-base font-medium text-gray-600 hover:text-gray-900 transition-colors;
+}
+
+.icon-circle {
+  @apply flex items-center justify-center overflow-hidden rounded-full h-11 w-11 text-gray-700 hover:bg-gray-100
+  focus-visible:ring-2 focus-visible:ring-[var(--primary-color)];
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-lg h-10 px-4 text-sm font-bold text-white
+  transition-colors bg-[var(--primary-color)] hover:bg-emerald-600;
+}
+
+.btn-outline {
+  @apply inline-flex items-center justify-center gap-2 rounded-lg h-10 px-4 text-sm font-bold
+  bg-white border border-gray-300 text-gray-700 hover:bg-gray-100;
+}
+
+.card {
+  @apply flex flex-col gap-6 p-6 bg-white rounded-lg shadow-sm border border-gray-200;
+}
+
+.card-title {
+  @apply text-gray-900 text-xl font-bold;
+}
+
+.action-tile {
+  @apply flex items-center gap-4 p-4 border border-gray-200 rounded-lg
+  hover:bg-gray-50 hover:border-gray-300 transition-colors focus-visible:ring-2 focus-visible:ring-[var(--primary-color)];
+}
+
+.tile-icon {
+  @apply flex items-center justify-center rounded-full size-10;
+}
+
+/* Material Symbols (peso y tamaño consistente) */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;
+}
+
+/* Ajustes responsivos mínimos (layout ya es mobile-first) */
+@screen md {
+  /* Espacios y medidas ya gestionados con utilidades responsive */
+}

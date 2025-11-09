@@ -1,0 +1,123 @@
+<section class="min-h-screen bg-gray-50 text-[color:var(--text-primary)] flex">
+  <!-- Sidebar -->
+  <aside class="hidden lg:flex w-80 bg-white shadow-md flex-col justify-between p-6" aria-label="Navegación lateral">
+    <div class="flex flex-col gap-8">
+      <div class="flex items-center gap-3">
+        <img
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmN5HyE0yppTJYS-3NqZcD1KY6oB3wydKPN2GwAx5DOt9lAMqO4E7AXqGu6FKMrSx6t1n2nClIRDMKPjJRsGD6XzAQjtV5aeWqZs7iNk9Evf2hR1iVjTt9qeiUoCvm40N8X2HRUqEZXSTsaOx4ORcue7g848Gqrw5nrIEkoy5MZRKp0mqD5lZL3a4vUTtG3_c4HlfcP2ATC-zVesfjEQpeo8doHyS-g1V3RxGHQaKhciEZa7pjLzU0XlDw4bm1Vb_8TXmeeQuFKg"
+          alt="Logo El Rincón del Viajero" class="h-10 w-10"
+        />
+        <span class="text-xl font-bold">El Rincón del Viajero</span>
+      </div>
+
+      <nav class="flex flex-col gap-2" aria-label="Principal">
+        <a routerLink="/" class="side-link">
+          <span class="material-symbols-outlined">home</span>
+          <span class="text-base font-medium">Inicio</span>
+        </a>
+        <a routerLink="/explorar" class="side-link">
+          <span class="material-symbols-outlined">search</span>
+          <span class="text-base font-medium">Explorar</span>
+        </a>
+        <a routerLink="/favoritos" class="side-link">
+          <span class="material-symbols-outlined">favorite</span>
+          <span class="text-base font-medium">Favoritos</span>
+        </a>
+        <a routerLink="/viajes" class="side-link">
+          <span class="material-symbols-outlined">luggage</span>
+          <span class="text-base font-medium">Viajes</span>
+        </a>
+        <a routerLink="/chats" class="side-link active" aria-current="page">
+          <span class="material-symbols-outlined">chat</span>
+          <span class="text-base font-medium">Mensajes</span>
+        </a>
+      </nav>
+    </div>
+
+    <div class="flex flex-col gap-2">
+      <a routerLink="/crear" class="side-link">
+        <span class="material-symbols-outlined">add_circle</span>
+        <span class="text-base font-medium">Crear</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Content -->
+  <main class="flex-1 bg-white">
+    <div class="px-4 sm:px-6 lg:px-8 py-6 lg:py-8">
+      <header class="mb-6 lg:mb-8">
+        <h1 class="text-3xl lg:text-4xl font-bold tracking-tight">Mensajes</h1>
+      </header>
+
+      <!-- Search -->
+      <div class="mb-6">
+        <form role="search" aria-label="Buscar en tus chats">
+          <label class="relative block">
+            <span class="material-symbols-outlined input-icon">search</span>
+            <input
+              type="search"
+              class="input-pill pl-12"
+              placeholder="Buscar en tus chats"
+              aria-label="Buscar en tus chats"
+            />
+          </label>
+        </form>
+      </div>
+
+      <!-- Chats list -->
+      <section aria-labelledby="lista-chats" class="divide-y divide-gray-100">
+        <h2 id="lista-chats" class="sr-only">Lista de conversaciones</h2>
+
+        <!-- Item 1 -->
+        <a
+          routerLink="/chats/casa-de-campo-la-esperanza"
+          class="chat-row"
+          aria-label="Abrir chat: Casa de Campo La Esperanza, 1 mensaje sin leer"
+        >
+          <div class="avatar-lg" style="--img: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAGcbnHW-9UxaXJIJz3ec2inIJtqOKrGNxKZGo2c_mciEGOtL3RpwbFxdrrPqAkvDN9pwI-jnNRa0fuwviWkzcEtLaBK8XyDtC_u5lhTFAHswDqfXgsGGujtedHBkDm3ZiucObDzaJc4T-XLMBENloi2qhsOsDMgBFKyvb8mMJhcgL2zR5AgE6hvgjl41e4btahext-Th2qw5GYnokjkQ2tbAfvUHj67-6dADwVqH76rOwbvXfPGmUmY0Y9p77_jqQnrqGGHAp-kw');"></div>
+
+          <div class="flex-1 min-w-0">
+            <p class="truncate font-semibold text-lg">Casa de Campo La Esperanza</p>
+            <p class="truncate text-sm text-[color:var(--text-secondary)]">Hola, ¿cómo estás? Espero que todo vaya bien.</p>
+          </div>
+
+          <div class="flex flex-col items-end text-sm text-[color:var(--text-secondary)] shrink-0">
+            <span>10:30 AM</span>
+            <span class="unread-badge mt-1">1</span>
+          </div>
+        </a>
+
+        <!-- Item 2 -->
+        <a routerLink="/chats/apartamento-centro" class="chat-row" aria-label="Abrir chat: Apartamento en el Centro">
+          <div class="avatar-lg" style="--img: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCwiHa96XdzJDDaNFa5uLihCNoOHH8XiTr4uq-k5mxILNkIDUBKHDA4HLRzhS2lHkifWz1OK64QdIqjcUOnEcCEw6Ulb-J_qiityyCOkILulYEfL15lgRjZ-2KNUaChf0UzcmGozDSUvBh17lDKHmtGLC-qEMc5IIVAJ_66_1Vt0YAb601oE3tFhvbj2Vjndrw4STOfkqG_JedOXaT8zP0CKCgI-jYdaHeIydWiMh4b9vy-xn_Di3z_LyHVYWfECnGA3cHhrzT0tg');"></div>
+          <div class="flex-1 min-w-0">
+            <p class="truncate font-semibold text-lg">Apartamento en el Centro</p>
+            <p class="truncate text-sm text-[color:var(--text-secondary)]">¡Claro! La piscina estará abierta hasta las 8 PM.</p>
+          </div>
+          <span class="text-sm text-[color:var(--text-secondary)] shrink-0">Ayer</span>
+        </a>
+
+        <!-- Item 3 -->
+        <a routerLink="/chats/finca-el-paraiso" class="chat-row" aria-label="Abrir chat: Finca El Paraíso">
+          <div class="avatar-lg" style="--img: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCg6B7-o-Oz5aw1s1STdO7QMfvnXG4SWIsFX64o3vdn5KTc3cplPNVJ48v_rk5OKyBkSQHQWZ_gBAEFZk57QsUMQYv_LkTB-8uhE7ZxQxkwTYHJ-O_FRA4qaATn0p5RsEMpKx28LrpwWB8Lp4BhuT2VNO55sKiMX4IvtOr6O4DZxXi3EZrYf4XLxamCSEoubnCAEggLZfea5RlTG7QNeblXjf43ZpNfR7tUs7buL9X6MFbtzG2Dbfxk_pDHtijbLflSzvCpzzx1pg');"></div>
+          <div class="flex-1 min-w-0">
+            <p class="truncate font-semibold text-lg">Finca El Paraíso</p>
+            <p class="truncate text-sm text-[color:var(--text-secondary)]">Sí, hay un supermercado a solo 5 minutos caminando.</p>
+          </div>
+          <span class="text-sm text-[color:var(--text-secondary)] shrink-0">2d</span>
+        </a>
+
+        <!-- Item 4 -->
+        <a routerLink="/chats/hotel-boutique-villa-del-sol" class="chat-row" aria-label="Abrir chat: Hotel Boutique Villa del Sol">
+          <div class="avatar-lg" style="--img: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA-WtaCTMRHYXu-Cb5vNbRyZyM8gDCyohMtvGogu82D5qNAsbBlYfEtt3QRZ8ZWubLaWb6v8Ikxi_LOaijUiwCQuLviO26aWYlsc6rvd6dkHyrQHfSR9ihyeqgd70a4HoceIhU4ejUwC174YdWxq-GmH3P46TJQnTwU3cSWt9WCVYXtnxAbg6lcDl9W6X_MaiCzT_pYNzhR9KHmOps1YG2Sj0I6WWIP-o8LPYXTFayxMS91WdWHN_0oEJt6RoKiJBieOQvHYSe9Ag');"></div>
+          <div class="flex-1 min-w-0">
+            <p class="truncate font-semibold text-lg">Hotel Boutique Villa del Sol</p>
+            <p class="truncate text-sm text-[color:var(--text-secondary)]">El check-out es a las 11 AM, pero podemos ser flexibles si no hay reservas.</p>
+          </div>
+          <span class="text-sm text-[color:var(--text-secondary)] shrink-0">1s</span>
+        </a>
+      </section>
+    </div>
+  </main>
+</section>
+

@@ -1,1 +1,152 @@
-<p>my-account-guest works!</p>
+<section class="min-h-screen bg-gray-50 text-gray-800 flex flex-col">
+  <!-- Header -->
+  <header class="bg-white shadow-sm border-b border-gray-200">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10 py-3 flex items-center justify-between">
+      <a routerLink="/" class="flex items-center gap-3 text-gray-900 focus-ring rounded" aria-label="Ir al inicio">
+        <svg class="h-8 w-8 text-primary" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"/>
+        </svg>
+        <h1 class="text-xl font-bold leading-tight tracking-tight">El Rincón del Viajero</h1>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6" aria-label="Principal">
+        <a routerLink="/" class="nav-link" aria-current="page">Inicio</a>
+        <a routerLink="/experiencias" class="nav-link">Experiencias</a>
+      </nav>
+
+      <div class="flex items-center justify-end gap-4">
+        <!-- Search -->
+        <form class="hidden md:flex items-center" role="search" aria-label="Buscar">
+          <label class="relative block w-full">
+            <span class="material-symbols-outlined input-icon">search</span>
+            <input
+              class="input-chip pl-10"
+              type="search"
+              placeholder="Buscar"
+              aria-label="Buscar"
+            />
+          </label>
+        </form>
+
+        <!-- Language -->
+        <button type="button" class="hidden sm:flex icon-btn" aria-label="Cambiar idioma">
+          <span class="material-symbols-outlined text-xl">language</span>
+        </button>
+
+        <!-- Account -->
+        <button type="button" class="account-btn" aria-haspopup="menu" aria-expanded="false">
+          <div
+            class="avatar"
+            style="--avatar-url: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA9AINKTC9EL3qYCeXqnwp8Oyq1k7utktxcRY3ldvchae5piDnA2kxJ0Qd1RYZGw1ZDTdsvGgv4v9n5NDHWcm0OqrIKE5gp6aTsLzsfvGlzqOYHbUtyX_OqxCcvaf4atnwkeoW4OYU4fJ56E31lIXkLPGso4bKBXtnlx6VN3dWIhSfdpZfUytu-ki0G-ilhQ8wDzUpGG6kZE-Y3lbwTJs1XoI0cL1Xq-TSAH2rPvrAk9A-uAL2T8Xo-RqXAfedrLZj6m-5Q2PuMeA');"
+          ></div>
+          <span class="hidden lg:inline font-semibold text-sm">Mi Cuenta</span>
+          <span class="material-symbols-outlined hidden lg:inline">expand_more</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="flex-1 px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+    <div class="mx-auto max-w-4xl">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-8">Mi Cuenta</h2>
+
+      <div class="grid grid-cols-1 gap-4">
+        <!-- Lista principal -->
+        <section class="bg-white rounded-lg shadow-sm overflow-hidden" aria-labelledby="mi-cuenta-lista">
+          <h3 id="mi-cuenta-lista" class="sr-only">Opciones de mi cuenta</h3>
+          <ul class="divide-y divide-gray-200">
+            <li class="group">
+              <a routerLink="/cuenta/reservas" class="row-link">
+                <div class="row-left">
+                  <div class="chip-icon">
+                    <span class="material-symbols-outlined">bookmark</span>
+                  </div>
+                  <span class="row-text">Mis reservas</span>
+                </div>
+                <span class="material-symbols-outlined row-chevron">chevron_right</span>
+              </a>
+            </li>
+
+            <li class="group">
+              <a routerLink="/cuenta/chats" class="row-link">
+                <div class="row-left">
+                  <div class="chip-icon">
+                    <span class="material-symbols-outlined">chat</span>
+                  </div>
+                  <span class="row-text">Mis chats</span>
+                </div>
+                <span class="material-symbols-outlined row-chevron">chevron_right</span>
+              </a>
+            </li>
+
+            <li class="group">
+              <a routerLink="/cuenta/configuracion" class="row-link">
+                <div class="row-left">
+                  <div class="chip-icon">
+                    <span class="material-symbols-outlined">settings</span>
+                  </div>
+                  <span class="row-text">Configuración de mi cuenta</span>
+                </div>
+                <span class="material-symbols-outlined row-chevron">chevron_right</span>
+              </a>
+            </li>
+
+            <li class="group">
+              <a routerLink="/cuenta/notificaciones" class="row-link">
+                <div class="row-left">
+                  <div class="chip-icon">
+                    <span class="material-symbols-outlined">notifications</span>
+                  </div>
+                  <span class="row-text">Notificaciones</span>
+                </div>
+                <span class="material-symbols-outlined row-chevron">chevron_right</span>
+              </a>
+            </li>
+
+            <li class="group">
+              <a routerLink="/cuenta/pagos" class="row-link">
+                <div class="row-left">
+                  <div class="chip-icon">
+                    <span class="material-symbols-outlined">credit_card</span>
+                  </div>
+                  <span class="row-text">Métodos de pago</span>
+                </div>
+                <span class="material-symbols-outlined row-chevron">chevron_right</span>
+              </a>
+            </li>
+
+            <li class="group">
+              <a routerLink="/cuenta/valoraciones" class="row-link">
+                <div class="row-left">
+                  <div class="chip-icon">
+                    <span class="material-symbols-outlined">star</span>
+                  </div>
+                  <span class="row-text">Historial de valoraciones</span>
+                </div>
+                <span class="material-symbols-outlined row-chevron">chevron_right</span>
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Modo anfitrión -->
+        <section class="bg-white rounded-lg shadow-sm" aria-labelledby="modo-anfitrion">
+          <h3 id="modo-anfitrion" class="sr-only">Modo anfitrión</h3>
+          <a routerLink="/anfitrion" class="row-link">
+            <div class="row-left">
+              <div class="chip-icon">
+                <span class="material-symbols-outlined">house</span>
+              </div>
+              <div>
+                <span class="row-text">Modo Anfitrión</span>
+                <p class="text-sm text-gray-500">Administra tus propiedades y reservas.</p>
+              </div>
+            </div>
+            <span class="material-symbols-outlined row-chevron">chevron_right</span>
+          </a>
+        </section>
+      </div>
+    </div>
+  </main>
+</section>

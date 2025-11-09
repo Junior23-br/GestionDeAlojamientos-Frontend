@@ -1,0 +1,128 @@
+:host {
+  /* ===== Design token ===== */
+  --primary-color: #1ed275;
+
+  display: block;
+  background: #f9fafb; /* gray-50 */
+  color: #111827; /* gray-900 */
+  font-family: "Plus Jakarta Sans", "Noto Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ===== Accesibilidad (focus) ===== */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  @apply outline-none ring-2 ring-offset-2;
+  --tw-ring-color: var(--primary-color);
+}
+
+/* ===== Nav links ===== */
+.nav-link {
+  @apply text-gray-600 hover:text-gray-900 text-base font-medium transition-colors;
+}
+
+/* ===== Avatar ===== */
+.avatar-btn {
+  @apply focus:outline-none rounded-full border-2 border-transparent hover:border-[var(--primary-color)] transition-all size-11;
+}
+.avatar-img {
+  @apply block rounded-full bg-center bg-cover w-full h-full;
+  background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC3uv-Q3UbUCV9GS4mD9ueuky16svPa2Jn59ZcVjmALDWiiCHb3ifUxHfzr_9sgyL_DdBDg2S6DU-gAdBraSEyqWW3kXSwvehs6pZV7OBqr183ZvDgqARmgeuOpiWdhGwnLOYWsWOEcK2vN0xBLn3-juqebMvCfAFqzuCWtPATuwoKAI2hlPNVQ0tZMi5VLYxi0h-AFPYmzXBhHrsxQzPnWHe1CMK5fxxQgxRVpoZrRb75vjV812xkyoJXqNGHpRVweCMb_Cy1dlw");
+}
+
+/* ===== Tabs (sin JS, accesibles) ===== */
+.tabs-list {
+  @apply -mb-px flex space-x-8;
+}
+
+/* Radios ocultos controlan estado */
+.tab-input {
+  @apply sr-only;
+}
+
+/* Estilo base de tab */
+.tab-label {
+  @apply whitespace-nowrap py-4 px-1 border-b-2 border-transparent text-base font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 cursor-pointer;
+}
+
+/* Estado seleccionado usando combinadores (orden fijo: activas, canceladas, realizadas) */
+#tab-activas:checked ~ label[for="tab-activas"] {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  @apply font-semibold;
+}
+#tab-canceladas:checked ~ label[for="tab-canceladas"] {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  @apply font-semibold;
+}
+#tab-realizadas:checked ~ label[for="tab-realizadas"] {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  @apply font-semibold;
+}
+
+/* Paneles (visibilidad controlada por :checked + IDs) */
+.tab-panel { @apply pt-6; }
+
+/* Mostrar/ocultar con :has() para navegadores modernos y con clases helper como fallback */
+:host .tab-panel { display: none; }
+#tab-activas:checked ~ #panel-activas,
+#tab-canceladas:checked ~ #panel-canceladas,
+#tab-realizadas:checked ~ #panel-realizadas {
+  display: block;
+}
+
+/* Fallback helper (se mantiene oculto por defecto en HTML con .hidden) */
+#panel-activas.hidden,
+#panel-canceladas.hidden,
+#panel-realizadas.hidden {
+  display: none;
+}
+
+/* ===== Cards de reserva ===== */
+.booking-card {
+  @apply  block rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 border border-gray-200 bg-white;
+  @apply flex items-stretch justify-between gap-6 flex-col sm:flex-row;
+}
+.booking-body {
+  @apply flex flex-col flex-[2_2_0px] p-6 justify-between;
+}
+.booking-title {
+  @apply text-xl font-bold text-gray-800 group-hover:text-[var(--primary-color)] transition-colors;
+}
+.booking-sub {
+  @apply text-gray-600 text-base mt-1;
+}
+.btn-ghost {
+  @apply flex items-center gap-2 mt-4 min-w-[84px] max-w-[480px] justify-center overflow-hidden rounded-lg h-10 px-4
+  bg-gray-100 text-gray-700 text-base font-medium hover:bg-gray-200 transition-colors w-fit focus:outline-none focus:ring-2;
+  --tw-ring-color: var(--primary-color);
+}
+
+/* Imagen de la card (background-image aquí, sin inline) */
+.booking-image {
+  @apply w-full flex-1 min-h-[200px] bg-center bg-no-repeat bg-cover;
+}
+
+/* Variantes de imagen (mismas del diseño original) */
+.img--refugio {
+  background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDhP9UrDesaK_s0r0w020ZbrDf5FeQffRp6NZUvEmgkvOHvVpTzes_hZUvbmAIpttV1V-LIlQGA2O3FPUp6kdns7EtpGJ3stzIRk1DjEc0oWP88WPbcq933UQb_i_oC7uREdYjNsFjzGTroQOeBkwpPlinWnHEQAoO5zS4zxexytD1gYgZATcAO9PwiSB7mITnGvpCt0Er2Qj9PFCDhn3W3ADtfpShcEehV9ILvOo9Sn2rWpxEKr-SAD2FZaNRFYh7jufhQ-PU9hg");
+}
+.img--esperanza {
+  background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCHcgqwqD1ZOe80Nen-zUysoGIvuv1wgRpAlZxGP4e-5GpnTI6GYxjt3QiZkUgfeAXVD76iXBhxht6egTy_MakvPuZXQz-nAvl_Ij6FRrxzO6ZLR8Hi8-wvjubGbRoT2T1M7RPqMPsPDWdgt0uz3DBO40iTXjmiR_JMoqI_ccvCmuTcov9vyiY-qs_8fJLr6U7EkHJnkavgpHp1_doEiAl-jfAbyDO7cTs2HOYqjMtZNZ1rHl_kovQla3oN0yuX_-MfZ-t8jEMg7Q");
+}
+.img--vista {
+  background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBj3tsoDVNsQ_MQTrGhP5XCv5BO2hX8Rik4wu8FbBfRMBdEu6w2GEWFJL2v7X0Cfs6qFpEmJKhouXdlv7j_dWAOvMhMucCkm4jfkDXW01dD-7X5-AF8wtT6M_U205xA_SuNdu1RXB4aaSacLxkOQzDopJjSsOtmcm_sG6CQMcWZSiv4UZWIvJRHOpN2hlf3qOBiJjw1YMIxwOr2jOZ-M05Pte4nPM24t6OSodJd2lK0tWcbnnctv-3LA1iV_2pbXPHGYMsYJBEL7A");
+}
+
+/* ===== Material Symbols (peso normal, no relleno) ===== */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;
+}
+
+/* ===== Micro-responsividad ===== */
+@screen md {
+  .booking-card { @apply flex-row; }
+}
+

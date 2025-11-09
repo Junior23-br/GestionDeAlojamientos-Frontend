@@ -1,0 +1,62 @@
+:host {
+  /* Tokens */
+  --primary-color: #1ed275;
+
+  @apply block bg-gray-50 text-gray-900;
+  font-family: "Plus Jakarta Sans", "Noto Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+/* Accesibilidad: focus visible consistente */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  @apply outline-none ring-2 ring-offset-2;
+  --tw-ring-color: var(--primary-color);
+}
+
+/* Utilidades propias para mantener el diseño exacto */
+.nav-link {
+  @apply text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors;
+}
+
+/* Botones acciones */
+.btn-primary {
+  @apply flex w-full sm:w-auto items-center justify-center rounded-lg h-12 px-6
+  text-sm font-bold text-white shadow-sm transition-colors;
+  @apply bg-[var(--primary-color)] hover:bg-green-600;
+}
+.btn-secondary {
+  @apply flex w-full sm:w-auto items-center justify-center rounded-lg h-12 px-6
+  text-sm font-bold bg-gray-100 text-gray-800 hover:bg-gray-200 transition-colors;
+}
+
+/* Botón icono (eliminar) */
+.icon-btn {
+  @apply text-gray-500 hover:text-red-600 rounded p-1 focus-visible:ring-2;
+  --tw-ring-color: var(--primary-color);
+}
+
+/* Avatar */
+.avatar-btn {
+  @apply rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--primary-color)];
+  @apply h-10 w-10;
+}
+.avatar-img {
+  @apply block rounded-full w-full h-full bg-center bg-cover;
+  background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDhqwqE2rDdfCJmt6GR7gJE7viaXdecPPNLkfmAo7oqVXaoZhZunH6WLaZWtS-h8CtLF0w5EKjjr-cOq96cgfgEOt3oaeUQiGza5HNE4lGWVLaZsAbv22wlIT6dPZBVbXKEDp1wNFRJeKAlF_vHSk5VLg0FTQBCIbhkGiPk8XGKodkSy__hOLuolEQ90tg8c5rWMWdIVG_rY-dv3iCncXYByIT4XDgt4eNC1d2Z6_bpSCCrB2K-BnL3rYxUEbdNaJ1HNTXUkz4QCw");
+}
+
+/* Material Symbols: peso normal, sin relleno */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;
+}
+
+/* Footer links */
+.footer-link {
+  @apply hover:text-gray-900 focus-visible:ring-2 focus-visible:ring-[var(--primary-color)] rounded;
+}
+
+/* Pequeñas mejoras responsivas */
+@screen md {
+  /* ejemplo: nada extra requerido, mantenemos layout tal cual diseño */
+}

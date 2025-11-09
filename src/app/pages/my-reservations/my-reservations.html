@@ -1,0 +1,214 @@
+<!-- Enlace Skip -->
+<a class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 px-3 py-2 rounded-md bg-black text-white"
+   routerLink="." fragment="contenido">
+  Saltar al contenido
+</a>
+
+<section class="min-h-screen w-full bg-gray-50 text-gray-800 flex flex-col group">
+  <!-- Header -->
+  <header class="sticky top-0 z-40 flex items-center justify-between border-b border-gray-200 px-4 sm:px-6 lg:px-10 py-4 bg-white shadow-sm">
+    <div class="flex items-center gap-8">
+      <a class="flex items-center gap-3 text-gray-800" routerLink="/">
+        <svg class="w-8 h-8 text-[var(--primary-color)]" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"/>
+        </svg>
+        <h1 class="text-xl font-bold leading-tight tracking-tight">El Rincón del Viajero</h1>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8" aria-label="Principal">
+        <a class="nav-link" routerLink="/">Inicio</a>
+        <a class="nav-link" routerLink="/explorar">Explorar</a>
+        <a class="nav-link" routerLink="/favoritos">Favoritos</a>
+        <a class="nav-link" routerLink="/mensajes">Mensajes</a>
+      </nav>
+    </div>
+
+    <div class="flex items-center gap-6">
+      <!-- Search -->
+      <label class="relative min-w-40 max-w-64" aria-label="Buscar">
+        <span class="material-symbols-outlined absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500 pointer-events-none">search</span>
+        <input
+          class="w-full rounded-full border-gray-300 bg-gray-100 py-2 pl-10 pr-4 text-gray-800 placeholder-gray-500
+                 focus:border-[var(--primary-color)] focus:ring-[var(--primary-color)]"
+          type="search" placeholder="Buscar" />
+      </label>
+
+      <!-- Avatar -->
+      <button type="button" class="avatar-btn" aria-label="Abrir menú de usuario">
+        <span class="avatar-img"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main id="contenido" class="flex-1">
+    <div class="mx-auto max-w-[960px] px-4 sm:px-6 lg:px-8 py-10">
+      <h2 class="text-gray-900 text-3xl sm:text-4xl font-bold leading-tight mb-6">Mis Reservas</h2>
+
+      <!-- Tabs accesibles sin JS -->
+      <div class="border-b border-gray-200">
+        <div role="tablist" aria-label="Reservas" class="tabs-list">
+          <!-- Radios ocultos para control de pestañas -->
+          <input id="tab-activas" class="tab-input" type="radio" name="tabs" checked aria-controls="panel-activas" />
+          <label class="tab-label" for="tab-activas" id="label-activas" role="tab" aria-selected="true" tabindex="0">
+            Activas
+          </label>
+
+          <input id="tab-canceladas" class="tab-input" type="radio" name="tabs" aria-controls="panel-canceladas" />
+          <label class="tab-label" for="tab-canceladas" id="label-canceladas" role="tab" aria-selected="false" tabindex="-1">
+            Canceladas
+          </label>
+
+          <input id="tab-realizadas" class="tab-input" type="radio" name="tabs" aria-controls="panel-realizadas" />
+          <label class="tab-label" for="tab-realizadas" id="label-realizadas" role="tab" aria-selected="false" tabindex="-1">
+            Realizadas
+          </label>
+        </div>
+      </div>
+
+      <!-- Panels -->
+      <section id="panel-activas" role="tabpanel" aria-labelledby="label-activas" class="tab-panel">
+        <div class="grid grid-cols-1 gap-8">
+          <!-- Card 1 -->
+          <article class="booking-card" aria-label="Cabaña El Refugio, Armenia, Quindío">
+            <div class="booking-body">
+              <div>
+                <h3 class="booking-title">Cabaña El Refugio</h3>
+                <p class="booking-sub">Armenia, Quindío • 2 noches • 15-17 de julio</p>
+              </div>
+              <button type="button" class="btn-ghost" aria-label="Contactar al anfitrión de Cabaña El Refugio">
+                <span class="material-symbols-outlined text-xl">chat_bubble_outline</span>
+                <span>Contactar al anfitrión</span>
+              </button>
+            </div>
+            <div class="booking-image img--refugio" role="img" aria-label="Foto de Cabaña El Refugio"></div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="booking-card" aria-label="Finca La Esperanza, Salento, Quindío">
+            <div class="booking-body">
+              <div>
+                <h3 class="booking-title">Finca La Esperanza</h3>
+                <p class="booking-sub">Salento, Quindío • 3 noches • 20-23 de agosto</p>
+              </div>
+              <button type="button" class="btn-ghost" aria-label="Contactar al anfitrión de Finca La Esperanza">
+                <span class="material-symbols-outlined text-xl">chat_bubble_outline</span>
+                <span>Contactar al anfitrión</span>
+              </button>
+            </div>
+            <div class="booking-image img--esperanza" role="img" aria-label="Foto de Finca La Esperanza"></div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="booking-card" aria-label="Apartamento Vista Hermosa, Pereira, Risaralda">
+            <div class="booking-body">
+              <div>
+                <h3 class="booking-title">Apartamento Vista Hermosa</h3>
+                <p class="booking-sub">Pereira, Risaralda • 2 noches • 5-7 de septiembre</p>
+              </div>
+              <button type="button" class="btn-ghost" aria-label="Contactar al anfitrión de Apartamento Vista Hermosa">
+                <span class="material-symbols-outlined text-xl">chat_bubble_outline</span>
+                <span>Contactar al anfitrión</span>
+              </button>
+            </div>
+            <div class="booking-image img--vista" role="img" aria-label="Foto de Apartamento Vista Hermosa"></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="panel-canceladas" role="tabpanel" aria-labelledby="label-canceladas" class="tab-panel hidden">
+        <div class="grid grid-cols-1 gap-8">
+          <!-- Mismo contenido solicitado -->
+          <article class="booking-card" aria-label="Cabaña El Refugio, Armenia, Quindío">
+            <div class="booking-body">
+              <div>
+                <h3 class="booking-title">Cabaña El Refugio</h3>
+                <p class="booking-sub">Armenia, Quindío • 2 noches • 15-17 de julio</p>
+              </div>
+              <button type="button" class="btn-ghost" aria-label="Contactar al anfitrión de Cabaña El Refugio">
+                <span class="material-symbols-outlined text-xl">chat_bubble_outline</span>
+                <span>Contactar al anfitrión</span>
+              </button>
+            </div>
+            <div class="booking-image img--refugio" role="img" aria-label="Foto de Cabaña El Refugio"></div>
+          </article>
+
+          <article class="booking-card" aria-label="Finca La Esperanza, Salento, Quindío">
+            <div class="booking-body">
+              <div>
+                <h3 class="booking-title">Finca La Esperanza</h3>
+                <p class="booking-sub">Salento, Quindío • 3 noches • 20-23 de agosto</p>
+              </div>
+              <button type="button" class="btn-ghost" aria-label="Contactar al anfitrión de Finca La Esperanza">
+                <span class="material-symbols-outlined text-xl">chat_bubble_outline</span>
+                <span>Contactar al anfitrión</span>
+              </button>
+            </div>
+            <div class="booking-image img--esperanza" role="img" aria-label="Foto de Finca La Esperanza"></div>
+          </article>
+
+          <article class="booking-card" aria-label="Apartamento Vista Hermosa, Pereira, Risaralda">
+            <div class="booking-body">
+              <div>
+                <h3 class="booking-title">Apartamento Vista Hermosa</h3>
+                <p class="booking-sub">Pereira, Risaralda • 2 noches • 5-7 de septiembre</p>
+              </div>
+              <button type="button" class="btn-ghost" aria-label="Contactar al anfitrión de Apartamento Vista Hermosa">
+                <span class="material-symbols-outlined text-xl">chat_bubble_outline</span>
+                <span>Contactar al anfitrión</span>
+              </button>
+            </div>
+            <div class="booking-image img--vista" role="img" aria-label="Foto de Apartamento Vista Hermosa"></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="panel-realizadas" role="tabpanel" aria-labelledby="label-realizadas" class="tab-panel hidden">
+        <div class="grid grid-cols-1 gap-8">
+          <!-- Mismo contenido solicitado -->
+          <article class="booking-card" aria-label="Cabaña El Refugio, Armenia, Quindío">
+            <div class="booking-body">
+              <div>
+                <h3 class="booking-title">Cabaña El Refugio</h3>
+                <p class="booking-sub">Armenia, Quindío • 2 noches • 15-17 de julio</p>
+              </div>
+              <button type="button" class="btn-ghost" aria-label="Contactar al anfitrión de Cabaña El Refugio">
+                <span class="material-symbols-outlined text-xl">chat_bubble_outline</span>
+                <span>Contactar al anfitrión</span>
+              </button>
+            </div>
+            <div class="booking-image img--refugio" role="img" aria-label="Foto de Cabaña El Refugio"></div>
+          </article>
+
+          <article class="booking-card" aria-label="Finca La Esperanza, Salento, Quindío">
+            <div class="booking-body">
+              <div>
+                <h3 class="booking-title">Finca La Esperanza</h3>
+                <p class="booking-sub">Salento, Quindío • 3 noches • 20-23 de agosto</p>
+              </div>
+              <button type="button" class="btn-ghost" aria-label="Contactar al anfitrión de Finca La Esperanza">
+                <span class="material-symbols-outlined text-xl">chat_bubble_outline</span>
+                <span>Contactar al anfitrión</span>
+              </button>
+            </div>
+            <div class="booking-image img--esperanza" role="img" aria-label="Foto de Finca La Esperanza"></div>
+          </article>
+
+          <article class="booking-card" aria-label="Apartamento Vista Hermosa, Pereira, Risaralda">
+            <div class="booking-body">
+              <div>
+                <h3 class="booking-title">Apartamento Vista Hermosa</h3>
+                <p class="booking-sub">Pereira, Risaralda • 2 noches • 5-7 de septiembre</p>
+              </div>
+              <button type="button" class="btn-ghost" aria-label="Contactar al anfitrión de Apartamento Vista Hermosa">
+                <span class="material-symbols-outlined text-xl">chat_bubble_outline</span>
+                <span>Contactar al anfitrión</span>
+              </button>
+            </div>
+            <div class="booking-image img--vista" role="img" aria-label="Foto de Apartamento Vista Hermosa"></div>
+          </article>
+        </div>
+      </section>
+    </div>
+  </main>
+</section>

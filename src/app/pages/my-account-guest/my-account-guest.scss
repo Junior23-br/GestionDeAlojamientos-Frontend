@@ -1,0 +1,87 @@
+:host {
+  /* ===== Tokens ===== */
+  --primary-color: #1ed275;
+
+  /* Carga tipográfica global fuera del componente.
+     Aquí solo aplicamos familia por defecto si procede */
+  font-family: "Plus Jakarta Sans", "Noto Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  display: block;
+  color: #1f2937; /* gray-800 */
+  background: #f9fafb; /* gray-50 */
+}
+
+/* ===== Utilidades semánticas (evitan inline styles) ===== */
+.text-primary { color: var(--primary-color); }
+
+/* Navegación */
+.nav-link {
+  @apply text-sm font-medium text-gray-600 transition-colors;
+  &:hover { @apply text-gray-900; }
+  &:focus-visible { @apply ring-2 ring-offset-2; }
+  --tw-ring-color: var(--primary-color);
+}
+
+/* Input pill (buscador) */
+.input-chip {
+  @apply flex w-full min-w-0 rounded-full h-10 bg-gray-100 text-gray-900 placeholder:text-gray-500
+  text-sm border border-transparent focus:outline-none focus:ring-2 pl-10 pr-4;
+  --tw-ring-color: var(--primary-color);
+}
+.input-icon {
+  @apply absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none;
+}
+
+/* Botones de icono / cuenta */
+.icon-btn {
+  @apply inline-flex items-center justify-center rounded-full h-10 w-10 text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition;
+  &:focus-visible { @apply ring-2 ring-offset-2; }
+  --tw-ring-color: var(--primary-color);
+}
+.account-btn {
+  @apply inline-flex items-center gap-2 focus:outline-none;
+  &:focus-visible { @apply ring-2 ring-offset-2 rounded-md; }
+  --tw-ring-color: var(--primary-color);
+}
+
+/* Avatar con CSS var para la imagen (evita inline style repetitivo) */
+.avatar {
+  @apply h-10 w-10 rounded-full bg-center bg-cover border-2 border-gray-200 transition-colors;
+  background-image: var(--avatar-url);
+}
+.account-btn:hover .avatar { border-color: var(--primary-color); }
+
+/* Fila de lista (enlaces a secciones de cuenta) */
+.row-link {
+  @apply flex items-center justify-between p-4 sm:p-5 hover:bg-gray-50 transition-colors duration-200 focus:outline-none;
+  &:focus-visible { @apply ring-2 ring-offset-2; }
+  --tw-ring-color: var(--primary-color);
+}
+.row-left { @apply flex items-center gap-4; }
+.row-text { @apply text-base font-medium text-gray-800; }
+.row-chevron { @apply text-gray-400 group-hover:text-gray-600 transition-colors; }
+
+/* Chip de icono (círculo verde claro con icono principal) */
+.chip-icon {
+  @apply flex items-center justify-center shrink-0 h-12 w-12 rounded-full bg-green-100;
+  color: var(--primary-color);
+}
+
+/* Accesibilidad: focus consistente para elementos interactivos genéricos */
+.focus-ring,
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  @apply outline-none ring-2 ring-offset-2;
+  --tw-ring-color: var(--primary-color);
+}
+
+/* Material Symbols (si ya cargas la fuente globalmente) */
+/* Mantén este bloque si usas Material Symbols */
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+}
+
