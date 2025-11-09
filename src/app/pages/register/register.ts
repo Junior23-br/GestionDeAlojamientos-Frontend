@@ -28,7 +28,7 @@ export class Register {
   email = '';
   password = '';
   telefono = '';
-  rol = 'GUEST';
+  rol = '';
   fechaNacimiento = '';
   aceptaTerminos = false;
   recibeNotificaciones = false;
@@ -62,16 +62,19 @@ export class Register {
 
     if (this.registerForm.valid) {
       console.log('Formulario válido:', this.registerForm.value);
-      this.userService.registerGuest(
-        {    
-        name: this.nombre,
-        phoneNumber: this.telefono,
-        birthDate: this.fechaNacimiento,
-        email: this.email,
-        password: this.password,
-        role: this.rol,
-        urlProfilePhoto: null,
-      }).subscribe({
+
+      if(this.rol !== 'GUEST'){
+        this.userService.registerHost(
+        {
+          name: this.nombre,
+          phoneNumber: this.telefono,
+          birthDate: this.fechaNacimiento,
+          email: this.email,
+          personalDescription: "",
+          password: this.password,
+          role: this.rol,
+        }
+      ).subscribe({
           next: (response) => {
             console.log('Usuario registrado con éxito:', response);
           },
@@ -79,8 +82,27 @@ export class Register {
             console.error('Error al registrar el usuario:', error);
           }
         });
-      alert(`Usuario registrado: ${this.registerForm.value.nombre}`);
-      this.registerForm.reset();
+      }else{
+        this.userService.registerGuest(
+          {    
+          name: this.nombre,
+          phoneNumber: this.telefono,
+          birthDate: this.fechaNacimiento,
+          email: this.email,
+          password: this.password,
+          role: this.rol,
+          urlProfilePhoto: null,
+        }).subscribe({
+            next: (response) => {
+              console.log('Usuario registrado con éxito:', response);
+            },
+            error: (error) => {
+              console.error('Error al registrar el usuario:', error);
+            }
+          });
+        alert(`Usuario registrado: ${this.registerForm.value.nombre}`);
+        this.registerForm.reset();
+      }
     } else {
       alert('Por favor completa todos los campos correctamente.');
     }

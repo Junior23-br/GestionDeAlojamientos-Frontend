@@ -27,7 +27,7 @@ export class Login {
 
   onSubmit() {
     this.userService.loginGuest({
-    email: this.email,
+    email: this.email, 
     password: this.password}).subscribe({
       next: (response) => {
         console.log('Usuario logueado con éxito:', response);
@@ -35,11 +35,6 @@ export class Login {
       error: (error) => {
         console.error('Error al loguear el usuario:', error);
       }
-    });
-
-    console.log({
-      email: this.email,
-      password: this.password
     });
   }
 }

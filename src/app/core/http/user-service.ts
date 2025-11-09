@@ -17,4 +17,11 @@ export class AuthService {
   loginGuest(obj: Object): Observable<any> {
     return this.http.post(this.apiUrl+'/guest/login', obj);
   }
+  registerHost(obj: Object): Observable<any> {
+    return this.http.post(this.apiUrl+'/host/signup', obj);
+  }
+
+  loginHost(obj: Object): Observable<any> {
+    return this.http.post(this.apiUrl+'/host/login', obj);
+  }
 }
