@@ -73,7 +73,7 @@ export class Register {
           birthDate: this.fechaNacimiento,
           email: this.email,
           personalDescription: "",
-          password: this.password,
+          password: this.password,  
           role: this.rol,
         }
       ).subscribe({

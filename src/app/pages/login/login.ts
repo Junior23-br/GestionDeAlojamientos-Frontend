@@ -27,12 +27,19 @@ export class Login {
   constructor(private userService: AuthService,
   private router:Router) {}
 
-  onSubmit() {
+  onSubmit() {}
+  
+  onForgotPassword() {
+    this.router.navigate(['/restore-password']).then(r =>"Pagina no accesible, error 404: Not Found Page" );
+  }
+
+  goToMyAccountGuest() {
     this.userService.loginGuest({
     email: this.email, 
     password: this.password}).subscribe({
       next: (response) => {
         console.log('Usuario logueado con éxito:', response);
+        this.router.navigate(['/my-account-guest']).then(r =>"Pagina no accesible, error 404: Not Found Page");
       },
       error: (error) => {
         console.error('Error al loguear el usuario:', error);
@@ -40,15 +47,17 @@ export class Login {
     });
   }
 
-  onForgotPassword() {
-    this.router.navigate(['/restore-password']).then(r =>"Pagina no accesible, error 404: Not Found Page" );
-  }
-
-  goToMyAccountGuest() {
-    this.router.navigate(['/my-account-guest']).then(r =>"Pagina no accesible, error 404: Not Found Page");
-  }
-
   goToMyAccountHost() {
-    this.router.navigate(['/my-account-host']).then(r =>"Pagina no accesible, error 404: Not Found Page");
+    this.userService.loginHost({
+    email: this.email, 
+    password: this.password}).subscribe({
+      next: (response) => {
+        console.log('Usuario logueado con éxito:', response);
+        this.router.navigate(['/my-account-host']).then(r =>"Pagina no accesible, error 404: Not Found Page");
+      },
+      error: (error) => {
+        console.error('Error al loguear el usuario:', error);
+      }
+    });
   }
 }
