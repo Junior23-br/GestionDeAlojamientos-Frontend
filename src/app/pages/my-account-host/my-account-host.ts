@@ -46,4 +46,8 @@ export class MyAccountHost {
     this.router.navigate(['/my-chats']).then(r =>"Pagina no accesible, error 404: Not Found Page" );;
 
   }
+
+  goToControlPanel() {
+    this.router.navigate(['/control-panel']).then(r =>"Pagina no accesible, error 404: Not Found Page" );;
+  }
 }

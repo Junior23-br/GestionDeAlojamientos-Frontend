@@ -23,15 +23,10 @@
         <a class="nav-link" routerLink="/">Inicio</a>
         <a class="nav-link" routerLink="/explorar">Explorar</a>
         <a class="nav-link" routerLink="/favoritos">Favoritos</a>
-        <a class="nav-link" routerLink="/mensajes">Mensajes</a>
       </nav>
 
       <div class="flex items-center gap-4">
-        <button type="button"
-                class="icon-btn bg-[var(--secondary-color)] text-[var(--text-primary)] hover:bg-gray-200"
-                aria-label="Notificaciones">
-          <span class="material-symbols-outlined" aria-hidden="true">notifications</span>
-        </button>
+
 
         <button type="button" class="rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--primary-color)]">
           <img
@@ -55,30 +50,32 @@
 
       <!-- Acciones rápidas -->
       <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <a class="quick-card group" routerLink="/alojamientos/crear" role="button" aria-label="Crear alojamiento">
-          <div class="pill-icon bg-[var(--primary-color)] text-white group-hover:scale-105">
-            <span class="material-symbols-outlined text-3xl" aria-hidden="true">add_home</span>
-          </div>
-          <h3 class="quick-card-title">Crear alojamiento</h3>
-        </a>
 
-        <a class="quick-card group" routerLink="/reservas" aria-label="Ver resumen de reservas">
+        <li class="group" (click)="goToCreateAccomodation()">
+          <a class="quick-card group"  role="button" aria-label="Crear alojamiento">
+            <div class="pill-icon bg-[var(--primary-color)] text-white group-hover:scale-105">
+            </div>
+            <h3 class="quick-card-title">Crear alojamiento</h3>
+          </a>
+        </li>
+
+        <li class="group" (click)="goToMyReservations()">
+          <a class="quick-card group" routerLink="/reservas" aria-label="Ver resumen de reservas">
           <div class="pill-icon bg-[var(--secondary-color)] text-[var(--text-primary)] group-hover:bg-[var(--primary-color)] group-hover:text-white">
-            <span class="material-symbols-outlined text-3xl" aria-hidden="true">book_online</span>
           </div>
           <h3 class="quick-card-title">Resumen de reservas</h3>
         </a>
+        </li>
 
+        <li class="group" (click)="goToMyAccomodations()">
         <a class="quick-card group" routerLink="/alojamientos" aria-label="Ver mis alojamientos">
           <div class="pill-icon bg-[var(--secondary-color)] text-[var(--text-primary)] group-hover:bg-[var(--primary-color)] group-hover:text-white">
-            <span class="material-symbols-outlined text-3xl" aria-hidden="true">holiday_village</span>
           </div>
           <h3 class="quick-card-title">Mis alojamientos</h3>
         </a>
-
+        </li>
         <a class="quick-card group" routerLink="/calificaciones" aria-label="Ver calificaciones recibidas">
           <div class="pill-icon bg-[var(--secondary-color)] text-[var(--text-primary)] group-hover:bg-[var(--primary-color)] group-hover:text-white">
-            <span class="material-symbols-outlined text-3xl" aria-hidden="true">reviews</span>
           </div>
           <h3 class="quick-card-title">Calificaciones recibidas</h3>
         </a>

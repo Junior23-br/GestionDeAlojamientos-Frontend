@@ -13,6 +13,9 @@ import {MyReservations}  from './pages/my-reservations/my-reservations';
 import {ConfigurationAccount} from './pages/configuration-account/configuration-account';
 import {MyChats} from './pages/my-chats/my-chats';
 import {PaymentMethod} from './pages/payment-method/payment-method';
+import {ControlPanel} from './pages/control-panel/control-panel';
+import {CreateAccomodation} from './pages/create-accomodation/create-accomodation';
+import {MyAccomodations} from './pages/my-accomodations/my-accomodations';
 import {NgModule} from '@angular/core';
 
 export const routes: Routes = [
@@ -30,7 +33,10 @@ export const routes: Routes = [
   {path: 'my-reservations', component: MyReservations},
   {path: 'my-chats', component: MyChats},
   {path: 'payment-method', component: PaymentMethod},
-  {path: 'configuration-account', component: ConfigurationAccount}
+  {path: 'configuration-account', component: ConfigurationAccount},
+  {path: 'control-panel', component: ControlPanel},
+  {path: 'create-accomodation', component: CreateAccomodation},
+  {path: 'my-accomodations', component: MyAccomodations},
 
 
 
