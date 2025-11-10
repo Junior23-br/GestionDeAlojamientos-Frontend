@@ -14,6 +14,7 @@ import {ConfigurationAccount} from './pages/configuration-account/configuration-
 import {MyChats} from './pages/my-chats/my-chats';
 import {PaymentMethod} from './pages/payment-method/payment-method';
 import {NgModule} from '@angular/core';
+import { CreateAccomodation } from './pages/create-accomodation/create-accomodation';
 
 export const routes: Routes = [
   { path: 'login', component: Login },
@@ -30,7 +31,8 @@ export const routes: Routes = [
   {path: 'my-reservations', component: MyReservations},
   {path: 'my-chats', component: MyChats},
   {path: 'payment-method', component: PaymentMethod},
-  {path: 'configuration-account', component: ConfigurationAccount}
+  {path: 'configuration-account', component: ConfigurationAccount},
+  {path: 'create-accommodation', component: CreateAccomodation}
 
 
 
