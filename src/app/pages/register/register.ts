@@ -73,13 +73,12 @@ export class Register {
           birthDate: this.fechaNacimiento,
           email: this.email,
           personalDescription: "",
-          password: this.password,  
+          password: this.password,
           role: this.rol,
         }
       ).subscribe({
           next: (response) => {
             console.log('Usuario registrado con éxito:', response);
-            this.router.navigate(['/login']);
           },
           error: (error) => {
             console.error('Error al registrar el usuario:', error);
@@ -87,7 +86,7 @@ export class Register {
         });
       }else{
         this.userService.registerGuest(
-          {    
+          {
           name: this.nombre,
           phoneNumber: this.telefono,
           birthDate: this.fechaNacimiento,
@@ -98,16 +97,16 @@ export class Register {
         }).subscribe({
             next: (response) => {
               console.log('Usuario registrado con éxito:', response);
-              this.router.navigate(['/login']);
             },
             error: (error) => {
               console.error('Error al registrar el usuario:', error);
             }
           });
+        alert(`Usuario registrado: ${this.registerForm.value.nombre}`);
         this.registerForm.reset();
       }
     } else {
-      alert('Formulario inválido. Por favor, verifica los campos e inténtalo de nuevo.');
+      alert('Por favor completa todos los campos correctamente.');
     }
   }
 
