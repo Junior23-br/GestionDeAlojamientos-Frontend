@@ -6,6 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { CommonModule } from '@angular/common';
 import {Router, RouterLink} from '@angular/router';
+import { SessionManager } from '../../core/storage/session-manager';
 
 @Component({
   selector: 'app-login',
@@ -25,7 +26,9 @@ export class Login {
   password = '';
 
   constructor(private userService: AuthService,
-  private router:Router) {}
+  private router:Router,
+  private sessionStorage: SessionManager
+  ) {}
 
   onSubmit() {}
   
@@ -38,7 +41,8 @@ export class Login {
     email: this.email, 
     password: this.password}).subscribe({
       next: (response) => {
-        console.log('Usuario logueado con éxito:', response);
+        // console.log('Usuario logueado con éxito:', response);
+        this.sessionStorage.setItem('userToken', response.token);
         this.router.navigate(['/my-account-guest']).then(r =>"Pagina no accesible, error 404: Not Found Page");
       },
       error: (error) => {
@@ -53,6 +57,7 @@ export class Login {
     password: this.password}).subscribe({
       next: (response) => {
         console.log('Usuario logueado con éxito:', response);
+        this.sessionStorage.setItem('userToken', response.token);
         this.router.navigate(['/my-account-host']).then(r =>"Pagina no accesible, error 404: Not Found Page");
       },
       error: (error) => {
