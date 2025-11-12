@@ -79,6 +79,7 @@ export class Register {
       ).subscribe({
           next: (response) => {
             console.log('Usuario registrado con éxito:', response);
+            this.router.navigate(['/login']);
           },
           error: (error) => {
             console.error('Error al registrar el usuario:', error);
@@ -97,16 +98,16 @@ export class Register {
         }).subscribe({
             next: (response) => {
               console.log('Usuario registrado con éxito:', response);
+              this.router.navigate(['/login']);
             },
             error: (error) => {
               console.error('Error al registrar el usuario:', error);
             }
           });
-        alert(`Usuario registrado: ${this.registerForm.value.nombre}`);
         this.registerForm.reset();
       }
     } else {
-      alert('Por favor completa todos los campos correctamente.');
+      alert('Formulario inválido. Por favor, verifica los campos e inténtalo de nuevo.');
     }
   }
 

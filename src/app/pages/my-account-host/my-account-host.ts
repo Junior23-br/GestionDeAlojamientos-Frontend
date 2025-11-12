@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {Router} from '@angular/router';
+import { SessionManager } from '../../core/storage/session-manager';
 
 @Component({
   selector: 'app-my-account-host',
@@ -10,7 +11,9 @@ import {Router} from '@angular/router';
 export class MyAccountHost {
 
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private sessionManager: SessionManager) {
+    console.log('User Token:', this.sessionManager.getItem('userToken'));
+   }
 
   goToMyReservations() {
     this.router.navigate(['/my-reservations']).then(r =>"Pagina no accesible, error 404: Not Found Page" );;
