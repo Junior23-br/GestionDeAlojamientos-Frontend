@@ -67,18 +67,11 @@
 }
 
 /* Responsive refinements específicos (ejemplo de tipografía/padding adaptativa) */
-@media (min-width: 360px) {
-  /* Teléfono base: ya cubierto con clases mobile-first */
-}
-@media (min-width: 768px) {
-  /* Tablet */
-}
-@media (min-width: 1280px) {
-  /* Escritorio amplio si se requiere algo adicional */
-}
+@media (min-width: 360px) { }
+@media (min-width: 768px) { }
+@media (min-width: 1280px) { }
 
-/* Ejemplo de clase avatar con background-image (si prefieres usar <div> en lugar de <img>)
-   Mantiene apariencia exacta del diseño original sin estilos inline. */
+/* Avatar opcional */
 .avatar {
   --avatar-url: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDAnODPMYWqwYlzyISZ0iXktaw61c6bt2bl3V6NdNCBnKHc8qO1ycLc6reShssre3EAEDIVMUUPzL4sPN4LgqWHZ_QoKJevr_G-JUX0LQYY-INEy9wYqndiOVl_2DI16wUbSfuHCz8CFG__6vdcVvlze82meA0rcqcoIXwz285UmDjlOTuNeYZA9_NNTVBqCR_P61KWdfRPMZKbMBcXJmbTbsZWsaaSlyYWBG1lXpltWC0zGjS-c5mnzMl3lpCRRHguexF4QEchEQ");
   background-image: var(--avatar-url);

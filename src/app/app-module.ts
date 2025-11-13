@@ -20,6 +20,7 @@ import { ControlPanel } from './pages/control-panel/control-panel';
 import { CreateAccomodation } from './pages/create-accomodation/create-accomodation';
 import { MyAccomodations } from './pages/my-accomodations/my-accomodations';
 import { MyReputation } from './pages/my-reputation/my-reputation';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -45,6 +46,8 @@ import { MyReputation } from './pages/my-reputation/my-reputation';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),
