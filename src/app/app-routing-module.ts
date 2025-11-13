@@ -38,7 +38,7 @@ export const routes: Routes = [
   {path: 'create-accomodation', component: CreateAccomodation},
   {path: 'my-accomodations', component: MyAccomodations},
 
-
+//Hello
 
 
 
